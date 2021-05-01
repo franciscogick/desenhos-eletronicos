@@ -2418,10 +2418,10 @@ app.get('/api/referencia/:name', function (req, res, next) {
 
 let loginLog = [];
 
-app.post('/api/login', async (req,res) => {
+app.get('/api/login/:name', async (req,res) => {
 
     try {
-      if (!req.body.name) {
+      if (!req.params.name) {
         throw new Error();
       }
   
@@ -2436,13 +2436,10 @@ app.post('/api/login', async (req,res) => {
 
       let now = new Date();
 
-      loginLog.push({nome:req.body.name,date:now});
+      loginLog.push({name:req.params.name,date:now});
       
-      res.send({
-        error: false,
-        message: 'Login realizado com sucesso',
-        name: req.body.name,
-      })
+      res.json({error: false, name: req.params.name});
+      res.end()
   
     } catch (err) {
       res.status(400).send({
@@ -2452,7 +2449,7 @@ app.post('/api/login', async (req,res) => {
     }
 });
 
-app.get('/api/login/log', async (req,res) => {
+app.get('/api/log', async (req,res) => {
     res.json(loginLog);
     res.end();
 });

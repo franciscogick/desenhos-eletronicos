@@ -42,6 +42,6 @@ export class SessionService {
   }
 
   login(data) {
-    return this.httpClient.post<any>(`/api/login`, data).pipe(tap(res => this.registerUser({name: res.name})));
+    return this.httpClient.get<any>(`/api/login/${data.name}`).pipe(tap(res => this.registerUser({name: res.name})));
   }
 }
