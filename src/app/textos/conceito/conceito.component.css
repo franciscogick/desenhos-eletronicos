@@ -1,9 +1,7 @@
 .conceito-wrapper {
-    position: relative;
     display: inline-block;
     cursor: default;
 }
-
 .conceito-wrapper span {
     background: linear-gradient(90deg,#ebfffd 0%, #eed3ff 100%);
     background: #FAAAFF;
@@ -17,12 +15,12 @@
 }
 
 .conceito-pop {
-    position: absolute;
+    position: fixed;
     left: 50%;
-    bottom: 100%;
-    transform: translate(-50%,10%);
+    top: 50%;
+    transform: translate(-50%,-40%);
     min-width: 300px;
-    max-width: 450px;
+    max-width: 80%;
     opacity: 0;
     z-index: +1;
     pointer-events: none;
@@ -40,7 +38,7 @@
 .conceito-wrapper:hover .conceito-pop,.conceito-wrapper:focus .conceito-pop {
     opacity: 1;
     pointer-events: all;
-    transform: translate(-50%,0);
+    transform: translate(-50%,-50%);
 }
 
 .label {
@@ -65,4 +63,21 @@ p {
 .reference {
     font-size: .7rem;
     line-height: .9rem;
+}
+
+@media (min-width: 900px) {
+    .conceito-wrapper {
+        position: relative;
+    }
+    .conceito-pop {
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translate(-50%,10%);
+        min-width: 300px;
+        max-width: 450px;
+    }
+    .conceito-wrapper:hover .conceito-pop,.conceito-wrapper:focus .conceito-pop {
+        transform: translate(-50%,-50%);
+    }
 }

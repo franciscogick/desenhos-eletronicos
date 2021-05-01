@@ -1,0 +1,11 @@
+.lexias {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Sans';
+}
+
+.lexias a {
+    margin: .25rem;
+}

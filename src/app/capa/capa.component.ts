@@ -18,7 +18,7 @@ export class CapaComponent implements OnInit {
 
   ngOnInit(): void {
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {
-      this.leitor = user.name;      
+      if (user) this.leitor = user.name;      
     });
   }
 

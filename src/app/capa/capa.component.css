@@ -21,6 +21,11 @@ p {
     font-size: 1.5rem;
 }
 
+p.institucional {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+}
+
 svg {
     display: block;
     width: 100%;

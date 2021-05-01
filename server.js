@@ -20,8 +20,8 @@ app.use(bodyParser.json({limit: '5mb'}));
 //DATA
 const nodes = [
 
-    {id: 111, label: 'Capa', name: '../capa', descricao: 'Capa do trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 112, label: 'Epígrafe', name: '../epigrafe', descricao: 'Epígrafe / loop[clarice].', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 111, label: 'Capa', name: 'capa', descricao: 'Capa do trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 112, label: 'Epígrafe', name: 'epigrafe', descricao: 'Epígrafe / loop[clarice].', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     
 
     {id: 11, label: 'Introdução', name: 'introducao', descricao: 'Em processo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},

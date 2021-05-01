@@ -8,6 +8,7 @@ import { Node, Edge } from 'vis-network/peer/umd/vis-network';
 import { HttpService } from '../http.service';
 import { Detalhe } from '../interfaces/detalhe';
 import { ExtendedNode } from '../interfaces/extended-node';
+import { NodesService } from '../nodes.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
 
   @ViewChild('elDetalhe', { read: ElementRef }) public elDetalhe: ElementRef<any>;
 
-  public constructor(private httpService: HttpService, private visNetworkService: VisNetworkService) {
+  public constructor(private httpService: HttpService, private visNetworkService: VisNetworkService, private nodesService: NodesService) {
   }
 
   public networkInitialized(): void {
@@ -92,6 +93,7 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
     this.httpService.getNodes().pipe(takeUntil(this.destroy$))
     .subscribe(nodes => {
       this.nodes = new DataSet<ExtendedNode>(nodes);
+      this.nodesService.nodes = nodes;
 
       this.httpService.getEdges().pipe(takeUntil(this.destroy$))
       .subscribe(edges => {

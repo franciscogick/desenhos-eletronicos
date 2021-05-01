@@ -38,6 +38,7 @@ import { EfemeridadeComponent } from './textos/efemeridade/efemeridade.component
 import { DramaturgiaCodigoComponent } from './textos/dramaturgia-codigo/dramaturgia-codigo.component';
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
 import { MenuComponent } from './menu/menu.component';
+import { LexiasConectadasComponent } from './textos/lexias-conectadas/lexias-conectadas.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { MenuComponent } from './menu/menu.component';
     EfemeridadeComponent,
     DramaturgiaCodigoComponent,
     UmTextoPorVirComponent,
-    MenuComponent
+    MenuComponent,
+    LexiasConectadasComponent
   ],
   imports: [
     BrowserModule,

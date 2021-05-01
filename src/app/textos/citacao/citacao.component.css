@@ -1,5 +1,4 @@
 .citacao-wrapper {
-    position: relative;
     display: inline-block;
     cursor: default;
 }
@@ -17,12 +16,13 @@
 }
 
 .citacao-pop {
-    position: absolute;
+    position: fixed;
     left: 50%;
-    bottom: 100%;
-    transform: translate(-50%,10%);
+    top: 50%;
+    z-index: +1;
+    transform: translate(-50%,-40%);
     min-width: 300px;
-    max-width: 450px;
+    max-width: 80%;
     opacity: 0;
     pointer-events: none;
     background: #454545;
@@ -50,7 +50,7 @@
 .citacao-wrapper:hover .citacao-pop,.citacao-wrapper:focus .citacao-pop {
     opacity: 1;
     pointer-events: all;
-    transform: translate(-50%,0);
+    transform: translate(-50%,-50%);
 }
 
 .label {
@@ -79,4 +79,23 @@ p {
 .reference {
     font-size: .7rem;
     line-height: .9rem;
+}
+
+@media (min-width: 900px) {
+    .citacao-wrapper {
+        position: relative;
+    }
+    .citacao-pop {
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        top: auto;
+        transform: translate(-50%,10%);
+        min-width: 300px;
+        max-width: 450px;
+    }
+
+    .citacao-wrapper:hover .citacao-pop,.citacao-wrapper:focus .citacao-pop {
+        transform: translate(-50%,0);
+    }
 }
