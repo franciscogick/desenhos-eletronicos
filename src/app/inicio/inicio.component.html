@@ -4,8 +4,8 @@
         <form [formGroup]="form" #f="ngForm">
             <div class="field-group">
                 <div class="form-field">
-                    <label for="name">Seu nome</label>
-                    <input type="text" formControlName="name" (keyup)="handleKey($event)" placeholder="" aria-label="Seu nome" [class.flash]="flash">
+                    <!--<label for="name">Seu nome</label>-->
+                    <input type="text" placeholder="seu nome" formControlName="name" (keyup)="handleKey($event)" aria-label="Seu nome" [class.flash]="flash">
                 </div>
                 <div class="form-field button-field end">
                     <button type="button" (click)="onSubmit()" [class.disabled]="form.invalid">Entrar</button>
