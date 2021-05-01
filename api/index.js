@@ -1,14 +1,12 @@
-const express = require('express')
-//const cors = require('cors')
-const bodyParser = require("body-parser");
+const app = require('express')()
+const { v4 } = require('uuid')
 
-const path = require('path');
-
-const app = express()
-const port = 8080;
-
-
-app.use(bodyParser.json({limit: '5mb'}));
+app.get('/api', (req, res) => {
+  const path = `/api/item/${v4()}`
+  res.setHeader('Content-Type', 'text/html')
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`)
+})
 
 
 /*
@@ -2453,17 +2451,4 @@ app.get('/api/log', async (req,res) => {
     res.end();
 });
 
-app.use(express.static(__dirname + '/dist/rizoma'));
-
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/rizoma/index.html'));
-});
-
-app.listen(port, (err) => {
-  if (err) {
-    return console.log('O servidor não iniciou :(', err)
-  }
-
-  console.log(`Ok → servidor ouvindo na porta ${port}`)
-})
+module.exports = app
