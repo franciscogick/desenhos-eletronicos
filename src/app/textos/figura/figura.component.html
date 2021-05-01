@@ -1,0 +1,4 @@
+<div class="figura" *ngIf="src">
+    <img [src]="src" [alt]="legenda">
+    <p class="legenda"><b>Figura:</b>&nbsp;<span [innerHTML]="legenda"></span>&nbsp;<citacao *ngIf="fonte" [id]="fonte"></citacao></p>
+</div>

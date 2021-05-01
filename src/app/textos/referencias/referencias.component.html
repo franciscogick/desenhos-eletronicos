@@ -1,0 +1,27 @@
+<nav id="menu">
+    <button class="rizoma" routerLink="/rizoma">rizoma</button>
+</nav>
+<div class="texto-wrapper" id="texto-wrapper" #wrapperEl>
+    <!-- menus de highlight e notes -->
+
+
+    <!--<div id="menu-highlight" #menuHighlight>
+        <button (click)="highlightSelectedText()"><img src="/assets/highlight.svg"></button>
+    </div>
+    
+    <div id="menu-remove-highlight" #menuRemoveHighlight>
+        <button (click)="removeHighlight()"><img src="/assets/close-circle-black.svg"></button>
+    </div>
+
+    -->
+    <div class="texto-inner" *ngIf="referencias && citadas && consultadas" id="texto-inner-referencias" #innerEl>
+        <h1>Referências</h1>
+        <div class="referencia" *ngFor="let ref of citadas">
+            <p [innerHTML]="ref | referenciador"></p>
+        </div>
+        <h2>Consultadas</h2>
+        <div class="referencia" *ngFor="let ref of consultadas">
+            <p [innerHTML]="ref | referenciador"></p>
+        </div>
+    </div>
+</div>

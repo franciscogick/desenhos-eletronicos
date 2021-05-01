@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="29.377" viewBox="0 0 32 29.377">
+  <g id="Groupe_2" data-name="Groupe 2" transform="translate(-91 -284)">
+    <g id="Tracé_1" data-name="Tracé 1" transform="translate(91 284)" fill="none">
+      <path d="M0,0H32V24.052H12.475v5.325L4.667,24.052H0Z" stroke="none"/>
+      <path d="M 2 2.000001907348633 L 2 22.05206298828125 L 4.667030334472656 22.05206298828125 L 5.284099578857422 22.05206298828125 L 5.793899536132812 22.39974212646484 L 10.47504997253418 25.59223365783691 L 10.47504997253418 24.05206298828125 L 10.47504997253418 22.05206298828125 L 12.47504997253418 22.05206298828125 L 30 22.05206298828125 L 30 2.000001907348633 L 2 2.000001907348633 M 0 1.9073486328125e-06 L 32 1.9073486328125e-06 L 32 24.05206298828125 L 12.47504997253418 24.05206298828125 L 12.47504997253418 29.37704277038574 L 4.667030334472656 24.05206298828125 L 0 24.05206298828125 L 0 1.9073486328125e-06 Z" stroke="none" fill="#111"/>
+    </g>
+    <g id="Groupe_1" data-name="Groupe 1" transform="translate(96.486 290.329)">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="21.098" height="1.688" transform="translate(0 0)" fill="#111"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="21.098" height="1.688" transform="translate(0 5.064)" fill="#111"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="16.879" height="1.688" transform="translate(0 10.127)" fill="#111"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<nav id="menu"><button routerLink="/rizoma" class="rizoma">rizoma</button></nav>
+<div id="epigrafe-wrapper">
+    <div id="logo">
+        loop(<span>clarice</span>)
+    </div>
+    <div id="texto" [style.fontSize]="font + 'rem'" #texto>
+    </div>
+    <div id="control">
+        <!--<div><button id="botao-frase" (click)="showFrase()"></button></div>-->
+        <div><input type="range" name="delay" id="delay" min="100" max="5000" [(ngModel)]="delay"><label for="delay">duração <span>[{{delay}}ms]</span></label></div>
+        <div><input type="range" name="font" id="font" min="4" max="64" [(ngModel)]="font"><label for="font">fonte <span>[{{font}}rem]</span></label></div>
+        <!--<div><button name="playPause" (click)="togglePlayPause()">{{play ? 'pause' : 'play'}}</button></div>-->
+    </div>
+
+    <div id="overlay-modal-frase" [class.show]="showModalFrase" (click)="dismissModalFrase()"></div>
+    <div id="modal-frase" [class.show]="showModalFrase">
+        <div>
+            <textarea name="frase-next" id="frase-next" placeholder="nova frase" [(ngModel)]="fraseNext"></textarea>
+            <button id="botao-reset" name="reset" (click)="resetFrase()"></button>
+            <button [disabled]="!fraseNext" (click)="updateFrase()">alterar frase</button>
+        </div>
+    </div>
+</div>

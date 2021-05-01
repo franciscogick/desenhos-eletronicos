@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.954" height="26.517" viewBox="0 0 24.954 26.517">
+  <defs>
+    <filter id="Soustraction_1" x="0" y="0" width="24.954" height="26.517" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_2" data-name="Groupe 2" transform="translate(-622.62 -395.5)">
+    <g transform="matrix(1, 0, 0, 1, 622.62, 395.5)" filter="url(#Soustraction_1)">
+      <path id="Soustraction_1-2" data-name="Soustraction 1" d="M10.954,14.517H2a2,2,0,0,1-2-2V3.591L2.822,0h8.132a2,2,0,0,1,2,2V12.517A2,2,0,0,1,10.954,14.517Z" transform="translate(6 5)" fill="#fff"/>
+    </g>
+    <g id="Groupe_1" data-name="Groupe 1" transform="translate(631.188 404.632)">
+      <line id="Ligne_21" data-name="Ligne 21" x2="6.254" transform="translate(1.504)" fill="none" stroke="#707070" stroke-width="1"/>
+      <line id="Ligne_22" data-name="Ligne 22" x2="7.758" transform="translate(0 3.127)" fill="none" stroke="#707070" stroke-width="1"/>
+      <line id="Ligne_23" data-name="Ligne 23" x2="7.758" transform="translate(0 6.254)" fill="none" stroke="#707070" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

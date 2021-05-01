@@ -1,0 +1,228 @@
+
+  constructor(private renderer: Renderer2, private highlightService: HighlightService) { }
+
+  ngOnInit():void {
+  }
+
+  ngAfterViewInit():void {
+    this.getHighlights();
+  }
+
+  ngOnDestroy():void {
+		this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
+
+  getHighlights():void {
+    this.highlightService.getHighlights().pipe(takeUntil(this.destroy$))
+    .subscribe(highlights => {
+      this.highlights = highlights;
+      this.applyHighlights();
+    });
+  }
+
+  insertHighlight(h):void {
+    this.highlightService.insert(h);
+  }
+
+  removeHighlight(h):void {
+    this.highlightService.remove(h);
+  }
+  
+  applyHighlights():void {
+    console.log('aplicando os highlights',this.highlights);
+    this.highlights.forEach(h => {
+      let range = new Range();
+
+      range.setStart(h.nodes[0],h.start);
+      range.setEnd(h.nodes[1],h.end);
+
+      let span = document.createElement('span');
+      this.renderer.addClass(span,'highlight');
+
+      range.surroundContents(span);
+
+    });
+  }
+  
+  createHighlight(type:string,comment:string = null) {
+    let selection = document.getSelection()
+    console.log(selection.getRangeAt(0))
+    //this.highlight(selection)
+  }
+
+  markText = (text) => {
+    let section = document.createElement('section')
+    //section.role = 'selection'
+    section.style.backgroundColor = 'rgba(255,255,0, 0.3)'
+    section.style.display = 'inline'
+    text.parentNode.replaceChild(section, text)
+    section.appendChild(text)
+    return section
+  }
+  
+  markImage = (image) => {
+    let selected = image.cloneNode()
+    selected.role = 'selection'
+    selected.style.objectPosition = `${image.width}px`
+    selected.style.backgroundImage = `url(${image.src})`
+    selected.style.backgroundColor = 'rgba(255, 255, 0, 0.3)'
+    selected.style.backgroundBlendMode = 'overlay'
+    // Keep original node so we can remove highlighting by
+    // swapping back images.
+    image.appendChild(selected)
+    
+    image.parentElement.replaceChild(selected, image)
+    
+    return selected
+  }
+  
+  markNode = node => {
+    const {Image, Text} = node.ownerDocument.defaultView
+    if (node instanceof Image) {
+      return this.markImage(node)
+    } else if (node instanceof Text) {
+      return this.markText(node)
+    } else {
+      return node
+    }
+  }
+  
+  filter = function* (p, iterator) {
+    for (let item of iterator) {
+      if (p(item)) {
+        yield item
+      }
+    }
+  }
+  
+  map = function* (f, iterator) {
+    for (let item of iterator) {
+      yield f(item)
+    }
+  }
+  
+  takeWhile = function* (p, iterator) {
+    for (let item of iterator) {
+      if (p(item)) {
+        yield item
+      } else {
+        break
+      }
+    }
+  }
+  
+  nextNodes = function* (node) {
+    let next = node
+    let isWalkingUp = false
+    while (next != null) {
+      if (!isWalkingUp && next.firstChild != null) {
+        [isWalkingUp, next] = [false, next.firstChild]
+        yield next
+      } else if (next.nextSibling != null) {
+        [isWalkingUp, next] = [false, next.nextSibling]
+        yield next
+      } else {
+        [isWalkingUp, next] = [true, next.parentNode]
+      }
+    }
+  }
+  
+  childByOffset = (node, offset, fallback=node) => {
+    const child = offset < node.childNodes.length
+     ? node.childNodes[offset]
+     : fallback
+    
+    return child
+  }
+  
+  resolveContainer = (node, offset) => {
+    const {Text, Element} = node.ownerDocument.defaultView
+    const result = node instanceof Text
+      ? [node, offset]
+      : offset < node.childNodes.length
+      ? [node.childNodes[offset], 0]
+      : Error('No child matching the offset found')
+    return result
+  }
+  
+  highlightTextRange = (text, startOffset, endOffset) => {
+    const prefix = text
+    const content = text.splitText(startOffset)
+    const suffix = content.splitText(endOffset - startOffset)
+    return [prefix, content, suffix]
+  }
+  
+  isHighlightableNode = node =>
+    ( this.isHighlightableText(node) ||
+      this.isHighlightableImage(node)
+    )
+  
+  isHighlightableText = node =>
+    node instanceof node.ownerDocument.defaultView.Text &&
+    node.textContent.trim().length > 0
+  
+  isHighlightableImage = node =>
+    node instanceof node.ownerDocument.defaultView.Image
+  
+  
+  highlightRange = (range) => {
+    const {startContainer, endContainer, startOffset, endOffset} = range
+    const start = this.resolveContainer(startContainer, startOffset)
+    const end = this.resolveContainer(endContainer, endOffset)
+    
+    if (start instanceof Error) {
+      return Error(`Invalid start of the range: ${start}`)
+    } else if (end instanceof Error) {
+      return Error(`Invalid end of the range: ${end}`)
+    } else {
+      const {Image, Text} = startContainer.ownerDocument.defaultView
+      const [startNode, startOffset] = start
+      const [endNode, endOffset] = end
+      
+      if (startNode === endNode && startNode instanceof Text) {
+        const [previous, text, next] = this.highlightTextRange(startNode, startOffset, endOffset)
+        console.log(previous,text,next)
+        this.markText(text)
+        range.setStart(text, 0)
+        range.setEnd(next, 0)
+      } else {
+        const contentNodes = this.takeWhile(node => node !== endNode, this.nextNodes(startNode))
+        const highlightableNodes = this.filter(this.isHighlightableNode, contentNodes)
+  
+        ;[...highlightableNodes].forEach(this.markNode)
+    
+        if (startNode instanceof Text) {
+          const text = startOffset > 0
+            ? startNode.splitText(startOffset)
+            : startNode
+  
+          this.markText(text)
+          range.setStart(text, 0)
+        }
+    
+        if (endNode instanceof Text) {
+          const [text, offset] = endOffset < endNode.length
+            ? [endNode.splitText(endOffset).previousSibling, 0]
+            : [endNode, endOffset]
+      
+          this.markText(text)
+          range.setEnd(text, text.length)
+        }
+      }
+    }
+  }
+  
+  getRanges = function*(selection) {
+    let index = 0
+    while (index < selection.rangeCount) {
+      yield selection.getRangeAt(index)
+      index ++
+    }
+  }
+  
+  highlight = (selection) => {
+    for (let range of this.getRanges(selection)) {
+      this.highlightRange(range)
+    }
+  }

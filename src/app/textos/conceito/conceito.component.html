@@ -1,0 +1,8 @@
+<div *ngIf="conceito" class="conceito-wrapper"><span [innerHTML]="conceito.title"></span>
+    <div class="conceito-pop">
+        <div class="label">conceito</div>
+        <h4>{{conceito.title}}</h4>
+        <p class="content" [innerHTML]="conceito.content"></p>
+        <p class="reference" [innerHTML]="conceito.reference"></p>
+    </div>
+</div>

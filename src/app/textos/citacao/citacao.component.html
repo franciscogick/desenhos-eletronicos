@@ -1,0 +1,23 @@
+<div class="citacao-wrapper" *ngIf="referencia">
+    <span [innerHTML]="referencia | citador:formato:pg:min:abrv:obs:par"></span>
+    <div class="citacao-pop">
+        <div class="label">referência</div>
+        <p class="content" [innerHTML]="referencia | referenciador"></p>
+
+        
+        <!--<svg id="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.425 27.21">
+            <defs>
+              <filter id="a" width="36.425" height="27.21" x="0" y="0" filterUnits="userSpaceOnUse">
+                <feOffset dy="5"/>
+                <feGaussianBlur result="blur" stdDeviation="3"/>
+                <feFlood flood-opacity=".251"/>
+                <feComposite in2="blur" operator="in"/>
+                <feComposite in="SourceGraphic"/>
+              </filter>
+            </defs>
+            <g filter="url(#a)">
+              <path fill="#fff" d="M18.191 16.21L27.421 7H9z" data-name="Tracé 2"/>
+            </g>
+        </svg>-->  
+    </div>
+</div>

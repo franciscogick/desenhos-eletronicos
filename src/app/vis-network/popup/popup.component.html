@@ -1,0 +1,9 @@
+<div *ngIf="detalhe" id="detalhe" [class.show]="detalhe.show" [style.left.px]="detalhe.x" [style.top.px]="detalhe.y" >
+    <div class="info">
+        <h3 [innerHTML]="detalhe.label"></h3>
+        <p [innerHTML]="detalhe.descricao"></p>
+    </div>
+    <div class="control">
+        <a [routerLink]="'/lexia/'+detalhe.name" [fragment]="detalhe.fragment">ver</a>
+    </div>
+</div>

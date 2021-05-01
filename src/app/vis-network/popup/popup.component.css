@@ -1,0 +1,35 @@
+#detalhe {
+    font-size: 80%;
+    position: absolute;
+    opacity: 0;
+    transform-origin: left top;
+    transform: scale(0);
+    max-width: 90vw;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.25);
+    border-radius: 1rem;
+    transition: opacity .2s linear, transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#detalhe .info {
+    padding: 1.5rem;
+}
+#detalhe .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem;
+    border-top: 1px solid rgba(0,0,0,.15);
+}
+#detalhe .control a {
+    display: block;
+    padding: .75rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Sans';
+}
+
+#detalhe.show {
+    opacity: 1;
+    transform: scale(1);
+}

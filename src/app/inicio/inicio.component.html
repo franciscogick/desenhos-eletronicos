@@ -1,0 +1,16 @@
+<div id="login-wrapper">
+    <div id="login-form">
+        <h1>Desenhos eletrônicos</h1>
+        <form [formGroup]="form" #f="ngForm">
+            <div class="field-group">
+                <div class="form-field">
+                    <label for="name">Seu nome</label>
+                    <input type="text" formControlName="name" placeholder="" aria-label="Seu nome" [class.flash]="flash">
+                </div>
+                <div class="form-field button-field end">
+                    <button type="button" (click)="onSubmit()" [class.disabled]="form.invalid">Entrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

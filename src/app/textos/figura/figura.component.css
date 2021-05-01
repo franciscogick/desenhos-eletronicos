@@ -1,0 +1,10 @@
+img {
+    display: block;
+    width: 100%;
+}
+
+.legenda {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    font-size: 10.5pt;
+}

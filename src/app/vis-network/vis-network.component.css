@@ -1,0 +1,81 @@
+
+#svg-sumario,#svg-border {
+    position: fixed;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+#svg-border {
+    z-index: +2;
+    pointer-events: none;
+    opacity: .15;
+}
+#svg-border.trans {
+    z-index: +2;
+    pointer-events: none;
+    opacity: .15;
+}
+
+#svg-sumario svg {
+    width: 100%;
+    opacity: .3;
+}
+
+.network-canvas {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* POPUP DETALHE */
+
+#detalhe {
+    font-size: 80%;
+    font-family: 'IMB Plex Sans',sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    max-width: 90vw;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.25);
+    border-radius: 1rem;
+    transition: opacity .2s linear;
+}
+#detalhe .info {
+    padding: 1.5rem;
+}
+p {line-height: 1.25;}
+#detalhe .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem .75rem;
+    /*border-top: 1px solid rgba(0,0,0,.15);*/
+}
+#detalhe .control a {
+    display: block;
+    padding: .25rem .5rem;
+    background: #11e;
+    color: #fff;
+    border-radius: .25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Sans';
+}
+
+#detalhe.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (min-width: 760px) {
+    #detalhe {
+        max-width: 450px;
+    }
+}

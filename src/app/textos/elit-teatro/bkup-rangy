@@ -1,0 +1,142 @@
+ngOnInit(): void {
+
+    rangy.init();
+
+    this.highlighter = rangy.createHighlighter();
+
+    this.highlighter.addClassApplier(rangy.createClassApplier("highlight", {
+      ignoreWhiteSpace: true,
+      tagNames: ["span", "a"],
+    }));
+
+    this.highlighter.addClassApplier(rangy.createClassApplier("note", {
+      ignoreWhiteSpace: true,
+      tagNames: ["span"]
+    }));
+    
+  }
+
+  ngAfterViewInit():void {
+    window.setTimeout(()=>{
+      if (this.savedHighlights) {
+        this.highlighter.deserialize(this.savedHighlights);
+      }
+    },100)
+
+    window.setTimeout(()=>{
+      this.clickEvents();
+    },200)
+  }
+
+  private clickEvents():void {
+    document.querySelectorAll('span.highlight').forEach((n)=>{
+      
+      if (!n.getAttribute('data-haslistener')) {
+        const r = Math.floor(Math.random() * 10000);
+        this.renderer.setAttribute(n,'id','h'+r);
+
+        n.addEventListener('click',() => {
+          const h = this.highlighter.getHighlightForElement(n);
+          console.log(h,n);
+        } ,false);
+        n.setAttribute('data-haslistener','1');
+      }  
+
+    })
+
+    document.querySelectorAll('span.note').forEach((n)=>{
+      
+      if (!n.getAttribute('data-haslistener')) {
+        const r = Math.floor(Math.random() * 10000);
+        this.renderer.setAttribute(n,'id','h'+r);
+
+        const h = this.highlighter.getHighlightForElement(n);
+        this.renderer.setAttribute(n,'data-comment',h.comment);
+
+
+        n.addEventListener('click',this.listener);
+        n.setAttribute('data-haslistener','1');
+      }  
+
+    })
+  } 
+
+  /*
+
+  () => {
+          if (n != this.actualNoteEl) {
+            this.dismissNoteModal();
+
+            this.actualNoteEl = n;
+            const par = document.getElementById('noteModalParagraph');
+            const h = this.highlighter.getHighlightForElement(n);
+            
+            window.setTimeout(()=>{ 
+              this.renderer.setProperty(this.noteModalParagraph.nativeElement,'innerHTML',h.comment);
+              this.showNoteModal();
+            },300);
+          }
+        }
+  */
+
+  listener = (e) => {
+    const el = e.target;
+    const c = el.getAttribute('data-comment');
+    this.renderer.setProperty(this.noteModalParagraph.nativeElement,'innerHTML',c);
+    this.showNoteModal();
+  }
+
+  setActualNote(el) {
+    if (el != this.actualNoteEl) {
+      this.actualNoteEl = el;
+      this.actualNote = this.highlighter.getHighlightForElement(el);
+    }
+    
+    console.log(this.actualNoteEl,this.actualNote);
+  }
+
+  highlightSelectedText() {
+    // tem alguma coisa já? se tem não faz...
+    let h = this.highlighter.highlightSelection("highlight",{exclusive: false});
+    console.log(h[0]);
+    console.log(this.highlighter.serialize());
+    this.clickEvents();
+  }
+
+  noteSelectedText() {
+    // tem alguma coisa já? se tem não faz...
+    this.lastNote = this.highlighter.highlightSelection("note",{exclusive: false})[0];
+    console.log(this.lastNote)
+    this.showNoteCreationModal();
+  }
+
+  noteSaveComment() {
+    this.lastNote.comment = this.comment;
+    console.log(this.highlighter.serialize());
+    this.clickEvents();
+    this.dismissNoteCreationModal();
+  }
+  
+  showNoteCreationModal():void {
+    this.comment = null;
+    this.noteModal = true;
+  }
+
+  dismissNoteCreationModal():void {
+    this.comment = null;
+    this.noteModal = false;
+  }
+
+  showNoteModal():void {
+    this.note = true;
+  }
+
+  dismissNoteModal():void {
+    this.note = false;
+    this.actualNoteEl = null;
+  }
+
+  deleteActualNote():void {
+    this.highlighter.removeHighlights([this.actualNote]);
+    this.dismissNoteModal();
+  }

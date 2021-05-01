@@ -1,0 +1,28 @@
+#capa-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#capa-inner {
+    padding: 2rem;
+    width: 100%;
+}
+
+p {
+    font-family: "Source Code Pro",monospace;
+    line-height: 1.25;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+}

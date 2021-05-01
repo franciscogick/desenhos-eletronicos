@@ -1,1 +1,379 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./minireset.min.css";
+
+*:focus {
+    outline: none;
+}
+
+::selection { 
+    
+background: /*#09B3FF*/#11e;
+color: #fff;
+
+ }
+
+html, body {
+    overflow-x: hidden;
+    font-family: 'Source Code Pro';
+}
+
+body {
+    font-size: 14px;
+    background-color: #11e;
+    color: #333;
+}
+
+a {
+    color: /*#09FFEA*/#11e;
+    overflow-wrap: break-word;
+}
+
+a.nav-lexia {
+    display: inline-block;
+    color: #fff;
+    background: /*#09FFEA*/#11e;
+    font-weight: bold !important;
+    text-decoration: none;
+    padding: 0rem .2rem;
+    border-radius: .2rem;
+}
+
+p.anotacao a.nav-lexia {
+    background: transparent;
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 3.814697265625em;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+h2 {
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    font-size: 3.0517578125em;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+h3 {
+    margin-bottom: 1rem;
+    line-height: 1;
+    font-size: 1.777777777em;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+h4 {
+    margin-bottom: .5rem;
+    line-height: 1;
+    font-size: 1.333333333em;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+h5 {
+    margin-bottom: 3rem;
+    font-size: 1.5625em;
+    line-height: 3rem;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+h6 {
+    margin-bottom: 3rem;
+    font-size: 1.25em;
+    line-height: 3rem;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+h3:first-child {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: .5rem;
+    margin-top: 0;
+    font-size: 1.0em;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+.highlight {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #7dfdff 100%);
+    background: #09FFEA;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+.note {
+    background-color: transparent;
+    position: relative;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.note::after {
+    position: absolute;
+    left: calc(100% - 13px);
+    top: -3px;
+    content: '';
+    display: block;
+    width: 13px;
+    height: 15px;
+    background: transparent url(/assets/note.svg) center center no-repeat;
+}
+.note:hover {
+    text-decoration: underline;
+}
+
+.texto-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    /*overflow-y: auto;
+    overflow-x: hidden;*/
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+button.close {
+    position: fixed;
+    z-index: +2;
+    right: 2rem;
+    top: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent url(/assets/close-transparent-black.svg) center center no-repeat;
+    background-size: cover;
+    border: 0;
+}
+
+.texto-inner {
+    width: 40rem;
+    max-width: 100%;
+    padding: 2rem;
+}
+
+.texto-inner > * {
+    position: relative;
+}
+
+.texto-inner .titulo {
+    margin-bottom: 2rem;
+}
+
+.texto-inner .titulo h1, .texto-inner .titulo h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.texto-inner .titulo,.texto-inner p {
+    max-width: 40rem;
+}
+
+.texto-inner p {
+    font-family: 'IBM Plex Sans';
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.texto-inner p:not(.citacao):not(.content):not(.reference):not(.legenda):not(.anotacao)::first-letter {
+    margin-left: 1.25cm;
+}
+
+.texto-inner p.citacao {
+    padding-left: 4cm;
+    font-size: 10.5pt;
+}
+
+.texto-inner p.epigrafe {
+    padding-left: 4cm;
+    text-align: right;
+    font-style: italic;
+    font-size: 10.5pt;
+}
+
+#menu-highlight, #menu-remove-highlight {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    z-index: +3;
+    pointer-events: none;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.3);
+    transform: translateY(10px);
+    transition: opacity .25s linear, transform .25s linear;
+}
+#menu-highlight:hover, #menu-remove-highlight:hover {
+    background: #eee;
+}
+#menu-highlight.show, #menu-remove-highlight.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+#menu-highlight button, #menu-remove-highlight button {
+    background: transparent;
+    border: none;
+    padding: .5rem;
+}
+#menu-highlight button img, #menu-remove-highlight button img {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+
+#noteCreationModal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    pointer-events: none;
+    background: #444;
+    color: #eee;
+    padding: .5rem;
+    z-index: +2;
+}
+
+#noteCreationModal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+button.disable {
+    opacity: .7;
+    pointer-events: none;
+}
+
+#noteModal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    padding: 1rem;
+    z-index: +2;
+}
+#noteModal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* NOTES */
+
+.wrapper-note {
+    position: absolute;
+    left: calc(100% + 1rem);
+    top: 0;
+    width: 2.25rem;
+    height: 100%;
+}
+
+.add-note {
+    position: sticky;
+    top: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s linear;
+}
+
+.texto-inner > *:hover .add-note {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.add-note button {
+    border: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: transparent url(/assets/add-note.svg) center center no-repeat;
+    background-size: cover;
+}
+
+.titulo-obra {
+    font-style: italic;
+}
+p.destaque {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+p.anotacao {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+p.anotacao span {
+    background:darkviolet;
+    color: #fff;
+    padding: .15rem .25rem;
+    border-radius: .15rem;
+}
+
+span.anotacao {
+    background:violet;
+    color: #fff;
+    padding: .15rem .25rem;
+    border-radius: .15rem;
+}
+
+p.memoria {
+    font-family: 'IBM Plex Serif';
+    font-style: italic;
+}
+
+p+h2 {
+    margin-top: 2rem;
+}
+
+#menu {
+    position: fixed;
+    z-index: +2;
+    right:2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#menu button {
+    border: 1px solid #111;
+    color: #111;
+    padding: .5rem;
+    border-radius: .25rem;
+    background: #fff;
+    text-transform: uppercase;
+    margin: 0 .25rem;
+}
+
+#menu button.rizoma {
+    border: 1px solid #11e;
+    color: #11e;
+}

@@ -1,0 +1,9 @@
+.texto-inner p:not(.citacao)::first-letter {
+    margin-left: 0 !important;
+}
+
+.texto-inner p {
+    margin-bottom: 6pt;
+    text-align: left;
+}
+

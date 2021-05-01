@@ -1,0 +1,8 @@
+<div id="header">
+    <div *ngIf="user">{{user.name}}</div>
+    <button (click)="logOut()">Sair</button>
+</div>
+
+<app-vis-network></app-vis-network>
+
+<router-outlet></router-outlet>
