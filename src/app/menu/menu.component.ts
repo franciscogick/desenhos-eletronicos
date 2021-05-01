@@ -11,11 +11,16 @@ import { SessionService } from '../session.service';
 export class MenuComponent implements OnInit {
 
   lexia: boolean;
+  menuState: boolean;
 
   constructor(private sessionService: SessionService, private router: Router) { }
 
   ngOnInit(): void {
     this.lexia = this.router.url.indexOf('lexia') > -1;
+  }
+
+  toggleMenu() {
+    this.menuState = !this.menuState;
   }
 
   logOut():void {

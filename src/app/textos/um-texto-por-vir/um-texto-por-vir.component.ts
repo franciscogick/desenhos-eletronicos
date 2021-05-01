@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UmTextoPorVirComponent implements OnInit {
 
+  nodeId = '106';
+
   constructor() { }
 
   ngOnInit(): void {

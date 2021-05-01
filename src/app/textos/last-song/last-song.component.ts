@@ -14,6 +14,8 @@ declare var rangy: any;
 })
 export class LastSongComponent implements OnInit,AfterViewInit,OnDestroy {
 
+  nodeId = '10411';
+
   textName = 'last-song';
   textContainerId = 'texto-inner-last-song';
 

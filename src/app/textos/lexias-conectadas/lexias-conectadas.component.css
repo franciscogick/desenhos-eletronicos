@@ -9,3 +9,10 @@
 .lexias a {
     margin: .25rem;
 }
+
+.secondary {
+    background: rgba(17,17,238,.5);
+}
+.terciary {
+    background: rgba(17,17,238,.25);
+}

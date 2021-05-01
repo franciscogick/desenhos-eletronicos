@@ -14,6 +14,8 @@ declare var rangy: any;
 })
 export class AiComponent implements OnInit,AfterViewInit,OnDestroy {
 
+  nodeId = '10414';
+
   textName = 'ai';
   textContainerId = 'texto-inner-ai';
 

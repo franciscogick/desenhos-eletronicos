@@ -14,6 +14,8 @@ declare var rangy: any;
 })
 export class EscuroComponent implements OnInit,AfterViewInit,OnDestroy {
 
+  nodeId='10412';
+
   textName = 'escuro';
   textContainerId = 'texto-inner-escuro';
 

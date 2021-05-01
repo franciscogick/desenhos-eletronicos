@@ -1,3 +1,5 @@
+@import url(hamburgers.css);
+
 .active {
     display: none;
 }
@@ -5,11 +7,58 @@
 #menu {
     position: fixed;
     z-index: +2;
-    right:1rem;
-    top: 1rem;
+    right: 0;
+    top: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+    padding: 4rem 2rem 2rem;
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    color: #111;
+    transition: opacity .3s ease-in-out;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.25);
+}
+
+#menu.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-trigger {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    z-index: 1001;
+}
+
+.nav-trigger.is-active {
+    color: #111 !important;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: currentColor !important;
+    height: 2px;
+    right: 0;
+}
+
+.hamburger-inner {
+    width: 24px;
+}
+
+.hamburger-inner::before {
+    width: 40px;
+}
+
+.hamburger-inner::after {
+   width: 30px;
+}
+
+.nav-trigger.is-active .hamburger-inner, .nav-trigger.is-active .hamburger-inner::before, .nav-trigger.is-active .hamburger-inner::after {
+    width: 40px;
 }
 
 #menu button {
@@ -19,14 +68,37 @@
     border-radius: .25rem;
     background: #fff;
     text-transform: uppercase;
-    margin: 0 .25rem;
+    margin: .25rem;
 }
 
-#menu button.logout {
-    margin-left: 1rem;
-}
+
 
 #menu button.rizoma {
     border: 1px solid #11e;
     color: #11e;
+}
+
+@media (min-width: 900px) {
+    #menu {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        pointer-events: all;
+        background: transparent;
+        color: currentColor;
+        padding: 1rem;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-trigger,.lista-mobile {
+        display: none;
+    }
+
+    #menu button.logout {
+        margin-left: 1rem;
+    }
 }

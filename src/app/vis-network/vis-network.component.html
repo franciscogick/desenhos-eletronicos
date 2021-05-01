@@ -42,6 +42,6 @@
         <p [innerHTML]="detalhe.descricao"></p>
     </div>
     <div class="control">
-        <a [routerLink]="detalhe.type == 'lexia' ? 'lexia/'+detalhe.name : detalhe.name" [fragment]="detalhe.fragment" (click)="dismissDetalhe()">abrir</a>
+        <a [routerLink]="[detalhe.type == 'lexia' ? 'lexia/'+detalhe.name : '../'+detalhe.name]" [fragment]="detalhe.fragment" (click)="dismissDetalhe()">abrir</a>
     </div>
 </div>

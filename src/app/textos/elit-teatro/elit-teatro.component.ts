@@ -16,6 +16,8 @@ declare var rangy: any;
 })
 export class ElitTeatroComponent implements OnInit,AfterViewInit,OnDestroy {
   
+  nodeId = '104';
+
   textName = 'elit-teatro';
   textContainerId = 'texto-inner-elit-teatro';
 

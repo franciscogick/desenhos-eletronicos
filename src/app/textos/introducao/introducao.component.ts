@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroducaoComponent implements OnInit {
 
+  nodeId='101';
+
   lexias: {texto:string,link:string,name:string}[] = [
     {texto:'Em <b>Desenhos eletrônicos</b> procede-se a uma reflexão teórica sobre o campo da Literatura Eletrônica e sobre como a textualidade digital implica em transformações nas relações de leitura e escrita.',link:'desenhos-eletronicos',name:'Desenhos Eletrônicos'},
     {texto:'<b>Travessia</b> é um passeio pelo território da Literatura Eletrônica que mobiliza discussões acerca das tecnologias e estratégias de composição de textos digitais.',link:'travessia',name:'Travessia'},

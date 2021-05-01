@@ -175,7 +175,8 @@ button.close {
 .texto-inner {
     width: 40rem;
     max-width: 100%;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem;
+    
 }
 
 .texto-inner > * {

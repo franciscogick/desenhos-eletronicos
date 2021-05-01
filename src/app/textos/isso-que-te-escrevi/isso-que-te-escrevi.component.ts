@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssoQueTeEscreviComponent implements OnInit {
 
+  nodeId='1011';
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,3 +1,7 @@
-<p class="lexias">
-    <a class="nav-lexia" *ngFor="let n of nodes" [routerLink]="'../'+n.name">{{n.label}}</a>
-</p>
+<div id="conexoes">
+    <h4>Lexias conectadas</h4>
+    <p class="lexias">
+        <a class="nav-lexia" [id]="(''+n.id).length" [class.secondary]="(''+n.id).length == 4" [class.terciary]="(''+n.id).length == 5" *ngFor="let n of nodes" [routerLink]="'../'+n.name" [fragment]="n.fragment">{{n.label}}</a>
+    </p>
+</div>
+    

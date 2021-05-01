@@ -5,6 +5,7 @@ import { EpigrafeComponent } from './epigrafe/epigrafe.component';
 import { Erro404Component } from './erro404/erro404.component';
 import { InicioGuard } from './inicio.guard';
 import { InicioComponent } from './inicio/inicio.component';
+import { ResumoComponent } from './resumo/resumo.component';
 import { RizomaComponent } from './rizoma/rizoma.component';
 import { AiComponent } from './textos/ai/ai.component';
 import { CartografiaLiteraturaDigitalComponent } from './textos/cartografia-literatura-digital/cartografia-literatura-digital.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
   component: CapaComponent},
   { path: 'epigrafe',
   component: EpigrafeComponent},
+  { path: 'resumo',
+  component: ResumoComponent},
+  { path: 'referencias',
+  component: ReferenciasComponent},
   {
     path: "rizoma",
     component: RizomaComponent,
@@ -65,8 +70,6 @@ const routes: Routes = [
         component: DramaturgiaCodigoComponent},
       { path: 'lexia/um-texto-por-vir',
       component: UmTextoPorVirComponent},
-      { path: 'lexia/referencias',
-      component: ReferenciasComponent},
     ],
     
     canActivate: [InicioGuard]

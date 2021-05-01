@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DramaturgiaTecnologiaComponent implements OnInit {
 
+  nodeId='105'
+
   constructor() { }
 
   ngOnInit(): void {

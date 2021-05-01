@@ -1,13 +1,4 @@
 const app = require('express')()
-const { v4 } = require('uuid')
-
-app.get('/api', (req, res) => {
-  const path = `/api/item/${v4()}`
-  res.setHeader('Content-Type', 'text/html')
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`)
-})
-
 
 /*
  *
@@ -18,89 +9,71 @@ app.get('/api', (req, res) => {
 //DATA
 const nodes = [
 
-    {id: 111, label: 'Capa', name: 'capa', descricao: 'Capa do trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 112, label: 'Epígrafe', name: 'epigrafe', descricao: 'Epígrafe / loop[clarice].', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 1, label: 'Capa', name: 'capa', descricao: 'Capa do trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 2, label: 'Epígrafe', name: 'epigrafe', descricao: 'Epígrafe / loop[clarice].', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 3, label: 'Resumo', name: 'resumo', descricao: 'Resumo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 4, label: 'Referências', name: 'referencias', descricao: 'Referências bibliográficas.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 5, label: 'Considerações finais', name: 'consideracoes-finais', descricao: 'Considerações finais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     
+    //lexias do rizoma
+    {id: 101, label: 'Introdução', name: 'introducao', descricao: 'Em processo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-    {id: 11, label: 'Introdução', name: 'introducao', descricao: 'Em processo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1011, label: 'Isso que te escrevi', name: 'isso-que-te-escrevi', descricao: 'Notas sobre o trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'}, 
 
-        {id: 6, label: 'Isso que te escrevi', name: 'isso-que-te-escrevi', descricao: 'Notas sobre o trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'}, 
+    {id: 102, label: 'Desenhos eletrônicos', name: 'desenhos-eletronicos', descricao: 'Reflexão conceitual sobre o campo da Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-    {id: 2, label: 'Desenhos eletrônicos', name: 'desenhos-eletronicos', descricao: 'Reflexão conceitual sobre o campo da Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1021, label: 'Efemeridade/Obsolescência', name: 'efemeridade', descricao: 'Sobre a efemeridade das criações em Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-        {id: 5, label: 'Efemeridade/Obsolescência', name: 'efemeridade', descricao: 'Sobre a efemeridade das criações em Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 103, label: 'Travessia', name: 'travessia', descricao: 'Um passeio pelo território da Literatura Digital, encontro com textos e discussões.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', type:'lexia', group: 2},
 
-    {id: 4, label: 'Travessia', name: 'travessia', descricao: 'Um passeio pelo território da Literatura Digital, encontro com textos e discussões.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', type:'lexia', group: 2},
-
-    {id: 3, label: 'Duas entradas', name: 'duas-entradas', descricao: 'Aproximações entre Teatro e Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+    {id: 104, label: 'Duas entradas', name: 'duas-entradas', descricao: 'Aproximações entre Teatro e Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
         
-        {id: 31, label: 'Corpus de pesquisa', name: 'duas-entradas', fragment: 'corpus', descricao: 'Descrição do corpus de pesquisa.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+        {id: 1041, label: 'Corpus de pesquisa', name: 'duas-entradas', fragment: 'corpus', descricao: 'Descrição do corpus de pesquisa.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-        {id: 311, label: 'Last Song of Violeta Parra', name: 'last-song-of-violeta-parra', descricao: 'Last Songs of Violeta Parra, de Charles Deemer.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10411, label: 'Last Song of Violeta Parra', name: 'last-song-of-violeta-parra', descricao: 'Last Songs of Violeta Parra, de Charles Deemer.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-        {id: 312, label: 'Escuro', name: 'escuro', descricao: 'Escuro, um mapa hipertextual escrito por Leonardo Moreira.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10412, label: 'Escuro', name: 'escuro', descricao: 'Escuro, um mapa hipertextual escrito por Leonardo Moreira.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-        {id: 313, label: 'TRANS.MISSION [A.DIALOGUE]', name: 'transmission-a-dialogue', descricao: 'TRANS.MISSION [A.DIALOGUE], de J. R. Carpenter.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10413, label: 'TRANS.MISSION [A.DIALOGUE]', name: 'transmission-a-dialogue', descricao: 'TRANS.MISSION [A.DIALOGUE], de J. R. Carpenter.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-        {id: 314, label: 'AI: when a robot writes a play', name: 'ai-when-a-robot-writes-a-play', descricao: 'AI: when a robot writes a play, uma peça de teatro escrita por uma inteligência artificial.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10414, label: 'AI: when a robot writes a play', name: 'ai-when-a-robot-writes-a-play', descricao: 'AI: when a robot writes a play, uma peça de teatro escrita por uma inteligência artificial.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-    {id: 1, label: 'Dramaturgia e tecnologia', name: 'dramaturgia-tecnologia', descricao: 'Discussão sobre a interface dramaturgia-tecnologia', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 105, label: 'Dramaturgia e tecnologia', name: 'dramaturgia-tecnologia', descricao: 'Discussão sobre a interface dramaturgia-tecnologia', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-        {id: 12, label: 'Dramaturgia e código', name: 'dramaturgia-codigo', descricao: 'Análise da performance online HIPERGAIVOTA e especulação sobre possíveis relações entre código-fonte e dramaturgia.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1051, label: 'Dramaturgia e código', name: 'dramaturgia-codigo', descricao: 'Análise da performance online HIPERGAIVOTA e especulação sobre possíveis relações entre código-fonte e dramaturgia.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-    {id: 7, label: 'Referências', name: 'referencias', descricao: 'Referências bibliográficas.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
-
-    {id: 8, label: 'Um texto por vir', name: 'um-texto-por-vir', descricao: 'Reflexões sobre a criação de um texto dramatúrgico digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 106, label: 'Um texto por vir', name: 'um-texto-por-vir', descricao: 'Reflexões sobre a criação de um texto dramatúrgico digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
         
-        {id: 9, label: 'Sensores de presença', name: 'cena-sensores', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1061, label: 'Sensores de presença', name: 'cena-sensores', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
         
-        {id: 10, label: 'Mickey Mouse está ficando velho', name: 'cena-mickey', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1062, label: 'Mickey Mouse está ficando velho', name: 'cena-mickey', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 ];
 //#46FF9C
 const edges = [
-    {from: 1, to: 2, dashes: true},
-    {from: 1, to: 12, dashes: true},
-    {from: 1, to: 3, dashes: true},
-    {from: 2, to: 3, dashes: true},
-    {from: 2, to: 4, dashes: true},
-    {from: 2, to: 5, dashes: true},
-    {from: 3, to: 31, dashes: true},
-    {from: 31, to: 311, dashes: true},
-    {from: 31, to: 312, dashes: true},
-    {from: 31, to: 313, dashes: true},
-    {from: 31, to: 314, dashes: true},
-    {from: 4, to: 31, dashes: true},
-    /*{from: 4, to: 31, dashes: true},
-    {from: 4, to: 32, dashes: true},
-    {from: 4, to: 33, dashes: true},
-    {from: 4, to: 34, dashes: true},*/
-    /*{from: 4, to: 41, dashes: true},
-    {from: 4, to: 42, dashes: true},
-    {from: 4, to: 43, dashes: true},
-    {from: 4, to: 44, dashes: true},
-    {from: 4, to: 45, dashes: true},
-    {from: 4, to: 46, dashes: true},
-    {from: 4, to: 47, dashes: true},
-    {from: 4, to: 48, dashes: true},
-    {from: 4, to: 49, dashes: true},*/
-    {from: 8, to: 9, dashes: true},
-    {from: 8, to: 10, dashes: true},
-    {from: 8, to: 1, dashes: true},
-    {from: 11, to: 1, dashes: true},
-    {from: 11, to: 3, dashes: true},
-    {from: 11, to: 4, dashes: true},
-    {from: 11, to: 6, dashes: true},
+    {from: 101, to: 1011, dashes: true},
+    {from: 101, to: 103, dashes: true},
+    {from: 102, to: 101, dashes: true},
+    {from: 102, to: 103, dashes: true},
+    {from: 102, to: 105, dashes: true},
+    {from: 102, to: 1021, dashes: true},
+    {from: 103, to: 104, dashes: true},
+    {from: 104, to: 101, dashes: true},
+    {from: 104, to: 102, dashes: true},
+    {from: 104, to: 105, dashes: true},
+    {from: 1041, to: 10411, dashes: true},
+    {from: 1041, to: 10412, dashes: true},
+    {from: 1041, to: 10413, dashes: true},
+    {from: 1041, to: 10414, dashes: true},
+    {from: 104, to: 10411, dashes: true},
+    {from: 104, to: 10412, dashes: true},
+    {from: 104, to: 10413, dashes: true},
+    {from: 104, to: 10414, dashes: true},
+    {from: 105, to: 101, dashes: true},
+    {from: 105, to: 106, dashes: true},
+    {from: 105, to: 1051, dashes: true},
+    {from: 106, to: 1061, dashes: true},
+    {from: 106, to: 1062, dashes: true},
 
-];
-
-const textos = [
-    {id: 1, name: 'dramaturgia', content: 'teste'},
-    {id: 2, name: 'elit', content: 'teste'},
-    {id: 3, name: 'elit-teatro', titulo: '2INPUTS', subtitulo: 'Teatro + Literatura Eletrônica', content: 'teste'},
-    {id: 4, name: 'elit-cartografia', content: 'teste'},
-    {id: 5, name: 'elit-obsolescencia', content: 'teste'},
-    {id: 6, name: 'sobre', content: 'teste'},
-    {id: 7, name: 'referencias', content: 'teste'},
 ];
 
 const conceitos = [
@@ -2362,14 +2335,6 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "cited":true
 }
 ];
-
-const usuarios = [
-    {
-        nome:'Francisco Gick',
-        email: 'f@gmail.com',
-        senha: 'rizoma123'
-    }
-]
 
 //ENDPOINTS
 app.get('/api/nodes', function (req, res, next) {

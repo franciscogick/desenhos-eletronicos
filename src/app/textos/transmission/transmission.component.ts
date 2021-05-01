@@ -14,6 +14,8 @@ declare var rangy: any;
 })
 export class TransmissionComponent implements OnInit,AfterViewInit,OnDestroy {
 
+  nodeId='10413';
+
   textName = 'transmission';
   textContainerId = 'texto-inner-transmission';
 

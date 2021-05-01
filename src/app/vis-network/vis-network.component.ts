@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VisNetworkService, Data, Options } from 'ngx-vis';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -30,7 +30,7 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
 
   @ViewChild('elDetalhe', { read: ElementRef }) public elDetalhe: ElementRef<any>;
 
-  public constructor(private httpService: HttpService, private visNetworkService: VisNetworkService, private nodesService: NodesService) {
+  public constructor(private httpService: HttpService, private visNetworkService: VisNetworkService, private nodesService: NodesService, private router: Router) {
   }
 
   public networkInitialized(): void {

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EfemeridadeComponent implements OnInit {
 
+  nodeId='1021';
+
   constructor() { }
 
   ngOnInit(): void {

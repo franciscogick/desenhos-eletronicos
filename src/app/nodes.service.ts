@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class NodesService {
 
   public nodes: any[];
+  public activeNode: string;
 
   constructor() { }
 }

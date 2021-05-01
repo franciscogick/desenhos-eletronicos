@@ -8,6 +8,8 @@ import { ScrollService } from 'src/app/scroll.service';
 })
 export class LiteraturaDigitalComponent implements OnInit {
 
+  nodeId='102';
+
   constructor(private scrollService: ScrollService) {
     //this.scrollService.scroll();
   }

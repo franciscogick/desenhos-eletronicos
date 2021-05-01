@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartografiaLiteraturaDigitalComponent implements OnInit {
 
+  nodeId='103';
+
   constructor() { }
 
   ngOnInit(): void {

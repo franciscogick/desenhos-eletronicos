@@ -68,7 +68,7 @@ export class ReferenciasComponent implements OnInit {
       this.consultadas = this.referencias.filter(r => !r.cited);
       
     });
-    this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => this.sessionUser = user.name);
+    this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {if (user) this.sessionUser = user.name});
     //this.rangyStart();
   }
   
