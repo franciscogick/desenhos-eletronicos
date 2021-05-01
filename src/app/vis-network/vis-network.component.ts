@@ -39,6 +39,15 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
 
     this.visNetworkService.moveTo(this.visNetwork,{position: {x:0,y:0},scale: 8});
 
+    const p = this.visNetworkService.getPositions(this.visNetwork,['101'])['101'];
+    console.log(p)
+
+    /*setTimeout(()=>{
+      const p = this.visNetworkService.getPositions(this.visNetwork,['101'])['101'];
+      console.log(p)
+      this.visNetworkService.moveTo(this.visNetwork,{position: p,scale: 8});
+    },400)*/
+
     //click no nó mostra o popup de detalhes, click fora de qualquer nó esconde o popup
     this.visNetworkService.click.subscribe((eventData: any[]) => {
       if (eventData[0] === this.visNetwork && eventData[1].nodes[0] !== this.detalhe.id) {
