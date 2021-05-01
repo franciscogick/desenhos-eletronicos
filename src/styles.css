@@ -1,4 +1,5 @@
 @import "./minireset.min.css";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Serif:ital@1&family=Source+Code+Pro:wght@400;900&display=swap');
 
 *:focus {
     outline: none;
@@ -13,7 +14,7 @@ color: #fff;
 
 html, body {
     overflow-x: hidden;
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro',monospace;
 }
 
 body {
