@@ -23,6 +23,7 @@ import { TransmissionComponent } from './textos/transmission/transmission.compon
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
 
 const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0,50]
 };
