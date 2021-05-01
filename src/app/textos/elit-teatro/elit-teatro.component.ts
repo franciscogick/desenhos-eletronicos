@@ -54,7 +54,7 @@ export class ElitTeatroComponent implements OnInit,AfterViewInit,OnDestroy {
   }
 
   ngOnInit(): void {
-    this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => this.sessionUser = user.name);
+    this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {if (user) this.sessionUser = user.name});
     //this.rangyStart();
 
     //this.shuffle(this.corpus);

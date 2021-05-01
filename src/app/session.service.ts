@@ -9,6 +9,8 @@ import { User } from './interfaces/user';
 })
 export class SessionService {
 
+  public redirectUrl: string;
+
   private user: BehaviorSubject<User>;
 
   constructor(private httpClient: HttpClient) { 

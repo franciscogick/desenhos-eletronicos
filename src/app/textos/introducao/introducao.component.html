@@ -1,6 +1,4 @@
-<nav id="menu">
-    <button class="rizoma" routerLink="/rizoma">rizoma</button>
-</nav>
+<app-menu></app-menu>
 <div class="texto-wrapper">
     <div class="texto-inner">
         <div class="titulo">
@@ -24,7 +22,7 @@
         <p class="anotacao"><span>Adicionar reflexão sobre minha prática artística como dramaturgo e programador estabelecendo, desde uma perspectiva pessoa, a interface entre dramaturgia e tecnologia</span></p>
 
         <h2>Sobre o corpo desta dissertação</h2>
-        <p *ngFor="let l of lexias" [innerHTML]="l"></p>
+        <p *ngFor="let l of lexias"><a class="nav-lexia" [routerLink]="'../'+l.link" [innerHTML]="l.name"></a> → <span [innerHTML]="l.texto"></span></p>
 
         <p class="anotacao"><span>Adicionar informação de este não é um trabalho "da pandemia", ou seja, a criação em ambiente digital não é aqui um resultado da contingência, mas parte de um traçado poético que desenvolvo.</span></p>
     </div>

@@ -147,6 +147,7 @@ p:last-of-type {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: +1;
     width: 100%;
     min-height: 100%;
     /*overflow-y: auto;
@@ -201,7 +202,7 @@ button.close {
     text-align: justify;
 }
 
-.texto-inner p:not(.citacao):not(.content):not(.reference):not(.legenda):not(.anotacao)::first-letter {
+.texto-inner p:not(.citacao):not(.content):not(.reference):not(.legenda):not(.anotacao):not(.aforismo)::first-letter {
     margin-left: 1.25cm;
 }
 
@@ -353,27 +354,4 @@ p+h2 {
     margin-top: 2rem;
 }
 
-#menu {
-    position: fixed;
-    z-index: +2;
-    right:2rem;
-    top: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
-#menu button {
-    border: 1px solid #111;
-    color: #111;
-    padding: .5rem;
-    border-radius: .25rem;
-    background: #fff;
-    text-transform: uppercase;
-    margin: 0 .25rem;
-}
-
-#menu button.rizoma {
-    border: 1px solid #11e;
-    color: #11e;
-}

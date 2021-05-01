@@ -53,3 +53,8 @@ button {
     text-transform: uppercase;
     box-sizing: content-box;
 }
+
+button.disabled {
+    opacity: .5;
+    pointer-events: none;
+}

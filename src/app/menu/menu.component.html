@@ -1,0 +1,7 @@
+<nav id="menu">
+    <button *ngIf="!lexia" routerLink="/capa" routerLinkActive="active">capa</button>
+    <button *ngIf="!lexia" routerLink="/epigrafe" routerLinkActive="active">epígrafe</button>
+    <button class="rizoma" routerLink="/rizoma">rizoma</button>
+    
+    <button class="logout" (click)="logOut()">Sair</button>
+</nav>

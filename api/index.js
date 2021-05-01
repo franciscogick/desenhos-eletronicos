@@ -2373,36 +2373,37 @@ const usuarios = [
 
 //ENDPOINTS
 app.get('/api/nodes', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(nodes);
     res.end();
 });
 
 app.get('/api/edges', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(edges);
     res.end();
 });
 
-app.get('/api/texto/:name', function (req, res, next) {
-    res.json(textos.filter(it => it.name == req.params.name)[0]);
-    res.end();
-});
-
 app.get('/api/conceitos', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(conceitos);
     res.end();
 });
 
 app.get('/api/conceito/:name', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(conceitos.filter(it => it.name == req.params.name)[0]);
     res.end();
 });
 
 app.get('/api/referencias', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(referencias);
     res.end();
 });
 
 app.get('/api/referencia/:name', function (req, res, next) {
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     res.json(referencias.filter(it => it.textual_id == req.params.name || it.rec_number == req.params.name)[0]);
     res.end();
 });

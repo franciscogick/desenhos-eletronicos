@@ -35,13 +35,8 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
   public networkInitialized(): void {
     this.visNetworkService.on(this.visNetwork, 'click');
     this.visNetworkService.on(this.visNetwork, 'dragStart');
-    this.visNetworkService.on(this.visNetwork, 'stabilized');
-
 
     this.visNetworkService.moveTo(this.visNetwork,{position: {x:0,y:0},scale: 8});
-
-
-    //this.visNetworkService.moveTo(this.visNetwork,{position: ,scale: 10});
 
     //click no nó mostra o popup de detalhes, click fora de qualquer nó esconde o popup
     this.visNetworkService.click.subscribe((eventData: any[]) => {
@@ -63,8 +58,6 @@ export class VisNetworkComponent implements OnInit, OnDestroy {
             this.detalhe.name = this.nodes.get(this.detalhe.id).name;
             this.detalhe.fragment = this.nodes.get(this.detalhe.id).fragment;
             this.detalhe.type = this.nodes.get(this.detalhe.id).type;
-
-            console.log(this.detalhe)
 
             let elWidth = this.elDetalhe.nativeElement.getBoundingClientRect().width;
             let elHeight = this.elDetalhe.nativeElement.getBoundingClientRect().height;

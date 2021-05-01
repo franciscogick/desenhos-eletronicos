@@ -37,6 +37,7 @@ import { IssoQueTeEscreviComponent } from './textos/isso-que-te-escrevi/isso-que
 import { EfemeridadeComponent } from './textos/efemeridade/efemeridade.component';
 import { DramaturgiaCodigoComponent } from './textos/dramaturgia-codigo/dramaturgia-codigo.component';
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-v
     IssoQueTeEscreviComponent,
     EfemeridadeComponent,
     DramaturgiaCodigoComponent,
-    UmTextoPorVirComponent
+    UmTextoPorVirComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
