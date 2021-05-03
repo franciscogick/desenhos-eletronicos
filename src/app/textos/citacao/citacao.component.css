@@ -44,8 +44,6 @@
     background: transparent !important;
 }
 
-.citacao-wrapper span:hover {
-}
 
 .citacao-wrapper:hover .citacao-pop,.citacao-wrapper:focus .citacao-pop {
     opacity: 1;
@@ -60,7 +58,7 @@
 }
 
 :host ::ng-deep a {
-    color:#09FFFF !important;
+    color:/*#09FFFF*/#FF699D !important;
 }
 
 h4 {

@@ -1,22 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
+import { BehaviorSubject, fromEvent, Observable, Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ScrollService {
+export class ScrollService implements OnDestroy {
 
-  constructor(private activatedRoute: ActivatedRoute, private viewportScroller: ViewportScroller) { }
+  destroy$: Subject<boolean> = new Subject<boolean>();
 
-  scroll() {
-    this.activatedRoute.fragment.subscribe((fragment: string) => {
-      if (fragment) {
-        this.scrollToAnchor(fragment)
-      } else {
-        this.scrollToTop();
-      }
-    });
+  private pos: BehaviorSubject<number>;
+
+  constructor(private activatedRoute: ActivatedRoute, private viewportScroller: ViewportScroller) {
+    this.pos = new BehaviorSubject<number>(0);
+    
+    fromEvent(window, 'scroll')
+      .pipe(debounceTime(5), takeUntil(this.destroy$))
+      .subscribe(() => {
+        const s = this.viewportScroller.getScrollPosition();
+        this.setPos(s[1]);
+      });
+  }
+
+  public getPos(): Observable<number> {
+    return this.pos.asObservable();
+  }
+  public setPos(val: number): void {
+    this.pos.next(val);
   }
 
   scrollToTop() {
@@ -25,6 +37,11 @@ export class ScrollService {
 
   scrollToAnchor(elementId: string): void {
     this.viewportScroller.scrollToAnchor(elementId);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }
 

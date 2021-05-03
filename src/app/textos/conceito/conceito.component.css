@@ -34,6 +34,9 @@
 :host ::ng-deep .conceito-pop span.highlight {
     background: transparent !important;
 }
+:host ::ng-deep a {
+    color:/*#09FFFF*/#FF699D !important;
+}
 
 .conceito-wrapper:hover .conceito-pop,.conceito-wrapper:focus .conceito-pop {
     opacity: 1;
@@ -73,11 +76,12 @@ p {
         position: absolute;
         left: 50%;
         bottom: 100%;
+        top: auto;
         transform: translate(-50%,10%);
         min-width: 300px;
         max-width: 450px;
     }
     .conceito-wrapper:hover .conceito-pop,.conceito-wrapper:focus .conceito-pop {
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,0);
     }
 }

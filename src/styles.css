@@ -198,7 +198,7 @@ button.close {
 }
 
 .texto-inner p {
-    font-family: 'IBM Plex Sans';
+    font-family: 'IBM Plex Sans',sans-serif;
     font-size: 12pt;
     line-height: 1.5;
     text-align: justify;

@@ -39,6 +39,7 @@ import { DramaturgiaCodigoComponent } from './textos/dramaturgia-codigo/dramatur
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
 import { MenuComponent } from './menu/menu.component';
 import { LexiasConectadasComponent } from './textos/lexias-conectadas/lexias-conectadas.component';
+import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { LexiasConectadasComponent } from './textos/lexias-conectadas/lexias-con
     DramaturgiaCodigoComponent,
     UmTextoPorVirComponent,
     MenuComponent,
-    LexiasConectadasComponent
+    LexiasConectadasComponent,
+    BotaoTopoComponent
   ],
   imports: [
     BrowserModule,
