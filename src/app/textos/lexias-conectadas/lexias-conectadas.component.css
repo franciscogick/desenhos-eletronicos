@@ -16,3 +16,12 @@
 .terciary {
     background: rgba(17,17,238,.25);
 }
+
+.loading {
+    position: relative;
+    color: #111;
+    top: auto;
+    left: auto;
+    text-align: center;
+    padding: 2rem;
+}

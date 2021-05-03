@@ -1,6 +1,28 @@
+.figura-inner {
+    min-height: 300px;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 4rem 0;
+    text-align: center;
+    color: #111;
+}
+
 img {
     display: block;
     width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s linear;
+}
+
+img.loaded {
+    opacity: 1;
 }
 
 .legenda {

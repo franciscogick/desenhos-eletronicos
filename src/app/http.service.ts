@@ -32,12 +32,28 @@ export class HttpService {
 	  );   
   }
 
-  getTextoByName(name:string): any {
-    const url = `/api/texto/${name}`;
+  getFiguras(): any {
+    const url = `/api/figuras`;
 		return this.http.get<any>(url).
 			pipe(
-				catchError(this.handleError<any>(`getTextoByName`))
+				catchError(this.handleError<any>(`getFiguras`))
 	  );
+  }
+
+  getFiguraByName(name:string): any {
+    const url = `/api/figuras/${name}`;
+		return this.http.get<any>(url).
+			pipe(
+				catchError(this.handleError<any>(`getFiguraByName`))
+	  );
+  }
+
+  public getConceitoByName(name:string):any {
+    const url = `/api/conceito/${name}`;
+    	return this.http.get<any>(url).
+			pipe(
+				catchError(this.handleError<any>(`getConceitoByName`))
+			);
   }
 
   getReferencias(): any {
@@ -45,7 +61,7 @@ export class HttpService {
 		return this.http.get<any>(url).
 			pipe(
 				catchError(this.handleError<any>(`getReferencias`))
-	  );
+	  		);
   }
 
   getReferenciaByName(name:string): any {

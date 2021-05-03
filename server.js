@@ -94,6 +94,12 @@ const conceitos = [
     {name:'suporte',title:'suporte',content:'?',reference:'?'},
 ]
 
+const figuras = [
+    {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia'},
+    {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia'},
+    {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia'},
+];
+
 const referencias = [
     {"rec_number":455,
     "type":"article",
@@ -2378,6 +2384,16 @@ app.get('/api/conceitos', function (req, res, next) {
 
 app.get('/api/conceito/:name', function (req, res, next) {
     res.json(conceitos.filter(it => it.name == req.params.name)[0]);
+    res.end();
+});
+
+app.get('/api/figuras', function (req, res, next) {
+    res.json(figuras);
+    res.end();
+});
+
+app.get('/api/figuras/:name', function (req, res, next) {
+    res.json(figuras.filter(it => it.name == req.params.name)[0]);
     res.end();
 });
 
