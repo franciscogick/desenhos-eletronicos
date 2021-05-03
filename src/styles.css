@@ -352,7 +352,7 @@ p.memoria {
     font-style: italic;
 }
 
-p+h2 {
+p+h2,p+h3 {
     margin-top: 2rem;
 }
 

@@ -4,7 +4,7 @@
 }
 .conceito-wrapper span {
     background: linear-gradient(90deg,#ebfffd 0%, #eed3ff 100%);
-    background: #FAAAFF;
+    background: /*#FAAAFF*/#FFF68B;
     border-radius: .15rem;
     padding: 0 2px;
     font-style: italic;
