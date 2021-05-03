@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-efemeridade',
@@ -9,7 +10,9 @@ export class EfemeridadeComponent implements OnInit {
 
   nodeId='1021';
 
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle('Desenhos eletrônicos | Efemeridade/obsolescência');
+  }
 
   ngOnInit(): void {
   }

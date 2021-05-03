@@ -11,7 +11,7 @@ import { VisNetworkComponent } from './vis-network/vis-network.component';
 import { PopupComponent } from './vis-network/popup/popup.component';
 import { NotaComponent } from './textos/nota/nota.component';
 import { ConceitoComponent } from './textos/conceito/conceito.component';
-import { ElitTeatroComponent } from './textos/elit-teatro/elit-teatro.component';
+import { DuasEntradasComponent } from './textos/duas-entradas/duas-entradas.component';
 import { CitacaoComponent } from './textos/citacao/citacao.component';
 import { CitadorPipe } from './pipes/citador.pipe';
 import { ReferenciadorPipe } from './pipes/referenciador.pipe';
@@ -23,11 +23,11 @@ import { CapaComponent } from './capa/capa.component';
 import { ResumoComponent } from './resumo/resumo.component';
 import { EpigrafeComponent } from './epigrafe/epigrafe.component';
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
-import { LiteraturaDigitalComponent } from './textos/literatura-digital/literatura-digital.component';
-import { CartografiaLiteraturaDigitalComponent } from './textos/cartografia-literatura-digital/cartografia-literatura-digital.component';
-import { LastSongComponent } from './textos/last-song/last-song.component';
-import { TransmissionComponent } from './textos/transmission/transmission.component';
-import { AiComponent } from './textos/ai/ai.component';
+import { DesenhosEletronicosComponent } from './textos/desenhos-eletronicos/desenhos-eletronicos.component';
+import { TravessiaComponent } from './textos/travessia/travessia.component';
+import { LastSongOfVioletaParraComponent } from './textos/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
+import { TransmissionADialogueComponent } from './textos/transmission-a-dialogue/transmission-a-dialogue.component';
+import { AiWhenARobotWritesAPlayComponent } from './textos/ai-when-a-robot-writes-a-play/ai-when-a-robot-writes-a-play.component';
 import { FiguraComponent } from './textos/figura/figura.component';
 import { EscuroComponent } from './textos/escuro/escuro.component';
 import { DuvidasComponent } from './textos/duvidas/duvidas.component';
@@ -48,7 +48,7 @@ import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
     PopupComponent,
     NotaComponent,
     ConceitoComponent,
-    ElitTeatroComponent,
+    DuasEntradasComponent,
     CitacaoComponent,
     CitadorPipe,
     ReferenciadorPipe,
@@ -60,11 +60,11 @@ import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
     ResumoComponent,
     EpigrafeComponent,
     IntroducaoComponent,
-    LiteraturaDigitalComponent,
-    CartografiaLiteraturaDigitalComponent,
-    LastSongComponent,
-    TransmissionComponent,
-    AiComponent,
+    DesenhosEletronicosComponent,
+    TravessiaComponent,
+    LastSongOfVioletaParraComponent,
+    TransmissionADialogueComponent,
+    AiWhenARobotWritesAPlayComponent,
     FiguraComponent,
     EscuroComponent,
     DuvidasComponent,

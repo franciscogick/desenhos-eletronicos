@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-introducao',
@@ -17,7 +18,9 @@ export class IntroducaoComponent implements OnInit {
     {texto:'<b>Um texto por vir</b> apresenta o processo de criação do texto dramatúrgico digital ainda sem título que é objeto desta pesquisa, apresentando e discutindo o texto e suas estratégias de composição.',link:'um-texto-por-vir',name:'Um texto por vir'},
   ]
 
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle('Desenhos eletrônicos | Introdução');
+  }
 
   ngOnInit(): void {
     this.shuffle(this.lexias);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dramaturgia-tecnologia',
@@ -9,7 +10,9 @@ export class DramaturgiaTecnologiaComponent implements OnInit {
 
   nodeId='105'
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Desenhos eletrônicos | Dramaturgia e tecnologia');
+   }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-epigrafe',
@@ -24,7 +25,9 @@ export class EpigrafeComponent implements OnInit,AfterViewInit {
   //@ViewChild('in',{static: false}) elIn: ElementRef;
   //@ViewChild('out',{static: false}) elOut: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private titleService: Title) {
+    this.titleService.setTitle('Desenhos eletrônicos | epígrafe'); 
+  }
 
   ngOnInit():void {
     this.palavras = this.frase.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")

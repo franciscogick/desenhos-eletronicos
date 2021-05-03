@@ -2,12 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rizoma</title>
+  <title>Desenhos Eletrônicos</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background: #11e;
+      font-family: 'IBM Plex Sans',sans-serif;
+    }
+    .loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: +1;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div class="loading">carregando...</div>
+  </app-root>
 </body>
 </html>

@@ -5,21 +5,19 @@ import { takeUntil } from 'rxjs/operators';
 import { SessionService } from 'src/app/session.service';
 
 @Component({
-  selector: 'app-escuro',
-  templateUrl: './escuro.component.html',
-  styleUrls: ['./escuro.component.css']
+  selector: 'app-last-song-of-violeta-parra',
+  templateUrl: './last-song-of-violeta-parra.component.html',
+  styleUrls: ['./last-song-of-violeta-parra.component.css']
 })
-export class EscuroComponent implements OnInit,OnDestroy {
+export class LastSongOfVioletaParraComponent implements OnInit,OnDestroy {
 
-  nodeId='10412';
+  nodeId = '10411';
 
   sessionUser: string;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
   
-  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title) {
-    this.titleService.setTitle('Desenhos eletrônicos | Corpus → Escuro'); 
-  }
+  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title) {this.titleService.setTitle('Desenhos eletrônicos | Corpus → Last Song of Violeta Parra'); }
 
   ngOnInit(): void {
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => this.sessionUser = user.name);

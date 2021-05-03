@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -16,7 +17,9 @@ export class RizomaComponent implements OnInit {
 
   user: User;
 
-  constructor(private sessionService: SessionService, private router: Router) { }
+  constructor(private sessionService: SessionService, private router: Router, private titleService: Title) {
+    this.titleService.setTitle('Desenhos eletrônicos | rizoma');  
+  }
 
   ngOnInit(): void {
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {this.user = user});

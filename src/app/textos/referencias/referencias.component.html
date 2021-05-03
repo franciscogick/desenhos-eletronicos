@@ -12,6 +12,9 @@
     </div>
 
     -->
+
+    <div class="loading" *ngIf="!referencias || !citadas || !consultadas">carregando referencias...</div>
+
     <div class="texto-inner" *ngIf="referencias && citadas && consultadas" id="texto-inner-referencias" #innerEl>
         <h1>Referências</h1>
         <div class="referencia" *ngFor="let ref of citadas">

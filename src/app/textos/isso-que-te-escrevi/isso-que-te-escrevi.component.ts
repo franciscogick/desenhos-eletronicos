@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-isso-que-te-escrevi',
@@ -9,7 +10,9 @@ export class IssoQueTeEscreviComponent implements OnInit {
 
   nodeId='1011';
 
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle('Desenhos eletrônicos | Isso que te escrevi');
+  }
 
   ngOnInit(): void {
   }

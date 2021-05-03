@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ElitTeatroComponent } from './elit-teatro.component';
+import { TravessiaComponent } from './travessia.component';
 
-describe('ElitTeatroComponent', () => {
-  let component: ElitTeatroComponent;
-  let fixture: ComponentFixture<ElitTeatroComponent>;
+describe('TravessiaComponent', () => {
+  let component: TravessiaComponent;
+  let fixture: ComponentFixture<TravessiaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ElitTeatroComponent ]
+      declarations: [ TravessiaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ElitTeatroComponent);
+    fixture = TestBed.createComponent(TravessiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

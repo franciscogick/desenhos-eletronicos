@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ScrollService } from './scroll.service';
 
 @Component({
@@ -8,5 +9,9 @@ import { ScrollService } from './scroll.service';
 })
 export class AppComponent {
   title = 'Desenhos Eletrônicos';
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle(this.title);
+  }
 
 }
