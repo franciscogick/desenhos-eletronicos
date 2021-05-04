@@ -55,9 +55,9 @@ const nodes = [
 
     {id: 106, label: 'Um texto por vir', name: 'um-texto-por-vir', descricao: 'Reflexões sobre a criação de um texto dramatúrgico digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
         
-        {id: 1061, label: 'Sensores de presença', name: 'cena-sensores', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1061, label: 'Da amabilidade dos sensores de presenca', name: 'da-amabilidade-dos-sensores-de-presenca', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
         
-        {id: 1062, label: 'Mickey Mouse está ficando velho', name: 'cena-mickey', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        {id: 1062, label: 'Mickey Mouse está ficando velho', name: 'mickey-mouse-esta-ficando-velho', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 ];
 //#46FF9C
 const edges = [

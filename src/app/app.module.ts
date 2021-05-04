@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { VisModule } from 'ngx-vis';
 
@@ -40,6 +41,7 @@ import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-v
 import { MenuComponent } from './menu/menu.component';
 import { LexiasConectadasComponent } from './textos/lexias-conectadas/lexias-conectadas.component';
 import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
+import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabilidade-dos-sensores-de-presenca/da-amabilidade-dos-sensores-de-presenca.component';
 
 @NgModule({
   declarations: [
@@ -75,10 +77,12 @@ import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
     UmTextoPorVirComponent,
     MenuComponent,
     LexiasConectadasComponent,
-    BotaoTopoComponent
+    BotaoTopoComponent,
+    DaAmabilidadeDosSensoresDePresencaComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,

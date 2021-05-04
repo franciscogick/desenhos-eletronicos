@@ -1,0 +1,14 @@
+<app-menu></app-menu>
+<div class="texto-wrapper">
+    <div class="texto-inner">
+        <!--<div class="titulo">
+            <h1>Da amabilidade dos sensores de presença</h1>
+        </div>-->
+        <div id="wrapper">
+            <div>[esteja presente]</div>
+            <div id="continente">
+                <span class="fragmento" *ngFor="let f of fragmentos" [innerHTML]="f+' '" [@anim]="fragmentos"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -25,6 +25,7 @@ import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-v
 import { InicioGuard } from './inicio.guard';
 
 import { Erro404Component } from './erro404/erro404.component';
+import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabilidade-dos-sensores-de-presenca/da-amabilidade-dos-sensores-de-presenca.component';
 
 
 const routerOptions: ExtraOptions = {
@@ -74,6 +75,8 @@ const routes: Routes = [
         component: DramaturgiaCodigoComponent},
       { path: 'lexia/um-texto-por-vir',
       component: UmTextoPorVirComponent},
+      { path: 'lexia/da-amabilidade-dos-sensores-de-presenca',
+      component: DaAmabilidadeDosSensoresDePresencaComponent},
     ],
     
     canActivate: [InicioGuard]
