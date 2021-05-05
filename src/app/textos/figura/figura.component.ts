@@ -21,6 +21,8 @@ export class FiguraComponent implements OnInit {
   figura: Figura;
   src: string;
 
+  __dir = '/assets/imgs-lexias/';
+
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private httpService: HttpService) { }
@@ -47,7 +49,7 @@ export class FiguraComponent implements OnInit {
     }
 
     if (this.figura.type == 'lexia') {
-      this.src = '/assets/imgs-lexias/'+this.figura.file;
+      this.src = this.__dir+this.figura.file;
       img.src = this.src;
     }
   }

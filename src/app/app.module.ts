@@ -19,7 +19,7 @@ import { ReferenciadorPipe } from './pipes/referenciador.pipe';
 import { InicioComponent } from './inicio/inicio.component';
 import { RizomaComponent } from './rizoma/rizoma.component';
 import { Erro404Component } from './erro404/erro404.component';
-import { ReferenciasComponent } from './textos/referencias/referencias.component';
+import { ReferenciasComponent } from './referencias/referencias.component';
 import { CapaComponent } from './capa/capa.component';
 import { ResumoComponent } from './resumo/resumo.component';
 import { EpigrafeComponent } from './epigrafe/epigrafe.component';
@@ -42,6 +42,9 @@ import { MenuComponent } from './menu/menu.component';
 import { LexiasConectadasComponent } from './textos/lexias-conectadas/lexias-conectadas.component';
 import { BotaoTopoComponent } from './botao-topo/botao-topo.component';
 import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabilidade-dos-sensores-de-presenca/da-amabilidade-dos-sensores-de-presenca.component';
+import { FigurasComponent } from './figuras/figuras.component';
+import { GaleriaComponent } from './galeria/galeria.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,10 @@ import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabili
     MenuComponent,
     LexiasConectadasComponent,
     BotaoTopoComponent,
-    DaAmabilidadeDosSensoresDePresencaComponent
+    DaAmabilidadeDosSensoresDePresencaComponent,
+    FigurasComponent,
+    GaleriaComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

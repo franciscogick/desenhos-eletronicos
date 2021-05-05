@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div class="texto-wrapper" id="texto-wrapper" #wrapperEl>
+    <!-- menus de highlight e notes -->
+
+
+    <!--<div id="menu-highlight" #menuHighlight>
+        <button (click)="highlightSelectedText()"><img src="/assets/highlight.svg"></button>
+    </div>
+    
+    <div id="menu-remove-highlight" #menuRemoveHighlight>
+        <button (click)="removeHighlight()"><img src="/assets/close-circle-black.svg"></button>
+    </div>
+
+    -->
+
+    <div class="loading" *ngIf="!figuras">carregando figuras...</div>
+
+    <div class="texto-inner" *ngIf="figuras" id="texto-inner-referencias" #innerEl>
+        <h1>Lista de figuras</h1>
+        <!--<div class="figura" *ngFor="let fig of figuras">
+            <p>{{fig.caption}}</p>
+        </div>-->
+        <app-galeria [figuras]="figuras"></app-galeria>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="figura" *ngIf="figura">
+<div class="figura" [id]="'figura-'+figura.name" *ngIf="figura">
     <div class="figura-inner">
         <img [alt]="legenda" [src]="src" [class.loaded]="loaded">
         <div class="loading" *ngIf="!loaded">carregando imagem...</div>

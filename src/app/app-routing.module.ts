@@ -6,7 +6,7 @@ import { CapaComponent } from './capa/capa.component';
 import { EpigrafeComponent } from './epigrafe/epigrafe.component';
 import { ResumoComponent } from './resumo/resumo.component';
 import { RizomaComponent } from './rizoma/rizoma.component';
-import { ReferenciasComponent } from './textos/referencias/referencias.component';
+import { ReferenciasComponent } from './referencias/referencias.component';
 
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
 import { IssoQueTeEscreviComponent } from './textos/isso-que-te-escrevi/isso-que-te-escrevi.component';
@@ -26,6 +26,7 @@ import { InicioGuard } from './inicio.guard';
 
 import { Erro404Component } from './erro404/erro404.component';
 import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabilidade-dos-sensores-de-presenca/da-amabilidade-dos-sensores-de-presenca.component';
+import { FigurasComponent } from './figuras/figuras.component';
 
 
 const routerOptions: ExtraOptions = {
@@ -43,6 +44,8 @@ const routes: Routes = [
   component: EpigrafeComponent},
   { path: 'resumo',
   component: ResumoComponent},
+  { path: 'lista-de-figuras',
+  component: FigurasComponent},
   { path: 'referencias',
   component: ReferenciasComponent},
   {

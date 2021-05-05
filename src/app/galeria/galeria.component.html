@@ -1,0 +1,42 @@
+<div class="galeria">
+    <div class="figura" [class.tresCol]="col == 3" [class.quatroCol]="col == 4" *ngFor="let fig of figuras; let i = index" (click)="showFigura(i)">
+        <!--<div class="fullscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                <g id="fullscreen-full" transform="translate(0)">
+                    <g id="s1" data-name="Group 450" transform="">
+                        <path id="Path_912" data-name="Path 912" d="M4815,2831v-7h7" transform="translate(-4815 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                        <path id="Path_913" data-name="Path 913" d="M4823,2832l-8-8" transform="translate(-4815 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                    <g id="s2" data-name="Group 452" transform="">
+                        <path id="Path_912-2" data-name="Path 912" d="M4815,2824v7h7" transform="translate(-4815 -2823)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                        <path id="Path_913-2" data-name="Path 913" d="M4823,2824l-8,8" transform="translate(-4815 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                    <g id="s3" data-name="Group 451" transform="">
+                        <path id="Path_912-3" data-name="Path 912" d="M4822,2831v-7h-7" transform="translate(-4814 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                        <path id="Path_913-3" data-name="Path 913" d="M4815,2832l8-8" transform="translate(-4815 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                    <g id="s4" data-name="Group 453" transform="">
+                        <path id="Path_912-4" data-name="Path 912" d="M4822,2824v7h-7" transform="translate(-4814 -2823)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                        <path id="Path_913-4" data-name="Path 913" d="M4815,2824l8,8" transform="translate(-4815 -2824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                </g>
+            </svg>
+        </div>-->
+        
+        <img [src]="__dir + fig.file" [alt]="fig.name"/>
+        <div class="caption"><span [innerHTML]="fig.caption"></span></div>
+        <div class="nav">
+            <a *ngIf="fig.lexia" [routerLink]="'/rizoma/lexia/'+fig.lexia" [fragment]="fig.name">ver lexia</a>
+        </div>
+    </div>
+</div>
+<div class="lightbox">
+    <div class="overlay" [class.show]="showLightbox" (click)="dismiss()"></div>
+    <div class="lb_figura" [class.show]="showLightbox">
+        <img *ngIf="figuras[activeFigura]" [src]="__dir + figuras[activeFigura].file | safe:'url'" alt="">
+        <div class="close" (click)="dismiss()"></div>
+        <div class="prev" (click)="prev()"><img src="/assets/chevron-esquerda.svg"></div>
+        <div class="next" (click)="next()"><img src="/assets/chevron-direita.svg"></div>
+    </div>
+    
+</div>

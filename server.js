@@ -25,6 +25,7 @@ const nodes = [
     {id: 3, label: 'Resumo', name: 'resumo', descricao: 'Resumo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     {id: 4, label: 'Referências', name: 'referencias', descricao: 'Referências citadas e consultadas.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     {id: 5, label: 'Considerações finais', name: 'consideracoes-finais', descricao: 'Considerações finais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 6, label: 'Lista de figuras', name: 'lista-de-figuras', descricao: 'Lista de figuras.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     
     //lexias do rizoma
     {id: 101, label: 'Introdução', name: 'introducao', descricao: 'Em processo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
@@ -95,9 +96,9 @@ const conceitos = [
 ]
 
 const figuras = [
-    {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia'},
-    {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia'},
-    {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia'},
+    {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia',lexia:'last-song-of-violeta-parra'},
+    {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia',lexia:'transmission-a-dialogue'},
+    {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',lexia:'ai-when-a-robot-writes-a-play'},
 ];
 
 const referencias = [

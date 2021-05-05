@@ -175,7 +175,7 @@ button.close {
 .texto-inner {
     width: 40rem;
     max-width: 100%;
-    padding: 4rem 2rem 2rem;
+    padding: 6rem 2rem 2rem;
     
 }
 
@@ -214,6 +214,8 @@ button.close {
     opacity: .15;
     font-family: 'IBM Plex Sans',sans-serif;
     font-style: normal;
+    pointer-events: none;
+    user-select: none;
 }
 
 .texto-inner p:not(.citacao):not(.content):not(.reference):not(.legenda):not(.anotacao):not(.aforismo)::first-letter {
