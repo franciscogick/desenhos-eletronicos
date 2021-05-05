@@ -1,7 +1,9 @@
 import { animate, sequence, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Scroll } from '@angular/router';
 import { concat, defer, fromEvent, interval, of, Subject } from 'rxjs';
 import { debounceTime, mapTo, skipUntil, takeUntil, timeoutWith } from 'rxjs/operators';
+import { ScrollService } from 'src/app/scroll.service';
 
 @Component({
   selector: 'app-da-amabilidade-dos-sensores-de-presenca',
@@ -65,28 +67,31 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
   fragmentos: string[] = [];
 
-  actualFrag = 0;
-
   presenca = false;
-
-  //mousemove$ = fromEvent(document, 'mousemove');
-
+  scroll = false;
+  winHeight = 0;
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor() { }
+  @ViewChild('continente',{static: false}) continenteEl: ElementRef;
+
+  constructor(private scrollService: ScrollService) { }
 
   ngOnInit(): void {
-    /*fromEvent(window, 'mousemove')
-      .pipe(debounceTime(5), takeUntil(this.destroy$))
-      .subscribe(() => {
-        this.presenca = true;
-      });
-    */
+
+    this.scrollService.getWinHeight().pipe(takeUntil(this.destroy$)).subscribe((winHeight)=>{
+      this.winHeight = winHeight;
+    });
+    
     interval(150).pipe(takeUntil(this.destroy$)).subscribe(()=>{
       if (this.presenca) {
         const r = Math.random();
         if (r > .5) {
           this.fragmentos.push(this.texto[this.fragmentos.length]);
+          /*const r = this.continenteEl.nativeElement.getBoundingClientRect();
+          const d = (r.top + r.height) - this.winHeight;
+          if (d > 0) {
+            window.scrollTo(0,document.body.scrollHeight);
+          }*/
         }
       }
     });
@@ -106,7 +111,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
           moveAndStop$.pipe(skipUntil(move$))
         ))
       )
-    );
+    ); 
 
     moveAndStop$
       .subscribe(e => {

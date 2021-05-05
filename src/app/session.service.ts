@@ -9,7 +9,7 @@ import { User } from './interfaces/user';
 })
 export class SessionService {
 
-  public redirectUrl: string;
+  public redirectUrl: {url: string, fragment: string} = {url:'/capa',fragment:null};
 
   private user: BehaviorSubject<User>;
 

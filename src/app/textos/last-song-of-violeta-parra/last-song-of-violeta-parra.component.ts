@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ParagrafosService } from 'src/app/paragrafos.service';
 import { SessionService } from 'src/app/session.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SessionService } from 'src/app/session.service';
   templateUrl: './last-song-of-violeta-parra.component.html',
   styleUrls: ['./last-song-of-violeta-parra.component.css']
 })
-export class LastSongOfVioletaParraComponent implements OnInit,OnDestroy {
+export class LastSongOfVioletaParraComponent implements OnInit,OnDestroy, AfterViewInit {
 
   nodeId = '10411';
 
@@ -17,10 +18,16 @@ export class LastSongOfVioletaParraComponent implements OnInit,OnDestroy {
 
   destroy$: Subject<boolean> = new Subject<boolean>();
   
-  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title) {this.titleService.setTitle('Desenhos eletrônicos | Corpus → Last Song of Violeta Parra'); }
+  @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
+
+  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title, private paragrafosService: ParagrafosService) {this.titleService.setTitle('Desenhos eletrônicos | Corpus → Last Song of Violeta Parra'); }
 
   ngOnInit(): void {
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => this.sessionUser = user.name);
+  }
+
+  ngAfterViewInit(): void {
+    this.paragrafosService.addNumbers(this.innerEl);
   }
 
   ngOnDestroy():void {

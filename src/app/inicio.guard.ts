@@ -18,7 +18,9 @@ export class InicioGuard implements CanActivate {
       if (this.sessionService.hasUser()) {
         return true;
       } else {
-        this.sessionService.redirectUrl = state.url;
+        let reqUrl = state.url.split('#') 
+        this.sessionService.redirectUrl.url = reqUrl[0];
+        this.sessionService.redirectUrl.fragment = reqUrl[1];
         return this.router.navigate(['/inicio']);
       }
   }

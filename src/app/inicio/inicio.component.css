@@ -59,3 +59,24 @@ button.disabled {
     opacity: .5;
     pointer-events: none;
 }
+
+.erro {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translate(-50%,100%);
+    max-width: calc(100% - 2rem);
+    background: #111;
+    color: #fff;
+    border-radius: .5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s linear, transform .15s linear;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.25);
+}
+
+.erro.show {
+    transform: translate(-50%,-50%);
+    opacity: 1;
+    pointer-events: all;
+}

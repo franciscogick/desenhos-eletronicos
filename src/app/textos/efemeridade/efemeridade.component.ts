@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ParagrafosService } from 'src/app/paragrafos.service';
 
 @Component({
   selector: 'app-efemeridade',
   templateUrl: './efemeridade.component.html',
   styleUrls: ['./efemeridade.component.css']
 })
-export class EfemeridadeComponent implements OnInit {
+export class EfemeridadeComponent implements OnInit, AfterViewInit {
 
   nodeId='1021';
 
-  constructor(private titleService: Title) { 
+  @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
+
+  constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
     this.titleService.setTitle('Desenhos eletrônicos | Efemeridade/obsolescência');
   }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+    this.paragrafosService.addNumbers(this.innerEl);
+  }
 }

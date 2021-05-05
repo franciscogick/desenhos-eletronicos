@@ -1,12 +1,11 @@
 <app-menu></app-menu>
 <div class="texto-wrapper" #wrapperEl>
-    <div class="texto-inner">
+    <div class="texto-inner" #innerEl>
         <app-lexias-conectadas [id]="nodeId"></app-lexias-conectadas>
-        <div class="titulo" #innerEl>
+        <div class="titulo">
             <h1>Isso que te escrevi</h1>
             <h2>Sobre a forma deste trabalho ou pode isto ser uma dissertação?</h2>
         </div>
-        <p></p>
         <p class="epigrafe">Escrever nada tem a ver com significar, mas com agrimensar, cartografar, mesmo que sejam regiões ainda por vir. <citacao [id]="'Deleuze+Guattari-2011'" [pg]="'p.19'"></citacao></p>
         <p>Este documento é um hipertexto eletrônico. Como tal, tem características específicas relacionadas a sua leitura e aos suportes em que pode ser apresentado. Ele é formado por uma série de fragmentos ligados entre si (e a outros fragmentos externos) por conectores, links, tais fragmentos serão referidos como lexias, usando o vocabulário de Roland Barthes <citacao [id]="'Barthes-1990'" [min]="true"></citacao>.</p> 
             <p class="citacao">Uma lexia incluirá, às vezes, poucas palavras, às vezes, muitas sentenças; será uma questão de conveniência: é suficiente que a lexia seja o melhor espaço possível em que possamos observar sentidos; sua dimensão, empiricamente determinada, estimada, dependerá da densidade de conotações, variável de acordo com os momentos do texto (...) (p.13).</p>

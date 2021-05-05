@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ParagrafosService } from 'src/app/paragrafos.service';
 
 @Component({
   selector: 'app-introducao',
   templateUrl: './introducao.component.html',
   styleUrls: ['./introducao.component.css']
 })
-export class IntroducaoComponent implements OnInit {
+export class IntroducaoComponent implements OnInit,AfterViewInit {
 
   nodeId='101';
 
@@ -18,12 +19,18 @@ export class IntroducaoComponent implements OnInit {
     {texto:'<b>Um texto por vir</b> apresenta o processo de criação do texto dramatúrgico digital ainda sem título que é objeto desta pesquisa, apresentando e discutindo o texto e suas estratégias de composição.',link:'um-texto-por-vir',name:'Um texto por vir'},
   ]
 
-  constructor(private titleService: Title) { 
+  @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
+
+  constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
     this.titleService.setTitle('Desenhos eletrônicos | Introdução');
   }
 
   ngOnInit(): void {
     this.shuffle(this.lexias);
+  }
+
+  ngAfterViewInit(): void {
+    this.paragrafosService.addNumbers(this.innerEl);
   }
 
   shuffle(array) {

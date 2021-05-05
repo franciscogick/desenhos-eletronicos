@@ -25,23 +25,18 @@ export class InicioComponent implements OnInit,OnDestroy {
   constructor(private sessionService: SessionService, private router: Router, private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    console.log(this.sessionService.redirectUrl);
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {
       if (user) {
-        if (this.sessionService.redirectUrl) {
-          this.router.navigateByUrl(this.sessionService.redirectUrl);
-          this.sessionService.redirectUrl = null;
-        } else {
-          this.router.navigateByUrl('/capa');
-        }
-        
+        this.router.navigate([this.sessionService.redirectUrl.url],{fragment:this.sessionService.redirectUrl.fragment});
+        this.sessionService.redirectUrl.url = '/capa';
+        this.sessionService.redirectUrl.fragment = null;
       } else {
         let storedUser = JSON.parse(sessionStorage.getItem('rizomaUser'));
 
         //console.log(storedUser,sessionStorage.getItem('rizomaUser'))
         if (storedUser?.name) this.sessionService.registerUser(storedUser);
       }
-
-      
     });
 
     this.form = this._formBuilder.group({
@@ -73,7 +68,6 @@ export class InicioComponent implements OnInit,OnDestroy {
       this.sessionService.login(data).pipe(takeUntil(this.destroy$),shareReplay(1)).subscribe(
         res => {
           this.erro = false;
-          this.router.navigateByUrl('/capa');
         },
         err => {
           this.erro = true;

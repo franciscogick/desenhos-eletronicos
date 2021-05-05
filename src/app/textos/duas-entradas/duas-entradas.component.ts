@@ -1,7 +1,8 @@
-import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
+import { Component, OnInit, Renderer2, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ParagrafosService } from 'src/app/paragrafos.service';
 import { SessionService } from 'src/app/session.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SessionService } from 'src/app/session.service';
   templateUrl: './duas-entradas.component.html',
   styleUrls: ['./duas-entradas.component.css']
 })
-export class DuasEntradasComponent implements OnInit,OnDestroy {
+export class DuasEntradasComponent implements OnInit,OnDestroy,AfterViewInit {
   
   nodeId = '104';
 
@@ -26,12 +27,18 @@ export class DuasEntradasComponent implements OnInit,OnDestroy {
     //{link:'canticle', nome:'Canticle'},
   ];
 
-  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title) {
+  @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
+
+  constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title, private paragrafosService: ParagrafosService) {
     this.titleService.setTitle('Desenhos eletrônicos | Duas entradas');
   }
 
   ngOnInit(): void {
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {if (user) this.sessionUser = user.name});
+  }
+  
+  ngAfterViewInit(): void {
+    this.paragrafosService.addNumbers(this.innerEl);
   }
 
   ngOnDestroy():void {
