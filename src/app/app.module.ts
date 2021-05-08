@@ -45,6 +45,7 @@ import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabili
 import { FigurasComponent } from './figuras/figuras.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { SafePipe } from './pipes/safe.pipe';
     DaAmabilidadeDosSensoresDePresencaComponent,
     FigurasComponent,
     GaleriaComponent,
-    SafePipe
+    SafePipe,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,

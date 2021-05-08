@@ -1,7 +1,9 @@
 <div class="figura" [id]="'figura-'+figura.name" *ngIf="figura">
     <div class="figura-inner">
-        <img [alt]="legenda" [src]="src" [class.loaded]="loaded">
-        <div class="loading" *ngIf="!loaded">carregando imagem...</div>
+        <img [alt]="legenda" [src]="src" [class.loaded]="loaded" *ngIf="figura.media == 'image'">
+        <youtube *ngIf="figura.media == 'youtube'" [id]="figura.file"></youtube> 
+
+        <div class="loading" *ngIf="!loaded">carregando figura...</div>
     </div>
     
     <p class="legenda"><b>Figura:</b>&nbsp;<span [innerHTML]="figura.caption"></span>&nbsp;<citacao *ngIf="figura.reference" [id]="figura.reference"></citacao></p>

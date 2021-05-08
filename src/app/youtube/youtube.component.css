@@ -1,0 +1,64 @@
+.video-wrapper {
+	padding-right: 0;
+	padding-left: 0;
+    width: 100%; 
+    position: relative;
+    padding-top: 56%;
+    background: #000;
+}
+.placeholder {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.placeholder > .play {
+    display: block;
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent url(/assets/play.svg) center center no-repeat;
+    background-size: auto 2rem;
+}
+
+.placeholder > .titulo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.placeholder > .titulo > span {
+    background: rgba(0,0,0,.8);
+    border-radius: .5rem;
+    padding: 0 .5rem;
+    line-height: 1.2;
+}
+
+.placeholder > span {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.video-wrapper iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 900px) {
+}

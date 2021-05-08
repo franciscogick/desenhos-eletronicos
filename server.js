@@ -96,9 +96,11 @@ const conceitos = [
 ]
 
 const figuras = [
-    {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia',lexia:'last-song-of-violeta-parra'},
-    {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia',lexia:'transmission-a-dialogue'},
-    {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',lexia:'ai-when-a-robot-writes-a-play'},
+    {name:'YCHI-site-artista',file:'YCHI-site-artista.gif',caption:'Fragmento de <span class="titulo-obra">ARTIST\'S STATEMENT N0. 45,730,944: THE PERFECT ARTISTIC WEB SITE</span> do YOUNG-HAE CHANG HEAVY INDUSTRIES',reference:'ArtistStatement-2020',type:'lexia',media:'image',lexia:'desenhos-eletronicos'},
+    {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia',media:'image',lexia:'last-song-of-violeta-parra'},
+    {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia',media:'image',lexia:'transmission-a-dialogue'},
+    {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',media:'image',lexia:'ai-when-a-robot-writes-a-play'},
+    {name:'ai-teaser',file:'8ho5sXiDX_A',caption:'Vídeo de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',media:'youtube',lexia:'ai-when-a-robot-writes-a-play'}
 ];
 
 const referencias = [
@@ -210,6 +212,16 @@ const referencias = [
     "url":"https://www.yhchang.com/CUNNILINGUS_NA_COREIA_DO_NORTE_V.html",
     "access":{"year":2020,"month":09,"day":12},
     "textual_id":"CUNNILINGUS-2020",
+    "cited":true
+},
+{
+    "rec_number":485,
+    "type":"website",
+    "site":"YOUNG-HAE CHANG HEAVY INDUSTRIES",
+    "title":"ARTIST'S STATEMENT N0. 45,730,944: THE PERFECT ARTISTIC WEB SITE",
+    "url":"https://www.yhchang.com/DECLARACION_DE_ARTISTA_V.html",
+    "access":{"year":2020,"month":09,"day":12},
+    "textual_id":"ArtistStatement-2020",
     "cited":true
 },
 {

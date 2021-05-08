@@ -1,3 +1,4 @@
 .texto-inner,.texto-wrapper {
     position: initial;
+    min-height: 100%;
 }

@@ -4,5 +4,6 @@ export interface Figura {
     caption: string;
     reference: string;
     type: string;
+    media: string;
     lexia?: string;
 }

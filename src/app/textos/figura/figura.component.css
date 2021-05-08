@@ -1,3 +1,8 @@
+.figura {
+    margin: 1rem 0;
+    
+}
+
 .figura-inner {
     min-height: 300px;
     position: relative;

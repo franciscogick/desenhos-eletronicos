@@ -31,7 +31,8 @@ export class FiguraComponent implements OnInit {
     this.httpService.getFiguraByName(this.name).pipe(takeUntil(this.destroy$))
     .subscribe(figura => {
       this.figura = figura;
-      this.loadImage();
+      if (this.figura.media == 'image') this.loadImage();
+      else this.loaded = true;
     });
   }
 

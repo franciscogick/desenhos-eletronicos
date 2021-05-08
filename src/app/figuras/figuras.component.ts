@@ -24,7 +24,8 @@ export class FigurasComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.getFiguras().pipe(takeUntil(this.destroy$))
     .subscribe(figuras => {
-      this.figuras = figuras.sort((a,b) => (a.caption > b.caption) ? 1 : ((b.caption > a.caption) ? -1 : 0));
+      this.figuras = figuras;
+      //this.figuras = figuras.sort((a,b) => (a.caption > b.caption) ? 1 : ((b.caption > a.caption) ? -1 : 0));
     });
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {if (user) this.sessionUser = user.name});
   }

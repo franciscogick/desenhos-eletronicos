@@ -365,6 +365,7 @@ span.anotacao {
 p.memoria {
     font-family: 'IBM Plex Serif';
     font-style: italic;
+    margin-bottom: 2rem;
 }
 
 p+h2,p+h3 {

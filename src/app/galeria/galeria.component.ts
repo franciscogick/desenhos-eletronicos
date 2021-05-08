@@ -18,9 +18,15 @@ export class GaleriaComponent implements OnInit {
   
   showLightbox = false;
 
+  list = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setList(state: boolean):void {
+    this.list = state;
   }
 
   dismiss() {
