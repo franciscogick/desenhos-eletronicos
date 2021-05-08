@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
-  <g id="Groupe_29" data-name="Groupe 29" transform="translate(30) rotate(90)">
-    <rect id="Rectangle_50" data-name="Rectangle 50" width="9.091" height="30" fill="#111"/>
-    <rect id="Rectangle_52" data-name="Rectangle 52" width="8.182" height="16.364" transform="translate(10.909 13.636)" fill="#111"/>
-    <rect id="Rectangle_53" data-name="Rectangle 53" width="9.091" height="20.909" transform="translate(20.909 9.091)" fill="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Groupe_31" data-name="Groupe 31" transform="translate(-1608 -950)">
+    <rect id="Rectangle_57" data-name="Rectangle 57" width="6" height="24" transform="translate(1632 950) rotate(90)" fill="#111"/>
+    <rect id="Rectangle_52" data-name="Rectangle 52" width="6" height="24" transform="translate(1632 959) rotate(90)" fill="#111"/>
+    <rect id="Rectangle_53" data-name="Rectangle 53" width="6" height="24" transform="translate(1632 968) rotate(90)" fill="#111"/>
   </g>
 </svg>

@@ -1,6 +1,5 @@
 <div class="video-wrapper" *ngIf="id">
     <div *ngIf="!playing" (click)="play()" class="placeholder" [style.backgroundImage]="'url(https://img.youtube.com/vi/'+ id +'/hqdefault.jpg' | safe: 'style'">
-        <span>vídeo</span>
         <div class="titulo" *ngIf="titulo"><span>{{titulo}}</span></div>
         <div class="play"></div>
     </div>

@@ -6,7 +6,8 @@
     <div class="figura" [class.tresCol]="col == 3" [class.quatroCol]="col == 4" *ngFor="let fig of figuras; let i = index" >
         <div class="figura-wrapper">
             <img *ngIf="fig.media == 'image'" [src]="__dir + fig.file" [alt]="fig.name" (click)="showFigura(i)"/>
-            <youtube *ngIf="fig.media == 'youtube'" [id]="fig.file"></youtube> 
+            <youtube *ngIf="fig.media == 'youtube'" [id]="fig.file"></youtube>
+            <span class="label" [innerHTML]="fig.media == 'image' ? 'imagem' : 'vídeo'"></span> 
         </div>
         
         <div class="caption"><span [innerHTML]="fig.caption"></span></div>

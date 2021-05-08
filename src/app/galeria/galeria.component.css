@@ -45,7 +45,6 @@
 .columns,.rows {
     width: 48px;
     height: 48px;
-    margin: 0 .5rem;
     border: none;
     background-color: transparent;
     background-position: center center;
@@ -68,6 +67,7 @@
 }
 
 .rows {
+    margin-left: .5rem;
     background-image: url(/assets/icone-rows.svg);
 }
 
@@ -93,7 +93,25 @@
 }
 
 .figura-wrapper {
+    position: relative;
     width: 100%;
+}
+
+.figura-wrapper span {
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
+    padding: 0 .15rem;
+    font-size: 8pt;
+    color: #fff;
+    background: rgba(17, 17, 17,.5);
+    border-radius: .25rem;
+    text-transform: uppercase;
+    opacity: .5;
+}
+
+.figura-wrapper:hover span {
+    opacity: 1;
 }
 
 .figura img {
@@ -222,11 +240,14 @@
     .galeria.list .figura {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 
     .galeria.list .figura-wrapper {
         width: 30%;
         flex-shrink: 0;
+        max-height: 150px;
+        overflow: hidden;
     }
 
     .galeria.list .caption {
