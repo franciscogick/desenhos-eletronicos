@@ -1,7 +1,6 @@
 import { animate, sequence, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Scroll } from '@angular/router';
-import { concat, defer, fromEvent, interval, of, Subject } from 'rxjs';
+import { concat, defer, fromEvent, interval, Observable, of, Subject } from 'rxjs';
 import { debounceTime, mapTo, skipUntil, takeUntil, timeoutWith } from 'rxjs/operators';
 import { ScrollService } from 'src/app/scroll.service';
 
@@ -69,8 +68,11 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
   presenca = false;
   scroll = false;
+  volume = false;
   winHeight = 0;
   destroy$: Subject<boolean> = new Subject<boolean>();
+
+  soundObserver$: any;
 
   @ViewChild('continente',{static: false}) continenteEl: ElementRef;
 
@@ -83,9 +85,9 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     });
     
     interval(150).pipe(takeUntil(this.destroy$)).subscribe(()=>{
-      if (this.presenca) {
+      if (this.presenca || this.volume) {
         const r = Math.random();
-        if (r > .5) {
+        if (r > .5 && (this.texto.length > this.fragmentos.length)) {
           this.fragmentos.push(this.texto[this.fragmentos.length]);
           /*const r = this.continenteEl.nativeElement.getBoundingClientRect();
           const d = (r.top + r.height) - this.winHeight;
@@ -97,7 +99,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     });
 
     interval(150).pipe(takeUntil(this.destroy$)).subscribe(()=>{
-      if (!this.presenca) {
+      if (!this.presenca && !this.volume) {
         this.fragmentos.pop();
       }
     });
@@ -117,6 +119,50 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
       .subscribe(e => {
         this.presenca = (e == 'move') 
       });
+
+    // conecta ao observer de som
+    this.soundLevel();
+  }
+
+  soundLevel = async () => {
+    // Initialize
+    try {
+      const audioStream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true
+        }
+      });
+      const audioContext = new AudioContext();
+      const audioSource = audioContext.createMediaStreamSource(audioStream);
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 512;
+      analyser.minDecibels = -127;
+      analyser.maxDecibels = 0;
+      analyser.smoothingTimeConstant = 0.4;
+      audioSource.connect(analyser);
+      const volumes = new Uint8Array(analyser.frequencyBinCount);
+
+      const soundObserver$ = Observable.create(observer => {
+        const updateVolume = () => {
+          analyser.getByteFrequencyData(volumes);
+          let volumeSum = 0;
+          for(const volume of volumes) volumeSum += volume;
+          const averageVolume = volumeSum / volumes.length;
+          observer.next(averageVolume)
+        }
+    
+        interval(100).pipe(takeUntil(this.destroy$)).subscribe(()=>{
+          updateVolume()
+        });
+      })
+
+      soundObserver$.pipe(takeUntil(this.destroy$)).subscribe((vol) => {
+        this.volume = vol > 25;
+      })
+    } catch(e) {
+      console.error('Falha ao iniciar o som', e);
+    }
+
   }
   
   ngOnDestroy() {

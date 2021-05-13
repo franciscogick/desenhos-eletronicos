@@ -46,6 +46,7 @@ import { FigurasComponent } from './figuras/figuras.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { Youtube2Component } from './youtube2/youtube2.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { YoutubeComponent } from './youtube/youtube.component';
     FigurasComponent,
     GaleriaComponent,
     SafePipe,
-    YoutubeComponent
+    YoutubeComponent,
+    Youtube2Component
   ],
   imports: [
     BrowserModule,

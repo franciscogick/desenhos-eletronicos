@@ -1,5 +1,5 @@
 <div class="figura" [id]="'figura-'+figura.name" *ngIf="figura">
-    <div class="figura-inner">
+    <div class="figura-inner" [class.loaded]="loaded">
         <img [alt]="legenda" [src]="src" [class.loaded]="loaded" *ngIf="figura.media == 'image'">
         <youtube *ngIf="figura.media == 'youtube'" [id]="figura.file"></youtube> 
 
