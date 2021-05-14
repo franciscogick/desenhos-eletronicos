@@ -75,6 +75,8 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
   soundObserver$: any;
 
   @ViewChild('continente',{static: false}) continenteEl: ElementRef;
+  audioContext: AudioContext;
+  audioStream: MediaStream;
 
   constructor(private scrollService: ScrollService) { }
 
@@ -127,14 +129,14 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
   soundLevel = async () => {
     // Initialize
     try {
-      const audioStream = await navigator.mediaDevices.getUserMedia({
+      this.audioStream = await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true
         }
       });
-      const audioContext = new AudioContext();
-      const audioSource = audioContext.createMediaStreamSource(audioStream);
-      const analyser = audioContext.createAnalyser();
+      this.audioContext = new AudioContext();
+      const audioSource = this.audioContext.createMediaStreamSource(this.audioStream);
+      const analyser = this.audioContext.createAnalyser();
       analyser.fftSize = 512;
       analyser.minDecibels = -127;
       analyser.maxDecibels = 0;
@@ -158,14 +160,15 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
       soundObserver$.pipe(takeUntil(this.destroy$)).subscribe((vol) => {
         this.volume = vol > 25;
+        console.log(vol)
       })
     } catch(e) {
       console.error('Falha ao iniciar o som', e);
     }
-
   }
   
   ngOnDestroy() {
+    this.audioContext.close();
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

@@ -424,7 +424,7 @@ const referencias = [
     "pub_location":"Rio de Janeiro",
     "publisher":"Rocco",
     "date":{"year":1998},
-    "title":"Grande Sertão: Veredas",
+    "title":"Água Viva",
     "textual_id":"Lispector-1998",
     "cited":true
 },
