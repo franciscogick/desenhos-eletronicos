@@ -3,25 +3,22 @@ import { Title } from '@angular/platform-browser';
 import { ParagrafosService } from 'src/app/paragrafos.service';
 
 @Component({
-  selector: 'app-hiperdramas-de-charles-deemer',
-  templateUrl: './hiperdramas-de-charles-deemer.component.html',
-  styleUrls: ['./hiperdramas-de-charles-deemer.component.css']
+  selector: 'app-hipertexto',
+  templateUrl: './hipertexto.component.html',
+  styleUrls: ['./hipertexto.component.css']
 })
-export class HiperdramasDeCharlesDeemerComponent implements OnInit,AfterViewInit {
-
-  nodeId='10411';
+export class HipertextoComponent implements OnInit {
 
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
-    this.titleService.setTitle('Dramaturgias digitais | Hiperdramas de Charles Deemer');
+    this.titleService.setTitle('Dramaturgias digitais | Hiperdramas de Charles Deemer/Last song of Violeta Parra');
   }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    //this.paragrafosService.addNumbers(this.innerEl);
+    this.paragrafosService.addNumbers(this.innerEl);
   }
-
 }

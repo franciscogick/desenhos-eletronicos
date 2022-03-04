@@ -519,6 +519,7 @@ ol.codigo-wrapper li {
     padding-left: 2.5em;
     white-space:normal;
     overflow-wrap: break-word;
+    position: relative;
 }
 ol.codigo-wrapper li::before {
     display: block;

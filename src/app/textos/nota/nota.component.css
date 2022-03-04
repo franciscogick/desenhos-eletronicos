@@ -43,6 +43,12 @@
     transform: translate(-50%,-50%);
 }
 
+.label {
+    font-size: .7rem;
+    font-style: italic;
+    margin-bottom: .5rem;
+}
+
 p {
     text-align: left;
     line-height: 1.15rem;

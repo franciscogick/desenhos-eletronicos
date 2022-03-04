@@ -27,7 +27,7 @@ import { EpigrafeComponent } from './epigrafe/epigrafe.component';
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
 import { DesenhosEletronicosComponent } from './textos/desenhos-eletronicos/desenhos-eletronicos.component';
 import { TravessiaComponent } from './textos/travessia/travessia.component';
-import { LastSongOfVioletaParraComponent } from './textos/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
+import { LastSongOfVioletaParraComponent } from './textos/hiperdramas-de-charles-deemer/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
 import { TransmissionADialogueComponent } from './textos/transmission-a-dialogue/transmission-a-dialogue.component';
 import { AiWhenARobotWritesAPlayComponent } from './textos/ai-when-a-robot-writes-a-play/ai-when-a-robot-writes-a-play.component';
 import { FiguraComponent } from './textos/figura/figura.component';
@@ -59,6 +59,8 @@ import { EpilogoComponent } from './textos/epilogo/epilogo.component';
 import { HiperdramasDeCharlesDeemerComponent } from './textos/hiperdramas-de-charles-deemer/hiperdramas-de-charles-deemer.component';
 import { ConsideracoesFinaisComponent } from './consideracoes-finais/consideracoes-finais.component';
 import { AbstractComponent } from './abstract/abstract.component';
+import { HiperdramaComponent } from './textos/hiperdramas-de-charles-deemer/hiperdrama/hiperdrama.component';
+import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipertexto/hipertexto.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +113,9 @@ import { AbstractComponent } from './abstract/abstract.component';
     EpilogoComponent,
     HiperdramasDeCharlesDeemerComponent,
     ConsideracoesFinaisComponent,
-    AbstractComponent
+    AbstractComponent,
+    HiperdramaComponent,
+    HipertextoComponent
   ],
   imports: [
     BrowserModule,

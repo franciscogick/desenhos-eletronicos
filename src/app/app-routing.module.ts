@@ -10,7 +10,6 @@ import { ReferenciasComponent } from './referencias/referencias.component';
 
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
 import { IssoQueTeEscreviComponent } from './textos/isso-que-te-escrevi/isso-que-te-escrevi.component';
-import { LastSongOfVioletaParraComponent } from './textos/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
 import { TransmissionADialogueComponent } from './textos/transmission-a-dialogue/transmission-a-dialogue.component';
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
 
@@ -31,6 +30,9 @@ import { EpilogoComponent } from './textos/epilogo/epilogo.component';
 import { HiperdramasDeCharlesDeemerComponent } from './textos/hiperdramas-de-charles-deemer/hiperdramas-de-charles-deemer.component';
 import { ConsideracoesFinaisComponent } from './consideracoes-finais/consideracoes-finais.component';
 import { AbstractComponent } from './abstract/abstract.component';
+import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipertexto/hipertexto.component';
+import { HiperdramaComponent } from './textos/hiperdramas-de-charles-deemer/hiperdrama/hiperdrama.component';
+import { LastSongOfVioletaParraComponent } from './textos/hiperdramas-de-charles-deemer/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
 
 
 const routerOptions: ExtraOptions = {
@@ -73,7 +75,15 @@ const routes: Routes = [
       { path: 'lexia/dramaturgias-digitais',
       component: DramaturgiasDigitaisComponent},
         { path: 'lexia/hiperdramas-de-charles-deemer',
-        component: HiperdramasDeCharlesDeemerComponent},
+        component: HiperdramasDeCharlesDeemerComponent,
+        children: [
+          { path: 'hiperdrama',
+          component: HiperdramaComponent},
+          { path: 'hipertexto',
+          component: HipertextoComponent},
+          { path: 'last-song-of-violeta-parra',
+          component: LastSongOfVioletaParraComponent},
+        ]},
         { path: 'lexia/transmission-a-dialogue',
         component: TransmissionADialogueComponent},
         { path: 'lexia/ive-seen-the-future-and-its-a-robot',
