@@ -1,1 +1,6 @@
-<p>nota works!</p>
+<div *ngIf="txt" class="nota-wrapper"><img src="/assets/note.png" alt="nota">
+    <div class="nota-pop">
+        <div class="label">nota</div>
+        <p class="content" [innerHTML]="txt"></p>
+    </div>
+</div>

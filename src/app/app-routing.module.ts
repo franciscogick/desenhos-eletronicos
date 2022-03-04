@@ -10,16 +10,8 @@ import { ReferenciasComponent } from './referencias/referencias.component';
 
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
 import { IssoQueTeEscreviComponent } from './textos/isso-que-te-escrevi/isso-que-te-escrevi.component';
-import { DesenhosEletronicosComponent } from './textos/desenhos-eletronicos/desenhos-eletronicos.component';
-import { TravessiaComponent } from './textos/travessia/travessia.component';
-import { EfemeridadeComponent } from './textos/efemeridade/efemeridade.component';
-import { DuasEntradasComponent } from './textos/duas-entradas/duas-entradas.component';
 import { LastSongOfVioletaParraComponent } from './textos/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
-import { EscuroComponent } from './textos/escuro/escuro.component';
 import { TransmissionADialogueComponent } from './textos/transmission-a-dialogue/transmission-a-dialogue.component';
-import { AiWhenARobotWritesAPlayComponent } from './textos/ai-when-a-robot-writes-a-play/ai-when-a-robot-writes-a-play.component';
-import { DramaturgiaCodigoComponent } from './textos/dramaturgia-codigo/dramaturgia-codigo.component';
-import { DramaturgiaTecnologiaComponent } from './textos/dramaturgia-tecnologia/dramaturgia-tecnologia.component';
 import { UmTextoPorVirComponent } from './textos/um-texto-por-vir/um-texto-por-vir.component';
 
 import { InicioGuard } from './inicio.guard';
@@ -27,6 +19,18 @@ import { InicioGuard } from './inicio.guard';
 import { Erro404Component } from './erro404/erro404.component';
 import { DaAmabilidadeDosSensoresDePresencaComponent } from './textos/da-amabilidade-dos-sensores-de-presenca/da-amabilidade-dos-sensores-de-presenca.component';
 import { FigurasComponent } from './figuras/figuras.component';
+
+import { PrologoComponent } from './textos/prologo/prologo.component';
+import { APedraDeEuripedesComponent } from './textos/a-pedra-de-euripedes/a-pedra-de-euripedes.component';
+import { NovasGrafiasComponent } from './textos/novas-grafias/novas-grafias.component';
+import { NovasGrafiasDoisComponent } from './textos/novas-grafias-dois/novas-grafias-dois.component';
+import { DramaturgiasDigitaisComponent } from './textos/dramaturgias-digitais/dramaturgias-digitais.component';
+import { AiComponent } from './textos/ai/ai.component';
+import { IveSeenTheFutureAndItsARobotComponent } from './textos/ive-seen-the-future-and-its-a-robot/ive-seen-the-future-and-its-a-robot.component';
+import { EpilogoComponent } from './textos/epilogo/epilogo.component';
+import { HiperdramasDeCharlesDeemerComponent } from './textos/hiperdramas-de-charles-deemer/hiperdramas-de-charles-deemer.component';
+import { ConsideracoesFinaisComponent } from './consideracoes-finais/consideracoes-finais.component';
+import { AbstractComponent } from './abstract/abstract.component';
 
 
 const routerOptions: ExtraOptions = {
@@ -44,6 +48,8 @@ const routes: Routes = [
   component: EpigrafeComponent},
   { path: 'resumo',
   component: ResumoComponent},
+  { path: 'abstract',
+  component: AbstractComponent},
   { path: 'lista-de-figuras',
   component: FigurasComponent},
   { path: 'referencias',
@@ -52,32 +58,30 @@ const routes: Routes = [
     path: "rizoma",
     component: RizomaComponent,
     children: [
+      { path: 'lexia/prologo',
+      component: PrologoComponent},
       { path: 'lexia/introducao',
       component: IntroducaoComponent},
         { path: 'lexia/isso-que-te-escrevi',
         component: IssoQueTeEscreviComponent},
-      { path: 'lexia/desenhos-eletronicos',
-      component: DesenhosEletronicosComponent},
-      { path: 'lexia/efemeridade',
-      component: EfemeridadeComponent},
-      { path: 'lexia/travessia',
-      component: TravessiaComponent},
-      { path: 'lexia/duas-entradas',
-      component: DuasEntradasComponent},
-        { path: 'lexia/last-song-of-violeta-parra',
-        component: LastSongOfVioletaParraComponent},
-        { path: 'lexia/escuro',
-        component: EscuroComponent},
+      { path: 'lexia/a-pedra-de-euripedes',
+      component: APedraDeEuripedesComponent},
+      { path: 'lexia/novas-grafias',
+      component: NovasGrafiasComponent},
+      { path: 'lexia/novas-grafias-2',
+      component: NovasGrafiasDoisComponent},
+      { path: 'lexia/dramaturgias-digitais',
+      component: DramaturgiasDigitaisComponent},
+        { path: 'lexia/hiperdramas-de-charles-deemer',
+        component: HiperdramasDeCharlesDeemerComponent},
         { path: 'lexia/transmission-a-dialogue',
         component: TransmissionADialogueComponent},
-        { path: 'lexia/ai-when-a-robot-writes-a-play',
-        component: AiWhenARobotWritesAPlayComponent},
-      { path: 'lexia/dramaturgia-tecnologia',
-      component: DramaturgiaTecnologiaComponent},
-        { path: 'lexia/dramaturgia-codigo',
-        component: DramaturgiaCodigoComponent},
-      { path: 'lexia/um-texto-por-vir',
-      component: UmTextoPorVirComponent},
+        { path: 'lexia/ive-seen-the-future-and-its-a-robot',
+        component: IveSeenTheFutureAndItsARobotComponent},
+      { path: 'lexia/consideracoes-finais',
+      component: ConsideracoesFinaisComponent},
+      { path: 'lexia/epilogo',
+      component: EpilogoComponent},
       { path: 'lexia/da-amabilidade-dos-sensores-de-presenca',
       component: DaAmabilidadeDosSensoresDePresencaComponent},
     ],

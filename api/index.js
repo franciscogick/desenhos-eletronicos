@@ -9,71 +9,85 @@ const app = require('express')()
 //DATA
 const nodes = [
 
-    {id: 1, label: 'Capa', name: 'capa', descricao: 'Capa do trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 2, label: 'Epígrafe', name: 'epigrafe', descricao: 'Epígrafe / loop[clarice].', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 3, label: 'Resumo', name: 'resumo', descricao: 'Resumo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 4, label: 'Referências', name: 'referencias', descricao: 'Referências bibliográficas.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 5, label: 'Considerações finais', name: 'consideracoes-finais', descricao: 'Considerações finais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
-    {id: 6, label: 'Lista de figuras', name: 'lista-de-figuras', descricao: 'Lista de figuras.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 1, label: 'Capa', name: 'capa', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 2, label: 'Epígrafe', name: 'epigrafe', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 3, label: 'Resumo', name: 'resumo', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 7, label: 'Abstract', name: 'abstract', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 4, label: 'Referências', name: 'referencias', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
+    {id: 6, label: 'Lista de figuras', name: 'lista-de-figuras', descricao: null, color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}},
     
     //lexias do rizoma
-    {id: 101, label: 'Introdução', name: 'introducao', descricao: 'Em processo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 100, label: 'Prólogo', name: 'prologo', descricao: 'Breve nota biográfica.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    
+    {id: 101, label: 'Introdução', name: 'introducao', descricao: '', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
         {id: 1011, label: 'Isso que te escrevi', name: 'isso-que-te-escrevi', descricao: 'Notas sobre o trabalho.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'}, 
 
-    {id: 102, label: 'Desenhos eletrônicos', name: 'desenhos-eletronicos', descricao: 'Reflexão conceitual sobre o campo da Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 102, label: 'A pedra de Eurípedes', name: 'a-pedra-de-euripedes', descricao: 'Reflexões sobre as transformações do texto teatral ao longo da história pela transformação das tecnologias de escrita.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-        {id: 1021, label: 'Efemeridade/Obsolescência', name: 'efemeridade', descricao: 'Sobre a efemeridade das criações em Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        //{id: 1021, label: 'Efemeridade/Obsolescência', name: 'efemeridade', descricao: 'Sobre a efemeridade das criações em Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-    {id: 103, label: 'Travessia', name: 'travessia', descricao: 'Um passeio pelo território da Literatura Digital, encontro com textos e discussões.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', type:'lexia', group: 2},
+    {id: 103, label: 'Novas grafias', name: 'novas-grafias', descricao: 'Sobre as transformações nas relações de escrita e leitura em nossa interação com as tecnologias digitais que abrem espaço para uma diversidade de criações de literatura digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', type:'lexia', group: 2},
 
-    {id: 104, label: 'Duas entradas', name: 'duas-entradas', descricao: 'Aproximações entre Teatro e Literatura Digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+    {id: 104, label: 'Dramaturgias digitais', name: 'dramaturgias-digitais', descricao: 'Análise de dramaturgias digitais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
         
-        {id: 1041, label: 'Corpus de pesquisa', name: 'duas-entradas', fragment: 'corpus', descricao: 'Descrição do corpus de pesquisa.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+        //{id: 1041, label: 'Dramaturgias digitais', name: 'duas-entradas', fragment: 'corpus', descricao: 'Análise de dramaturgias digitais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-            {id: 10411, label: 'Last Song of Violeta Parra', name: 'last-song-of-violeta-parra', descricao: 'Last Songs of Violeta Parra, de Charles Deemer.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10411, label: 'Os Hiperdramas de Charles Deemer', name: 'hiperdramas-de-charles-deemer', descricao: 'Reflexões sobre hiperdramas, textos dramáticos hipertextuais, a partir de <span class="titulo-obra">Last Songs of Violeta Parra</span>, de Charles Deemer.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-            {id: 10412, label: 'Escuro', name: 'escuro', descricao: 'Escuro, um mapa hipertextual escrito por Leonardo Moreira.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            // {id: 10412, label: 'Escuro', name: 'escuro', descricao: 'Escuro, um mapa hipertextual escrito por Leonardo Moreira.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-            {id: 10413, label: 'TRANS.MISSION [A.DIALOGUE]', name: 'transmission-a-dialogue', descricao: 'TRANS.MISSION [A.DIALOGUE], de J. R. Carpenter.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10413, label: 'TRANS.MISSION [A.DIALOGUE]', name: 'transmission-a-dialogue', descricao: 'Análise de TRANS.MISSION [A.DIALOGUE], de J. R. Carpenter, um diálogo generativo.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-            {id: 10414, label: 'AI: when a robot writes a play', name: 'ai-when-a-robot-writes-a-play', descricao: 'AI: when a robot writes a play, uma peça de teatro escrita por uma inteligência artificial.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
+            {id: 10414, label: 'I\'ve seen the future and it\' a robot', name: 'ive-seen-the-future-and-its-a-robot', descricao: 'Reflexões sobre o processo de escrita dramatúrgica utilizando tecnologias de inteligência artificial a partir de duas criações <span class="titulo-obra">AI: when a robot writes a play</span> e <span class="titulo-obra">AI</span>.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia', group: 1},
 
-    {id: 105, label: 'Dramaturgia e tecnologia', name: 'dramaturgia-tecnologia', descricao: 'Discussão sobre a interface dramaturgia-tecnologia', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 105, label: 'Novas Grafias 2', name: 'novas-grafias-2', descricao: 'Mapeamento de características das dramaturgias digitais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 
-        {id: 1051, label: 'Dramaturgia e código', name: 'dramaturgia-codigo', descricao: 'Análise da performance online HIPERGAIVOTA e especulação sobre possíveis relações entre código-fonte e dramaturgia.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        //{id: 1051, label: 'Dramaturgia e código', name: 'dramaturgia-codigo', descricao: 'Análise da performance online HIPERGAIVOTA e especulação sobre possíveis relações entre código-fonte e dramaturgia.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    
+    {id: 107, label: 'Considerações finais', name: 'consideracoes-finais', descricao: 'Considerações finais.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    
 
-    {id: 106, label: 'Um texto por vir', name: 'um-texto-por-vir', descricao: 'Reflexões sobre a criação de um texto dramatúrgico digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+    {id: 106, label: 'Epílogo', name: 'epilogo', descricao: 'Reflexões a escrita de uma dramaturgia digital.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
         
         {id: 1061, label: 'Da amabilidade dos sensores de presenca', name: 'da-amabilidade-dos-sensores-de-presenca', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
             
-        {id: 1062, label: 'Mickey Mouse está ficando velho', name: 'mickey-mouse-esta-ficando-velho', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
+        //{id: 1062, label: 'Mickey Mouse está ficando velho', name: 'mickey-mouse-esta-ficando-velho', descricao: 'Uma cena.', color:{background:'#FFF',border:'#fff', highlight:'#FF055C'}, type:'lexia'},
 ];
 //#46FF9C
 const edges = [
+    {from: 7, to: 3, dashes: true},
+    {from: 100, to: 101, dashes: true},
     {from: 101, to: 1011, dashes: true},
     {from: 101, to: 103, dashes: true},
     {from: 102, to: 101, dashes: true},
     {from: 102, to: 103, dashes: true},
     {from: 102, to: 105, dashes: true},
-    {from: 102, to: 1021, dashes: true},
+    //{from: 102, to: 1021, dashes: true},
     {from: 103, to: 104, dashes: true},
+    {from: 103, to: 105, dashes: true},
     {from: 104, to: 101, dashes: true},
     {from: 104, to: 102, dashes: true},
     {from: 104, to: 105, dashes: true},
-    {from: 1041, to: 10411, dashes: true},
-    {from: 1041, to: 10412, dashes: true},
-    {from: 1041, to: 10413, dashes: true},
-    {from: 1041, to: 10414, dashes: true},
+    //{from: 1041, to: 10411, dashes: true},
+    //{from: 1041, to: 10412, dashes: true},
+    //{from: 1041, to: 10413, dashes: true},
+    //{from: 1041, to: 10414, dashes: true},
     {from: 104, to: 10411, dashes: true},
-    {from: 104, to: 10412, dashes: true},
+    //{from: 104, to: 10412, dashes: true},
     {from: 104, to: 10413, dashes: true},
     {from: 104, to: 10414, dashes: true},
     {from: 105, to: 101, dashes: true},
-    {from: 105, to: 106, dashes: true},
-    {from: 105, to: 1051, dashes: true},
+    //{from: 105, to: 106, dashes: true},
+    //{from: 105, to: 1051, dashes: true},
     {from: 106, to: 1061, dashes: true},
-    {from: 106, to: 1062, dashes: true},
+    //{from: 106, to: 1062, dashes: true},
+    {from: 106, to: 100, dashes: true},
+    {from: 107, to: 105, dashes: true},
+    {from: 107, to: 106, dashes: true},
+    {from: 10411, to: 10413, dashes: true},
+    {from: 10411, to: 10414, dashes: true},
+    {from: 10413, to: 10414, dashes: true},
 
 ];
 
@@ -87,10 +101,41 @@ const conceitos = [
 const figuras = [
     {name:'YCHI-site-artista',file:'YCHI-site-artista.gif',caption:'Fragmento de <span class="titulo-obra">ARTIST\'S STATEMENT N0. 45,730,944: THE PERFECT ARTISTIC WEB SITE</span> do YOUNG-HAE CHANG HEAVY INDUSTRIES',reference:'ArtistStatement-2020',type:'lexia',media:'image',lexia:'desenhos-eletronicos'},
     {name:'last-song',file:'last-song-menu.jpg',caption:'Página inicial de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia',media:'image',lexia:'last-song-of-violeta-parra'},
+    {name:'last-song-flowchart',file:'last-song-flowchart.jpg',caption:'<span class="estrangeirismo">Flowchart</span> de <span class="titulo-obra">The Last Song of Violeta Parra</span>',reference:'Deemer-1996b',type:'lexia',media:'image',lexia:'last-song-of-violeta-parra'},
     {name:'transmission',file:'transmission.jpg',caption:'<span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> de J.R. Carpenter',reference:'Carpenter-2021',type:'lexia',media:'image',lexia:'transmission-a-dialogue'},
     {name:'ai',file:'ai-cartaz.jpg',caption:'Cartaz de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',media:'image',lexia:'ai-when-a-robot-writes-a-play'},
-    {name:'ai-teaser',file:'8ho5sXiDX_A',caption:'Vídeo de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',media:'youtube',lexia:'ai-when-a-robot-writes-a-play'}
+    {name:'ai-teaser',file:'8ho5sXiDX_A',caption:'Vídeo de divulgação de <span class="titulo-obra">AI: when a robot writes a play</span>',reference:'THEAITRE-2020',type:'lexia',media:'youtube',lexia:'ai-when-a-robot-writes-a-play'},
+    {name:'liberdade',file:'Liberdade1.jpg',caption:'<span class="titulo-obra">Liberdade</span>, dirigido por Alckmar Santos e Chico Marinho.',reference:'CICLOPE-2015',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'tombeau-mallarmé',file:'desouza-letombeaudemallarme_2.jpg',caption:'<span class="titulo-obra">Le Tombeau de Mallarmé</span>, de Erthos Albino de Souza.',reference:'LITELAT-2019',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'tombeau-mallarme',file:'desouza-letombeaudemallarme_2.jpg',caption:'<span class="titulo-obra">Le Tombeau de Mallarmé</span>, de Erthos Albino de Souza.',reference:'LITELAT-2019',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'patchwork-girl',file:'screen-shot-2019-07-27-at-8.13.54-pm.jpg',caption:'Capa de <span class="titulo-obra">Patchwork Girl</span>, de Shelley Jackson.',reference:'Short-2019',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'cunnilingus',file:'cunnilingus3.jpg',caption:'Quadro de <span class="titulo-obra">Cunnilingus na Coreia do Norte de YOUNG-HAE CHANG HEAVY INDUSTRIES.',reference:'YHCHI-2020',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'veredasbot',file:'veredasBot1.jpg',caption:'',reference:'Veredasbot-2020',type:'lexia',media:'image',lexia:'novas-grafias'},
+    {name:'hipolito-euripedes',file:'hipolito-euripedes-POxy.v0044.n3152.a.01.hires.jpg',caption:'Fragmento de <span class="titulo-obra">Hipólito</span> de Eurípedes encontrado nos Papiros de Oxyrinco.',reference:'Poxy-1976',type:'lexia',media:'image',lexia:'a-pedra-de-euripedes'},
+    {name:'hipolito-seneca',file:'hipolito-seneca.jpg',caption:'Página de impressão do <span class="titulo-obra">Hipólito</span> de Sêneca com anotações (século XV).',reference:'Seneca-1493',type:'lexia',media:'image',lexia:'a-pedra-de-euripedes'},
+    {name:'hecuba-euripedes',file:'manuscriptHecuba-bl_uk.jpg',caption:'Página de um manuscrito medieval de <span class="titulo-obra">Hécuba</span> de Eurípedes.',reference:'Bl-2021',type:'lexia',media:'image',lexia:'a-pedra-de-euripedes'},
+    {name:'phedre-racine',file:'phedre-montagem.jpg',caption:'Folha de rosto e página 2 da primeira impressão de <span class="titulo-obra">Phèdre et Hippolyte</span> de Racine.',reference:'Racine-1677',type:'lexia',media:'image',lexia:'a-pedra-de-euripedes'},
+
 ];
+
+
+/*
+Liberdade1.jpg
+cunnilingus3.jpg
+desouza-letombeaudemallarme_2.jpg
+diagramaLastSong2.jpg
+hipolito-euripedes-POxy.v0044.n3152.a.01.hires.jpg
+hipolito-seneca.jpg
+last-song-menu.jpg
+last-song-menu.png
+manuscriptHecuba-bl_uk.jpg
+phedre-montagem.jpg
+print-LastSong.jpg
+print-transmission.jpg
+screen-shot-2019-07-27-at-8.13.54-pm.jpg
+transmission.jpg
+veredasBot1.jpg
+*/
 
 const referencias = [
     {"rec_number":455,
@@ -170,19 +215,20 @@ const referencias = [
     "textual_id":"Blanchot-2005",
     "cited":true
 },
-/*{
+{
     "rec_number":451,
     "type":"video",
     "author":[
         {"name":"Young-Hae Chang Heavy Industries"}
     ],
     "duration":"6m32s",
+    "publisher":"Young-Hae Chang Heavy Industries",
     "date":{"year":2020},
     "title":"CUNNILINGUS NA COREIA DO NORTE",
     "url":"https://www.yhchang.com/CUNNILINGUS_NA_COREIA_DO_NORTE_V.html",
-    "access":{"year":null,"month":null,"day":null},
-    "textual_id":"Industries-2020"
-},*/
+    "access":{"year":2020,"month":12,"day":03},
+    "textual_id":"YHCHI-2020"
+},
 {
     "rec_number":449,
     "type":"website",
@@ -2328,14 +2374,14 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "rec_number":461,
     "type":"book",
     "author":[
-        {"name":"Astrid Esslin"}
+        {"name":"Astrid Ensslin"}
     ],
     "pub_location":"Nova York",
     "publisher":"Continuum International",
     "date":{"year":2007},
     "title":"Canonizing Hypertext",
     "subtitle":"Explorations and constructions",
-    "textual_id":"Esslin-2007",
+    "textual_id":"Ensslin-2007",
     "cited":true
 },
 {
@@ -2352,7 +2398,414 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "access":{"year":2020,"month":05,"day":12},
     "textual_id":"Deemer-1996b",
     "cited":true
-}
+},
+{
+    "rec_number":229,
+    "type":"article",
+    "author":[
+        {"name":"N ELGAWAHERGY"},
+        {"name":"N SOLIMA"},
+        {"name":"M RIAD"}
+    ],
+    "number":null,
+    "pages":"284-331",
+    "electronic_resource_num":"10.11606/issn.2238-3867.v17i1p387-399",
+    "language":"Portuguese",
+    "journal":"Annals of the Faculty of Arts",
+    "volume":42,
+    "date":{"year":2014,"month":1,"day":1},
+    "title":"Hyperdrama as a New Kind of Dramatic Texts",
+    "textual_id":"Elgawahergy-2014",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "author":[
+        {"name":"Charles Deemer"}
+    ],
+    "site":"Charles Deemer",
+    "date":{"year":1996},
+    "title":"What is hypertext?",
+    "url":"http://www.ibiblio.org/cdeemer/hypertxt.htm",
+    "access":{"year":2020,"month":03,"day":18},
+    "textual_id":"Deemer-1994",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "author":[
+        {"name":"Charles Deemer"}
+    ],
+    "site":"Charles Deemer",
+    "date":{"year":2007},
+    "title":"REFLECTIONS ON THE DESIGN OF A HYPERTHEATER",
+    "url":"http://www.ibiblio.org/cdeemer/hypertheater.htm",
+    "access":{"year":2020,"month":03,"day":18},
+    "textual_id":"Deemer-2007",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"Luca Ronconi",
+    "date":{"year":2021},
+    "title":"Orlando Furioso",
+    "url":"https://lucaronconi.it/scheda/teatro/orlando-furioso",
+    "access":{"year":2020,"month":03,"day":18},
+    "textual_id":"Ronconi-2021",
+    "cited":true
+},
+{
+    "rec_number":229,
+    "type":"article",
+    "author":[
+        {"name":"Lorena Regattieri"}
+    ],
+    "number":2,
+    "language":"Portuguese",
+    "journal":"Liinc em Revista",
+    "volume":14,
+    "date":{"year":2018},
+    "title":"Algoritmização da vida e organização da informação: Considerações sobre a tecnicidade no algoritmo a partir de Gilbert Simondon",
+    "url":"https://lucaronconi.it/scheda/teatro/orlando-furioso",
+    "access":{"year":2021,"month":11,"day":18},
+    "textual_id":"Regattieri-2018",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "author":[
+        {"name":"Nicanor Parra"}
+    ],
+    "site":"Nicanor Parra - Antologia",
+    "date":{"year":1979},
+    "title":"Nuevos sermones y prédicas del Cristo de Elqui - sermon XLIX",
+    "url":"http://www.nicanorparra.uchile.cl/antologia/indexpoemas.html",
+    "access":{"year":2021,"month":04,"day":23},
+    "textual_id":"Parra-1979",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Régis Debray"}
+    ],
+    "pub_location":"Petrópolis",
+    "publisher":"Vozes",
+    "date":{"year":1993},
+    "title":"Curso de Midiologia Geral",
+    "textual_id":"Debray-1993",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Raymond Williams"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Cosac Naify",
+    "date":{"year":2010},
+    "title":"Drama em cena",
+    "textual_id":"Williams-2010",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Patrice Pavis"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Perspectiva",
+    "date":{"year":2013},
+    "title":"A encenação contemporânea",
+    "sub_title":"origens, tendências, perspectivas",
+    "textual_id":"Pavis-2013",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Mark Fisher"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Autonomia Literária",
+    "date":{"year":2020},
+    "title":"Realismo Capitalista",
+    "sub_title":"é mais fácil imaginar o fim do mundo que o fim do capitalismo?",
+    "textual_id":"Fisher-2020",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Michel Foucault"}
+    ],
+    "pub_location":"Rio de Janeiro",
+    "publisher":"Graal",
+    "date":{"year":1998},
+    "title":"Microfísica do poder",
+    "textual_id":"Foucault-1998",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Régis Debray"}
+    ],
+    "pub_location":"Londres",
+    "publisher":"Verso",
+    "date":{"year":1996},
+    "title":"Media manifestos",
+    "sub_title":"on the technological transmission of cultural forms",
+    "textual_id":"Debray-1996",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Tarcísio Silva"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Edições SESC São Paulo",
+    "date":{"year":2022},
+    "title":"Racismo Algorítmico",
+    "sub_title":"inteligência artificial e discriminação nas redes digitais",
+    "textual_id":"Silva-2022",
+    "cited":true
+},
+{
+    "rec_number":453,
+    "type":"book-chapter",
+    "author":[
+        {"name":"P Finglass"}
+    ],
+    "book": {
+        "editor":[
+            {"name":"A Markantonatos"}
+        ],
+        "pub_location":"Brill",
+        "publisher":"Brill Academic Publishers",
+        "title":"Brill’s Companion to Euripides",
+        "date":{"year":2020}
+    },
+    "date":{"year":2020},
+    "title":"The textual transmission of Euripides’ dramas",
+    "textual_id":"Finglass-2020",
+    "cited":true
+},
+{
+    "rec_number":453,
+    "type":"book-chapter",
+    "author":[
+        {"name":"Katherine Hayles"}
+    ],
+    "book": {
+        "editor":[
+            {"name":"M ADALAIDE"},
+            {"name":"T Swiss"}
+        ],
+        "pub_location":"Cambridge",
+        "publisher":"MIT Press",
+        "title":"New Media Poetics",
+        "sub_title":"Contexts, Technotexts, and Theories",
+        "date":{"year":2006}
+    },
+    "date":{"year":2006},
+    "title":"The Time of Digital Poetry",
+    "sub_title":"From Object to Event",
+    "textual_id":"Finglass-2020",
+    "cited":true
+},
+{
+    "rec_number":229,
+    "type":"article",
+    "author":[
+        {"name":"A Domingues"}
+    ],
+    "number":35,
+    "language":"Portuguese",
+    "journal":"VARIA HISTORIA",
+    "pub_location":"Belo Horizonte",
+    "volume":22,
+    "pages":"150-174",
+    "date":{"year":2006},
+    "title":"Notícias do Brasil colonial",
+    "sub_title":"a imprensa científica e política a serviço das elites (Portugal, Brasil e Inglaterra)",
+    "textual_id":"Domingues-2006",
+    "cited":true
+},
+{
+    "rec_number":229,
+    "type":"article",
+    "author":[
+        {"name":"Denise Siqueira"}
+    ],
+    "number":2,
+    "language":"Portuguese",
+    "journal":"LOGOS",
+    "pub_location":"Rio de Janeiro",
+    "volume":4,
+    "date":{"year":1997},
+    "title":"Memória, história e poder",
+    "sub_title":"a implantação dos meios de comunicação no Brasil",
+    "textual_id":"Siqueira-1997",
+    "cited":true
+},
+{
+    "rec_number":229,
+    "type":"article",
+    "author":[
+        {"name":"Franck Bauchard"}
+    ],
+    "number":3,
+    "language":"Portuguese",
+    "journal":"Liberté",
+    "volume":52,
+    "pages":"54-77",
+    "date":{"year":2011},
+    "title":"Du texte au théâtre",
+    "sub_title":"de la culture de l'imprimé aux environnements numériques",
+    "textual_id":"Bauchard-2011",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Julie Stone Peters"}
+    ],
+    "pub_location":"Oxford",
+    "publisher":"Oxford University Press",
+    "date":{"year":2003},
+    "title":"Theatre of the Book, 1480-1880",
+    "sub_title":"Print, Text, and Performance in Europe",
+    "textual_id":"Peters-2003",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Leonor Fávero"},
+        {"name":"Ingedor Koch"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Cortez",
+    "date":{"year":1983},
+    "title":"Lingüística Textual",
+    "sub_title":"uma introdução",
+    "textual_id":"Favero-1983",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Gerard Genette"}
+    ],
+    "pub_location":"Madri",
+    "publisher":"Taurus",
+    "date":{"year":1989},
+    "title":"Palimpsetos",
+    "sub_title":"La literatura en segundo grado",
+    "textual_id":"Genette-1989",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Jean Racine"}
+    ],
+    "pub_location":"Paris",
+    "publisher":"Barbin",
+    "date":{"year":1667},
+    "title":"Phèdre & Hippolyte",
+    "sub_title":"tragédie",
+    "textual_id":"Racine-1677",
+    "cited":true
+},
+{
+    "rec_number":461,
+    "type":"book",
+    "author":[
+        {"name":"Lúcio Sêneca"}
+    ],
+    "pub_location":"[S.l.]",
+    "publisher":"per Matheu[m] Capcasam",
+    "date":{"year":1493},
+    "title":"L. Annei Senecae Tragoediae: cu[m] duobis co[m]mentis",
+    "textual_id":"Seneca-1493",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"POxy - Oxyrhynchus online",
+    "date":{"year":1976},
+    "title":"P.Oxy.XLIV 3152",
+    "url":"http://www.papyrology.ox.ac.uk/POxy/",
+    "access":{"year":2021,"month":09,"day":09},
+    "textual_id":"Poxy-1976",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"British Library",
+    "title":"Digitised Manuscripts - Add MS 10057",
+    "url":"http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Add_MS_10057&index=1",
+    "access":{"year":2021,"month":09,"day":27},
+    "textual_id":"Bl-2021",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "author":[
+        {"name":"Emily Short"}
+    ],
+    "site":"Emily Short Interactive Storytelling",
+    "title":"Patchwork Girl (Shelley Jackson) and Spatial Hypertext",
+    "url":"https://emshort.blog/2019/09/17/patchwork-girl-shelley-jackson-and-spatial-hypertext/",
+    "date":{"day":17,"month":9,"year":2019},
+    "access":{"year":2021,"month":09,"day":27},
+    "textual_id":"Short-2019",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"Twitter: @veredasbot",
+    "title":"“Eu atravesso as coisas — e no meio da travessia não vejo! — só estava era entretido na ideia dos lugares de saída e de chegada”",
+    "url":"https://twitter.com/veredasbot/status/1341927019119042560",
+    "date":{"day":23,"month":12,"year":2020},
+    "access":{"day":12,"month":2,"year":2021},
+    "textual_id":"Veredasbot-2020",
+    "cited":true
+},
+// adicoes 02/03
+/*
+GRANDE SERTÃO. “Eu atravesso as coisas — e no meio da travessia não vejo! — só estava era entretido na ideia dos lugares de saída e de chegada”. 23 dez. 2020. Twitter: @veredasbot. Disponível em: https://twitter.com/veredasbot/status/1341927019119042560. Acesso em: 12 fev. 2021
+
+
+
+
+
+sarah kane
+
+*/
+
 ];
 
 //ENDPOINTS

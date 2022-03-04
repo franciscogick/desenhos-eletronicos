@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nota',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nota.component.css']
 })
 export class NotaComponent implements OnInit {
+
+  @Input() txt: string;
 
   constructor() { }
 

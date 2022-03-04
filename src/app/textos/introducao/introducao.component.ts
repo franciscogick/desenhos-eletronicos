@@ -12,17 +12,16 @@ export class IntroducaoComponent implements OnInit,AfterViewInit {
   nodeId='101';
 
   lexias: {texto:string,link:string,name:string}[] = [
-    {texto:'Em <b>Desenhos eletrônicos</b> procede-se a uma reflexão teórica sobre o campo da Literatura Eletrônica e sobre como a textualidade digital implica em transformações nas relações de leitura e escrita.',link:'desenhos-eletronicos',name:'Desenhos Eletrônicos'},
-    {texto:'<b>Travessia</b> é um passeio pelo território da Literatura Eletrônica que mobiliza discussões acerca das tecnologias e estratégias de composição de textos digitais.',link:'travessia',name:'Travessia'},
-    {texto:'Em <b>Duas entradas</b> apresentam-se duas possibilidades de aproximação entre Teatro e Literatura Eletrônica: (1) o teatro como metáfora cognitiva privilegiada para pensar o texto digital como representação e, em um movimento seguinte, como performance; (2) o texto dramatúrgico como textualidade digital, onde se caracteriza a categoria de texto dramatúrgico digital e procede-se a análise de um corpus de 4 textos digitais (encontrados ao longo da <b>Travessia</b>) relacionados à forma dramática ou criados com intensão de serem apropriados em um processo de criação ou performance.',link:'duas-entradas',name:'Duas Entradas'},
-    {texto:'<b>Dramaturgia e Tecnologia</b> discute as relações entre a dramaturgia contemporânea e as novas tecnologias, abordando o conceito de dramaturgia e tentando perceber qual o lugar do texto dramatúrgico no teatro contemporâneo. É realizada análise de HIPERGAIVOTA, uma performance online compartilhada em tempo real, produzida a partir desta pesquisa, como uma especulação sobre relações possíveis entre código-fonte e dramaturgia.',link:'dramaturgia-tecnologia',name:'Dramaturgia e tecnologia'},
-    {texto:'<b>Um texto por vir</b> apresenta o processo de criação do texto dramatúrgico digital ainda sem título que é objeto desta pesquisa, apresentando e discutindo o texto e suas estratégias de composição.',link:'um-texto-por-vir',name:'Um texto por vir'},
+    {texto:'Em <b>A pedra de Eurípedes</b> procede-se a uma reflexão sobre as transformações do texto teatral ao longo da história em relação às tecnologias da escrita.',link:'a-pedra-de-euripedes',name:'A pedra de Eurípedes'},
+    {texto:'<b>Novas grafias</b> discute as transformações em nossas relações de escrita e leitura a partir da interação com tecnologias digitais, além de realizar um passeio pelo território da literatura digital que mobiliza discussões acerca das tecnologias e estratégias de composição de textos digitais.',link:'novas-grafias',name:'Novas grafias'},
+    {texto:'Em <b>Dramaturgias digitais</b> são analisados 4 criações de literatura digital que têm o teatro como horizonte, <span class="titulo-obra">The last song of Violeta Parra</span>, <span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span>, <span class="titulo-obra">AI: when a robot writes a play</span> e <span class="titulo-obra">AI</span>.',link:'dramaturgias-digitais',name:'Dramaturgias digitais'},
+    {texto:'<b>Novas grafias 2</b> discute características observadas nas dramaturgias digitais analisadas.',link:'novas-grafias-2',name:'Novas grafias 2'}
   ]
 
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
-    this.titleService.setTitle('Desenhos eletrônicos | Introdução');
+    this.titleService.setTitle('Dramaturgias digitais | Introdução');
   }
 
   ngOnInit(): void {

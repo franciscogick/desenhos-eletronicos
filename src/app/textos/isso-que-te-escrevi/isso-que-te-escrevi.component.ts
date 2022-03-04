@@ -14,7 +14,7 @@ export class IssoQueTeEscreviComponent implements OnInit, AfterViewInit {
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
-    this.titleService.setTitle('Desenhos eletrônicos | Isso que te escrevi');
+    this.titleService.setTitle('Dramaturgias digitais | Isso que te escrevi');
   }
 
   ngOnInit(): void {

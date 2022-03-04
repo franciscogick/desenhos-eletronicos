@@ -1,0 +1,7 @@
+p.palavras-chave {
+    margin-top: 2rem;
+}
+
+#resumo::first-letter {
+    margin: 0;
+}

@@ -65,7 +65,7 @@ export class ReferenciadorPipe implements PipeTransform {
 
         autor = createAuthors(ref.author);
 
-        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.journal}, ${ref.pub_location?ref.pub_location+', ':''}${ref.volume?'n'+ref.volume + ', ':''}${ref.number?'v'+ref.number + ', ':''}${ref.pages?'p'+ref.pages + ', ':''}${ref.date.month?months[ref.date.month - 1]+'. de ':''}${ref.date.year}.${ref.url?' Disponível em: <a href="'+ref.url+'" target="_blank">'+ref.url+'</a>. Acesso em: '+ref.access.day+' '+months[ref.access.month - 1].toLowerCase()+'. '+ref.access.year:''}.`; 
+        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.journal}, ${ref.pub_location?ref.pub_location+', ':''}${ref.volume?'n'+ref.volume + ', ':''}${ref.number?'v'+ref.number + ', ':''}${ref.pages?'p'+ref.pages + ', ':''}${ref.date.month?months[ref.date.month - 1]+'. de ':''}${ref.date.year}.${ref.url?' Disponível em: <a href="'+ref.url+'" target="_blank">'+ref.url+'</a>. Acesso em: '+ref.access.day+' '+months[ref.access.month - 1].toLowerCase()+'. '+ref.access.year+'.':''}`; 
       }
       if (ref.type == 'website') {
         //TÍTULO da matéria. Nome do site, ano. Disponível em: URL. Acesso em: dia, mês e ano.
@@ -75,7 +75,7 @@ export class ReferenciadorPipe implements PipeTransform {
         if (ref.author) {
           autor = createAuthors(ref.author);
           
-          return `${autor}${ref.author?'':'.'} ${ref.site}, ${ref.date.year}. ${ref.title}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}`;
+          return `${autor}${ref.author?'':'.'} ${ref.site}, ${ref.date.year}. <i>${ref.title}</i>. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         } else {
           return `${ref.title}. ${ref.site}${(ref.date && ref.date.year)?', '+ref.date.year:''}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         }         

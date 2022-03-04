@@ -66,7 +66,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
   fragmentos: string[] = [];
 
-  presenca = false;
+  toque = false;
   scroll = false;
   volume = false;
   winHeight = 0;
@@ -87,7 +87,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     });
     
     interval(150).pipe(takeUntil(this.destroy$)).subscribe(()=>{
-      if (this.presenca || this.volume) {
+      if (this.toque || this.volume) {
         const r = Math.random();
         if (r > .5 && (this.texto.length > this.fragmentos.length)) {
           this.fragmentos.push(this.texto[this.fragmentos.length]);
@@ -101,7 +101,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     });
 
     interval(150).pipe(takeUntil(this.destroy$)).subscribe(()=>{
-      if (!this.presenca && !this.volume) {
+      if (!this.toque && !this.volume) {
         this.fragmentos.pop();
       }
     });
@@ -119,7 +119,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
     moveAndStop$
       .subscribe(e => {
-        this.presenca = (e == 'move') 
+        this.toque = (e == 'move') 
       });
 
     // conecta ao observer de som

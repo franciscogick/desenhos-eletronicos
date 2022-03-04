@@ -1,26 +1,84 @@
 <app-menu></app-menu>
-<div class="texto-wrapper" id="texto-wrapper" #wrapperEl>
-    <!-- menus de highlight e notes -->
-
-
-    <!--<div id="menu-highlight" #menuHighlight>
-        <button (click)="highlightSelectedText()"><img src="/assets/highlight.svg"></button>
-    </div>
-    
-    <div id="menu-remove-highlight" #menuRemoveHighlight>
-        <button (click)="removeHighlight()"><img src="/assets/close-circle-black.svg"></button>
-    </div>
-    -->
-    
+<div class="texto-wrapper" id="texto-wrapper" #wrapperEl>    
     <div class="texto-inner" id="texto-inner-transmission" #innerEl>
         <app-lexias-conectadas [id]="nodeId"></app-lexias-conectadas>
         <div class="titulo">
             <h1>TRANS.MISSION [A.DIALOGUE]</h1>
         </div>
         <figura [name]="'transmission'"></figura>
-        <p><span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> é um diálogo generativo criado pela artista canadense J. R. Carpenter. Não se trata propriamente de um texto dramático, mas um diálogo criado para ser performado/lido em voz alta por três vozes. </p>
-        <p>Um arquivo JavaScript fica em um diretório em um servidor ligado a uma vasta rede de hubs, roteadores, switches, e cabos submarinos pelos quais esse arquivo pode ser acessado muitas vezes de muitos lugares e muitos dispositivos. Cada vez que esse JavaScript é instanciado, a rede, o navegador, e o CPU do cliente conspiram para responder com uma nova interação. A missão do código do JavaScript é gerar um tipo diferente de roteiro, um diálogo a ser lido em voz alta por três vozes: Chamada (Call), Resposta (Response) e Interferência (Interference); ou Estrofe, Antístrofe e Coro; ou Aqui, Lá, e Algum Lugar no Meio. <citacao [id]="'Carpenter-2021'"></citacao>.</p>
-        <p>O arquivo JavaScript a que Carpenter se refere é um pequeno programa que dá instruções para um navegador de internet. Em <span class="titulo-obra">TRANS.MISSION</span>, o programa gera um diálogo utilizando uma base de dados de palavras separadas em categorias que são escolhidas aleatoriamente e dispostas em uma sintaxe previamente definida e fixa. São 72 categorias de e 934 palavras. A categoria "Errado", por exemplo tem 26 palavras: "ambíguo, no máximo", "gerado por computador", "confuso", "irreparável", "errôneo", "falso", "defeituoso", "forjado", "desenhado à mão", "indecifrável", "impreciso", "incorreto", "inválido", "perdido", "ausente", "extraviado", "enganado", "desatualizado", "desordenado", "arrancado", "meio enganoso", "rasgado", "ilegível", "danificado pela água", "fora da marca" e "errado". A cada execução do programa, uma dessas palavras aparecerá na 35ª linha do diálogo após uma das palavras da categoria "Pode ser" ("poderia", "possivelmente", "pode", "deveria", "será", "seria") <citacao [id]="'Carpenter-2021'" [obs]="'código-fonte'"></citacao>. Tais informações derivam de uma análise do código fonte do programa ordena a instanciação do "aparato do texto digital" de <span class="titulo-obra">TRANS.MISSION</span>, para retomar o termo de Fletcher, ou, como descreve Carpenter, acionar a conspiração entre rede, navegador e CPU que resulta em uma nova interação. A cada 80 segundos o texto se desloca, o diálogo se atualiza e o que era "errado" passa a ser "danificado pela água" ou "desenhado à mão", o que "poderia" torna-se algo que "será" ou "deveria". Assim, também as vozes se transformam, sem que mude a estrutura do texto. A impermanência do diálogo - não raro, começa-se a ler um e termina-se por ler outro - contrasta com a fixidez da primeira e da última fala, ambas vocalizadas por Interferência: "Iniciar transmissão", "Por favor, tente novamente". O fim remete ao começo, o texto retorna a si mesmo, mas transformado, produzindo uma infinidade de transmissões possíveis ou, ao menos, um fluxo que dura enquanto operar o "aparato" e resistir a vontade de quem lê.</p>
-        <p class="anotacao"><span>Em elaboração. O próximo passo é discutir mais profundamente a característica de generatividade do texto em associação com as noções de transformatividade, performatividade <citacao [id]="'Simanowski-2010'"></citacao> e abertura <citacao [id]="'Mestre-2017'"></citacao> discutidas em <a class="nav-lexia" routerLink="../desenhos-eletronicoss" fragment="textualidade">Desenhos eletrônicos</a>.</span></p>
+        <p><span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span><app-nota [txt]="'O texto está disponível na internet em: http://luckysoap.com/generations/transmission_script.html'"></app-nota>, da canadense J. R. Carpenter, é um texto generativo, ou seja, um texto cujos elementos – um conjunto de palavras, uma sintaxe, um algoritmo – estão definidos previamente, mas que não é produzido antes que tenha lugar uma operação de leitura (RETTBERG, 2019). O texto é um diálogo, ou uma tentativa de diálogo, para três vozes. </p>
+        <p>Como descreve Carpenter, trata-se de um arquivo <span class="tecnologia">JavaScript</span> (um programa) fica hospedado em um diretório de um servidor (um computador) ligado a uma vasta rede de hubs, roteadores, switches, e cabos submarinos pelos quais esse arquivo pode ser acessado muitas vezes de muitos lugares e muitos dispositivos. Cada vez que esse <span class="tecnologia">JavaScript</span> é instanciado, a rede, o navegador, e o <span class="tecnologia">CPU</span> do cliente conspiram para responder com uma nova interação. A missão do código do <span class="tecnologia">JavaScript </span>é gerar um tipo diferente de roteiro, um diálogo a ser lido em voz alta por três vozes: Chamada (<span class="estrangeirismo">Call</span>), Resposta (<span class="estrangeirismo">Response</span>) e Interferência (<span class="estrangeirismo">Interference</span>); ou Estrofe, Antístrofe e Coro; ou Aqui, Lá, e Algum Lugar no Meio. (CARPENTER, 2021a).</p>
+        <p>O arquivo a que Carpenter se refere é um pequeno programa que dá instruções para um navegador de internet. Em <span class="titulo-obra">TRANS.MISSION</span>, o programa gera o diálogo utilizando uma base de dados de palavras separadas em categorias que são escolhidas aleatoriamente e dispostas em uma sintaxe previamente definida pela autora. São 72 categorias com 934 palavras. A cada 80 segundos o texto é novamente gerado, mantendo a mesma sintaxe, mas com uma nova seleção de palavras, fazendo com que não seja raro começar lendo um texto e terminar lendo outro.  </p>
+        <p>Tais informações derivam de uma análise do código fonte do programa que ordena a instanciação do dispositivo de <span class="estrangeirismo">TRANS.MISSION</span>, ou ainda, como Carpenter descreve esse processo, aciona a conspiração entre rede, navegador e <span class="tecnologia">CPU</span> que resulta em uma nova interação. O diálogo se atualiza periodicamente, ganhando sentidos novos a cada iteração. Assim, também as vozes se transformam, sem que mude a sintaxe do texto. Esse olhar para o código faz-se importante na análise de um texto digital, uma vez que a escrita se transfigura em programação.</p>
+        <p>O código-fonte de um programa é um conjunto de instruções, compreensível para a máquina que o executa, que ordena o funcionamento do programa no tempo, seu acesso a dados, suas possibilidades de interação etc. Em casos como o de <span class="estrangeirismo">TRANS.MISSION</span>, o código-fonte é o que a autora escreve, o que é lido por quem lê resulta da conspiração maquínica deflagrada pelo que autora escreveu. </p>
+        <p>O motor de <span class="estrangeirismo">TRANS.MISSION [A.DIALOGUE] </span>é uma função chamada <span class="codigo-no-meio-do-texto">story()</span>, uma série de instruções que definem como será, linha a linha, o texto mostrado na tela. A primeira linha do texto é</p>
+        <ol class="codigo-wrapper">
+            <li class="codigo ParaOverride-5"><span class="HI-variable">line</span>=<span class="HI-text">’INTERFERENCE: Begin Transmission.’</span>; </li>
+            <li class="codigo"><span class="HI-variable">last</span>.<span class="HI-function">appendChild</span>(<span class="HI-variable">document</span>.<span class="HI-function">createTextNode</span>(<span class="HI-function">capitaliseFirstLetter</span>(<span class="HI-variable">line</span>))); </li>
+            <li class="codigo"><span class="HI-variable">last</span>.<span class="HI-function">appendChild</span>(<span class="HI-variable">document</span>.<span class="HI-function">createElement</span>(<span class="HI-text">‘br’</span>)); </li>
+        </ol>
+        <p>O que esse código faz é simplesmente (1) criar uma linha (<span class="codigo-no-meio-do-texto">line</span>) contendo o texto <span class="estrangeirismo">‘INTERFERENCE: Begin Transmission.’</span> e (2) adicionar a linha criada ao elemento que contém o texto, com uma quebra de linha no final (3).</p>
+        <p>A segunda linha do texto é definida pelas seguintes instruções: </p>
+        <ol class="codigo-wrapper">
+            <li class="codigo ParaOverride-5"><span class="HI-variable">line</span>=<span class="HI-text">’RESPONSE::::: ‘</span>; <span class="HI-variable">last</span>.<span class="HI-function">appendChild</span>(<span class="HI-variable">document</span>.<span class="HI-function">createTextNode</span>(<span class="HI-variable">line</span>)); </li>
+            <li class="codigo"><span class="HI-variable">line</span>=<span class="HI-function">choose</span>(<span class="HI-variable">w</span>)+<span class="HI-text">’?’</span>; </li>
+            <li class="codigo"><span class="HI-variable">last</span>.<span class="HI-function">appendChild</span>(<span class="HI-variable">document</span>.<span class="HI-function">createTextNode</span>(<span class="HI-function">capitaliseFirstLetter</span>(<span class="HI-variable">line</span>))); </li>
+            <li class="codigo"><span class="HI-variable">last</span>.<span class="HI-function">appendChild</span>(<span class="HI-variable">document</span>.<span class="HI-function">createElement</span>(<span class="HI-text">‘br’</span>));</li>
+        </ol>
+        <p>Ou seja, (1) cria-se uma linha (line) com o texto<span class="estrangeirismo"> ‘RESPONSE::::: ’ </span>e adiciona-se a essa linha a (2) instrução <span class="codigo-no-meio-do-texto">choose(w)</span>, sucedida de um ponto de interrogação, depois (3) adiciona-se a linha ao texto com (4) uma quebra de linha. <span class="codigo-no-meio-do-texto">choose()</span> é uma nova função, um novo conjunto de instruções que seleciona aleatoriamente uma das palavras contidas na categoria de palavras indicada, assim <span class="codigo-no-meio-do-texto">choose(w)</span> selecionará ao acaso uma palavra da lista w que contém <span class="estrangeirismo">‘why’</span>, <span class="estrangeirismo">‘where’</span> e <span class="estrangeirismo">‘how’</span><app-nota [txt]="'O algoritmo do texto é uma expansão do algoritmo criado por Nick Monfort em The Two, um gerador de poemas curtos escrito em 2008 (CARPENTER, 2021a).'"></app-nota>.</p>
+        <p>Dessa maneira, com a sequência de instruções contidas na função <span class="codigo-no-meio-do-texto">story()</span>, que agenciam palavras por meio da função <span class="codigo-no-meio-do-texto">choose()</span> e as distribuem em uma sintaxe fixa e previamente definida, produz-se o texto que será lido na tela. Imediatamente após o carregamento do texto, e depois, a cada 80 segundos <span class="codigo-no-meio-do-texto">story() </span>é executada, deflagrando novos agenciamentos de palavras, produzindo iterações do texto. </p>
+        <p>Uma das numerosas iterações possíveis de <span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> (são ao todo 1,56 x 10<span class="CharOverride-3">178</span> possibilidades de diálogos distintos) é apresentada a seguir em tradução livre.</p>
+        <p class="texto-obras">
+            <span>INTERFERÊNCIA: Iniciar Transmissão.</span>
+                <span>RESPOSTA::::: Como?</span>
+                <span>CHAMADA::::::::: Com uma chamada.</span>
+                <span>RESPOSTA::::: O que surge de um desafio?</span>
+                <span>CHAMADA::::::::: Vendavais de inverno no Atlântico Norte.</span>
+                <span>INTERFERÊNCIA: Paisagens prometidas, para provocá-los.</span>
+                <span>RESPOSTA::::: As malas de teste já foram discriminadas?</span>
+                <span>CHAMADA::::::::: A condutora dá seus parabéns.  </span>
+                <span>RESPONSE::::: Por que os errantes insistem em diferentes passaportes?</span>
+                <span>INTERFERÊNCIA: As famílias continuaram por vinte e sete semanas.</span>
+                <span>CHAMADA::::::::: A comida apodreceu, ao menos é o que as fotografias parecem concluir.</span>
+                <span>RESPOSTA::::: Como o moderador transmite sua informação relativa a traduções do século XVI?</span>
+                <span>CHAMADA::::::::: A infraestrutura transatlântica não consegue interceptar esses toques irregulares.</span>
+                <span>RESPOSTA::::: Será que a recepcionista vai um dia quantificar essa colina?</span>
+                <span>CHAMADA::::::::: O caminho de Cornualha foi cansativo.</span>
+                <span>RESPOSTA::::: Condições não estão parcialmente legíveis. </span>
+                <span>INTERFERÊNCIA: Recebendo bipes brilhantes, repetidos “você está aí”...</span>
+                <span>RESPOSTA::::: Quem pode categorizar o oceano em aguaceiros como esse?</span>
+                <span>CHAMADA::::::::: Algumas partes do relato da testemunha do genealogista parecem estar carregadas.</span>
+                <span>RESPOSTA::::: Poderão os marinheiros algum dia deixar essas baías?</span>
+                <span>CHAMADA::::::::: Marinheiros do século XVII encomendaram atlas.</span>
+                <span>INTERFERÊNCIA: Alguns eram das ilhas Scilly. </span>
+                <span>RESPOSTA::::: Onde é que alguns deles frequentemente parece destruir pacotes do diagnóstico?</span>
+                <span>CHAMADA::::::::: Roteadores telefônicos levam anos para dar os primeiros relatórios. </span>
+                <span>RESPOSTA::::: As autoridades comunicaram?</span>
+                <span>CHAMADA::::::::: Instruções foram enviadas há muito tempo.</span>
+                <span>RESPOSTA::::: Pode ter havido sinais. </span>
+                <span>INTERFERÊNCIA: Tremores criptografados, navegam na tela. Um murmúrio, fortes sinais legíveis, enviando rapidamente...</span>
+                <span>RESPOSTA::::: Alguém codificou aquele clique?</span>
+                <span>CHAMADA::::::::: Conduítes distantes mantiveram contato.</span>
+                <span>INTERFERÊNCIA: Um aventureiro sinaliza para o moderador.</span>
+                <span>RESPOSTA::::: Que advertências ele deve sugerir?</span>
+                <span>CHAMADA::::::::: Baladas de artistas sobre promontórios exóticos sempre parte dessas delineações.</span>
+                <span>RESPOSTA::::: Mães de antigos colonos poderiam obter novos diagnósticos deles?</span>
+                <span>CHAMADA::::::::: Essencialmente, mas no inverno alguns manuais devem estar errados. </span>
+                <span>RESPOSTA::::: Onde foi feito o ultimo canal?</span>
+                <span>CHAMADA::::::::: As primeiras costas lembram aquelas do País de Gales.</span>
+                <span>INTERFERÊNCIA: Nesses manuais truncados, a rebentação brilha eternamente. </span>
+                <span>RESPOSTA::::: Seja como for… isso sugere mais antigas proposições?</span>
+                <span>INTERFERÊNCIA: Presságios de temporais estrangeiros aparecem no console.</span>
+                <span>RESPOSTA::::: O circuito está lá fora?</span>
+                <span>CHAMADA::::::::: A maioria deles supõe que está conectado.</span>
+                <span>INTERFERÊNCIA: Por favor, tente novamente.</span>
+        </p>
+        <p>O acaso é a semente generativa em <span class="titulo-obra">TRANS.MISSION</span>, operando a partir da função <span class="codigo-no-meio-do-texto">choose()</span>, cuja primeira instrução é a geração de um número aleatório usado para selecionar uma das palavras na categoria indicada a cada iteração, de 80 em 80 segundos. Esse acolhimento da aleatoriedade no agenciamento de palavras armazenadas em uma base de dados aproxima <span class="titulo-obra">TRANS.MISSION</span> do que Rettberg (op. cit.) refere como uma Poética Combinatória, que marca as primeiras experiências de criação de textos com uso de computadores e que encontra influências em experimentos literários dadaístas, surrealistas e oulipianos. A característica combinatória não implica, no entanto, em uma dissolução da agência humana e da autoria, uma vez a operação do acaso se dá sobre as bases de uma composição prévia. </p>
+        <p class="citacao">O computador, na verdade, não gera nada. Eu escrevi todas as palavras em todas as frases que aparecem na tela. Usei palavras, termos e frases que colhi em leituras de um amplo espectro de tópicos relativos a migrações transatlânticas e redes de comunicação, incluindo palavras comuns a transporte de cargas, navegação, viagem, telegrafia, comunicação sem fio, cartografia e telepatia. (BRIDGER; CARPENTER, 2013, p.9, tradução nossa)</p>
+        <p><span class="estrangeirismo">TRANS.MISSION </span>é uma tentativa de diálogo que se interrompe a todo tempo, muda de direção, sofre interferências constantes. Uma tentativa de comunicação a longa distância entre pessoas que se deslocam (ou se perdem) no mar. Mas também uma tentativa de comunicação a longa distância entre pessoas que se perdem na torrente informacional em que se encontra imersa a vida contemporânea. Para a autora, há também um diálogo entre o próprio programa e o navegador de internet, sem o qual o texto não pode ser lido. </p>
+        <p class="citacao">Existe também um diálogo acontecendo entre o arquivo JavaScript e o navegador. O navegador ‘chama’ o arquivo JavaScript por meio de uma série de protocolos de internet. O arquivo JavaScript responde à chamada do navegador com instruções. Ele diz ao navegador onload=“produce_stories()”. O navegador então segue lendo o roteiro. Pode se dizer que o navegador executa o roteiro transformando e traduzindo o texto do arquivo JavaScript no texto que vemos na tela (ibid., p.8, tradução nossa).</p>
+        <p>De certa maneira, o texto de Carpenter reconfigura as características da comunicação digital, a latência, o ruído, a interrupção, como elementos que provocam uma situação de irregularidade permanente no texto, que desarticula qualquer potencial fábula percebida em qualquer momento da experiência do texto.       </p>
+        <p>A impermanência do diálogo contrasta com a fixidez da primeira e da última fala, ambas vocalizadas por Interferência: “Iniciar transmissão” e “Por favor, tente novamente”. O fim remete ao começo, o texto retorna a si mesmo, mas transformado, produzindo uma infinidade de transmissões possíveis ou, ao menos, um fluxo que dura enquanto operar o dispositivo e resistir a vontade de quem lê.</p>
+        <p>A observação de <span class="titulo-obra">TRANS.MISSION [A.DIALOGUE]</span> engaja a imaginação para outras possibilidades de criação dramatúrgica que partam da apropriação das possibilidades típicas do meio digital como espaço de inscrição e leitura do texto dramatúrgico. A experimentação de tais possibilidades, cabe ressaltar, não implica em uma adesão ao que Manovich chama de ideologia californiana, “um coquetel letal de otimismo ingênuo, tecnoutopia e essa política neolibertária popularizada pela revista Wired” (op. cit., p.14, tradução nossa), mas aproxima-se mais da já citada noção de hackeio cultural (GAINZA, op. cit.) ou daquilo que o pensador brasileiro Arlindo Machado chama de desprogramação da técnica, uma prática de “(...) ‘enganar’ as máquinas, obrigando-as a funcionar  fora de seus parâmetros conhecidos e fora, também, de qualquer possibilidade de controle previsível” (MACHADO, 2001, p.101).</p>
     </div>
 </div>
