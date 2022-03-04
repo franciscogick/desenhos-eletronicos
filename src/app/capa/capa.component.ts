@@ -16,7 +16,7 @@ export class CapaComponent implements OnInit {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private sessionService: SessionService, private titleService: Title) {
-    this.titleService.setTitle('Desenhos eletrônicos | capa'); 
+    this.titleService.setTitle('Dramaturgias digitais | capa'); 
   }
 
   ngOnInit(): void {

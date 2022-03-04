@@ -13,7 +13,7 @@ export class TravessiaComponent implements OnInit, AfterViewInit {
 
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
   
-  constructor(private titleService: Title, private paragrafosService: ParagrafosService) { this.titleService.setTitle('Desenhos eletrônicos | Travessia');}
+  constructor(private titleService: Title, private paragrafosService: ParagrafosService) { this.titleService.setTitle('Dramaturgias digitais | Travessia');}
 
   ngOnInit(): void {
   }

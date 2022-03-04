@@ -14,7 +14,7 @@ export class DesenhosEletronicosComponent implements OnInit, AfterViewInit {
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) {
-    this.titleService.setTitle('Desenhos eletrônicos | Desenhos eletrônicos');
+    this.titleService.setTitle('Dramaturgias digitais | Dramaturgias digitais');
   }
 
   ngOnInit(): void {

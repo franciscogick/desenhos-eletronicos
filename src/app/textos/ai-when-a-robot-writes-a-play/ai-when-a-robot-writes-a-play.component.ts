@@ -21,7 +21,7 @@ export class AiWhenARobotWritesAPlayComponent implements OnInit, AfterViewInit, 
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
   
   constructor(private sessionService: SessionService, private titleService: Title, private paragrafosService: ParagrafosService) { 
-    this.titleService.setTitle('Desenhos eletrônicos | Corpus → AI: when a robot writes a play'); 
+    this.titleService.setTitle('Dramaturgias digitais | Corpus → AI: when a robot writes a play'); 
   }
 
   ngOnInit(): void {

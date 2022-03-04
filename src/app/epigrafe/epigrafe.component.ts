@@ -26,7 +26,7 @@ export class EpigrafeComponent implements OnInit,AfterViewInit {
   //@ViewChild('out',{static: false}) elOut: ElementRef;
 
   constructor(private renderer: Renderer2, private titleService: Title) {
-    this.titleService.setTitle('Desenhos eletrônicos | epígrafe'); 
+    this.titleService.setTitle('Dramaturgias digitais | epígrafe'); 
   }
 
   ngOnInit():void {

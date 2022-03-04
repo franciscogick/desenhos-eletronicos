@@ -22,7 +22,7 @@ export class ReferenciasComponent implements OnInit {
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private renderer: Renderer2, private highlightService: HighlightService, private sessionService: SessionService, private httpService: HttpService, private titleService: Title) { this.titleService.setTitle('Desenhos eletrônicos | Referências'); }
+  constructor(private renderer: Renderer2, private highlightService: HighlightService, private sessionService: SessionService, private httpService: HttpService, private titleService: Title) { this.titleService.setTitle('Dramaturgias digitais | Referências'); }
 
   ngOnInit(): void {
     this.httpService.getReferencias().pipe(takeUntil(this.destroy$))

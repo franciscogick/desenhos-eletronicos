@@ -19,7 +19,7 @@ export class FigurasComponent implements OnInit {
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private sessionService: SessionService, private httpService: HttpService, private titleService: Title) { this.titleService.setTitle('Desenhos eletrônicos | Lista de figuras'); }
+  constructor(private sessionService: SessionService, private httpService: HttpService, private titleService: Title) { this.titleService.setTitle('Dramaturgias digitais | Lista de figuras'); }
 
   ngOnInit(): void {
     this.httpService.getFiguras().pipe(takeUntil(this.destroy$))

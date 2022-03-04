@@ -30,7 +30,7 @@ export class DuasEntradasComponent implements OnInit,OnDestroy,AfterViewInit {
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private renderer: Renderer2, private sessionService: SessionService, private titleService: Title, private paragrafosService: ParagrafosService) {
-    this.titleService.setTitle('Desenhos eletrônicos | Duas entradas');
+    this.titleService.setTitle('Dramaturgias digitais | Duas entradas');
   }
 
   ngOnInit(): void {

@@ -18,7 +18,7 @@ export class RizomaComponent implements OnInit {
   user: User;
 
   constructor(private sessionService: SessionService, private router: Router, private titleService: Title) {
-    this.titleService.setTitle('Desenhos eletrônicos | rizoma');  
+    this.titleService.setTitle('Dramaturgias digitais | rizoma');  
   }
 
   ngOnInit(): void {

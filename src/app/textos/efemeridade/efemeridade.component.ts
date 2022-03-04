@@ -14,7 +14,7 @@ export class EfemeridadeComponent implements OnInit, AfterViewInit {
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
-    this.titleService.setTitle('Desenhos eletrônicos | Efemeridade/obsolescência');
+    this.titleService.setTitle('Dramaturgias digitais | Efemeridade/obsolescência');
   }
 
   ngOnInit(): void {

@@ -13,7 +13,7 @@ export class LastSongOfVioletaParraComponent implements OnInit,AfterViewInit {
   
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
-  constructor(private titleService: Title, private paragrafosService: ParagrafosService) {this.titleService.setTitle('Desenhos eletrônicos | Corpus → Last Song of Violeta Parra'); }
+  constructor(private titleService: Title, private paragrafosService: ParagrafosService) {this.titleService.setTitle('Dramaturgias digitais | Corpus → Last Song of Violeta Parra'); }
 
   ngOnInit(): void {
   }

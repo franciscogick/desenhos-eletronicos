@@ -14,7 +14,7 @@ export class DramaturgiaTecnologiaComponent implements OnInit, AfterViewInit {
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) {
-    this.titleService.setTitle('Desenhos eletrônicos | Dramaturgia e tecnologia');
+    this.titleService.setTitle('Dramaturgias digitais | Dramaturgia e tecnologia');
   }
 
   ngOnInit(): void {
