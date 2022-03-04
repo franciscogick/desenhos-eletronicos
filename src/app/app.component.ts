@@ -8,7 +8,7 @@ import { ScrollService } from './scroll.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Desenhos Eletrônicos';
+  title = 'Dramaturgias digitais';
 
   constructor(private titleService: Title) {
     this.titleService.setTitle(this.title);
