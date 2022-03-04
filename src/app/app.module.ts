@@ -48,24 +48,6 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { Youtube2Component } from './youtube2/youtube2.component';
-import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
-import { QuestaoComponent } from './apresentacao/questao/questao.component';
-import { HackeioUmComponent } from './apresentacao/hackeio-um/hackeio-um.component';
-import { ExistenciasComponent } from './apresentacao/existencias/existencias.component';
-import { LiteraturaEletronicaComponent } from './apresentacao/literatura-eletronica/literatura-eletronica.component';
-import { CorpusComponent } from './apresentacao/corpus/corpus.component';
-import { SamplerComponent } from './apresentacao/sampler/sampler.component';
-import { TextoPorVirComponent } from './apresentacao/texto-por-vir/texto-por-vir.component';
-import { TextoPorVir2Component } from './apresentacao/texto-por-vir2/texto-por-vir2.component';
-import { CenaSensoresComponent } from './apresentacao/cena-sensores/cena-sensores.component';
-import { ObrigadoComponent } from './apresentacao/obrigado/obrigado.component';
-import { HackeioDoisComponent } from './apresentacao/hackeio-dois/hackeio-dois.component';
-
-import { CapaComponent as ApresentacaoCapaComponent } from './apresentacao/capa/capa.component';
-import { EpigrafeComponent as ApresentacaoEpigrafeComponent } from './apresentacao/epigrafe/epigrafe.component';
-import { DramaturgiaTecnologiaComponent as ApresentacaoDramaturgiaTecnologiaComponent } from './apresentacao/dramaturgia-tecnologia/dramaturgia-tecnologia.component';
-import { DramaturgiaCodigoComponent as ApresentacaoDramaturgiaCodigoComponent } from './apresentacao/dramaturgia-codigo/dramaturgia-codigo.component';
-import { ReferenciasComponent as ApresentacaoReferenciasComponent } from './apresentacao/referencias/referencias.component';
 import { PrologoComponent } from './textos/prologo/prologo.component';
 import { APedraDeEuripedesComponent } from './textos/a-pedra-de-euripedes/a-pedra-de-euripedes.component';
 import { NovasGrafiasComponent } from './textos/novas-grafias/novas-grafias.component';
@@ -119,23 +101,6 @@ import { AbstractComponent } from './abstract/abstract.component';
     SafePipe,
     YoutubeComponent,
     Youtube2Component,
-    ApresentacaoComponent,
-    QuestaoComponent,
-    HackeioUmComponent,
-    ExistenciasComponent,
-    LiteraturaEletronicaComponent,
-    CorpusComponent,
-    SamplerComponent,
-    TextoPorVirComponent,
-    TextoPorVir2Component,
-    CenaSensoresComponent,
-    ObrigadoComponent,
-    HackeioDoisComponent,
-    ApresentacaoCapaComponent,
-    ApresentacaoEpigrafeComponent,
-    ApresentacaoDramaturgiaTecnologiaComponent,
-    ApresentacaoDramaturgiaCodigoComponent,
-    ApresentacaoReferenciasComponent,
     PrologoComponent,
     APedraDeEuripedesComponent,
     NovasGrafiasComponent,
