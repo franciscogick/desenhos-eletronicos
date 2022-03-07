@@ -478,14 +478,14 @@ const referencias = [
     "rec_number":466,
     "type":"book",
     "author":[
-        {"name":"Ronald J. Diebert"}
+        {"name":"Ronald J. Deibert"}
     ],
     "pub_location":"Nova York",
     "publisher":"Columbia University Press",
     "date":{"year":1997},
     "title":"Parchment, Printing, and Hypermedia",
     "sub_title":"Communication in World",
-    "textual_id":"Diebert-1997",
+    "textual_id":"Deibert-1997",
     "cited":true
 },
 {
@@ -609,6 +609,23 @@ const referencias = [
     "access":{"year":2020,"month":07,"day":23},
     "textual_id":"Elgawahergy-2014"
 },
+{
+    "rec_number":431,
+    "type":"article",
+    "author":[
+        {"name":"Barbara Bridger"},
+        {"name":"J R Carpenter"}
+    ],
+    "number":1,
+    "pages":"373-386",
+    "publisher":null,
+    "journal":"Journal of Writing in Creative Practice",
+    "volume":6,
+    "date":{"year":2013,"month":12},
+    "title":"Call and response",
+    "textual_id":"BridgerCarpenter-2013"
+},
+
 {
     "rec_number":430,
     "type":"book",
@@ -764,6 +781,21 @@ const referencias = [
     "access":{"year":2020,"month":09,"day":23},
     "title":"Mundos que se desvanecen. Tecnoteatros y performatividad",
     "textual_id":"ROSALES-2015",
+    "cited":true
+},
+{
+    "rec_number":459,
+    "type":"article",
+    "author":[
+        {"name":"María Ángeles Grande Rosales"}
+    ],
+    "number":1,
+    "pages":"27-49",
+    "journal":"Caracteres",
+    "volume":97,
+    "date":{"year":2020},
+    "title":"El espectador digital y el teatro diseminado",
+    "textual_id":"ROSALES-2020",
     "cited":true
 },
 {
@@ -998,11 +1030,11 @@ const referencias = [
     "rec_number":473,
     "type":"website",
     "site":"Live Counter",
-    "date":{"year":2021,"month":04,"day":20},
+    "date":{"year":2022,"month":02,"day":20},
     "title":"How big is the internet? (In petabytes)",
     "url":"https://www.live-counter.com/how-big-is-the-internet/",
-    "access":{"year":2021,"month":04,"day":20},
-    "textual_id":"Counter-2021",
+    "access":{"year":2022,"month":02,"day":20},
+    "textual_id":"Counter-2022",
     "cited":true
 },
 {
@@ -1128,10 +1160,25 @@ const referencias = [
     "site":"LUCKYSOAP Co.",
     "date":{"year":2021},
     "title":"J. R. CARPENTER || TRANS.MISSION [A.DIALOGUE]",
-    "url":"https://luckysoap.com/statements/transmission.html",
+    "url":"https://luckysoap.com/generations/transmission.html",
     "access":{"year":2021,"month":3,"day":20},
     "textual_id":"Carpenter-2021",
     "cited":true
+},
+{
+    "rec_number":385,
+    "type":"website",
+    "author":[
+        {"name":"J R Carpenter"}
+    ],
+    "site":"LUCKYSOAP Co.",
+    "date":{"year":2021},
+    "title":"J. R. CARPENTER || TRANS.MISSION [A.DIALOGUE]",
+    "url":"https://luckysoap.com/statements/transmission.html",
+    "access":{"year":2021,"month":3,"day":20},
+    "textual_id":"Carpenter-2021b",
+    "cited":true,
+    "distinct":'b'
 },
 {
     "rec_number":383,
@@ -1513,7 +1560,28 @@ const referencias = [
     "textual_id":"Kerkhoven-2009",
     "cited":true
 },
+{
+    "rec_number":481,
+    "type":"article",
+    "author":[
+        {"name":"N Köbis"},
+        {"name":"L Mossink"}
+    ],
+    "number":1,
+    "pages":"7-11",
+    "journal":"Computers in Human Behavior",
+    "volume":114,
+    "date":{"year":2021,"month":1},
+    "title":"Artificial intelligence versus Maya Angelou",
+    "sub_title":"Experimental evidence that people cannot differentiate AI-generated from human-written poetry",
+    "textual_id":"Kobis-2021",
+    "cited":true
+},
+
+
 /*
+
+
 {
     "rec_number":347,
     "type":"article",
@@ -1716,7 +1784,7 @@ const referencias = [
 {
     "rec_number":469,
     "type":"book",
-    "editor":[
+    "author":[
         {"name":"Carolina Gainza"}
     ],
     "pub_location":"Cidade do México",
@@ -1725,6 +1793,19 @@ const referencias = [
     "title":"Narrativas y poéticas digitales en América Latina",
     "title":"producción literaria en el capitalismo informacional",
     "textual_id":"Gainza-2019b",
+    "cited":true
+},
+{
+    "rec_number":469,
+    "type":"book",
+    "author":[
+        {"name":"Arlindo Machado"}
+    ],
+    "pub_location":"Rio de Janeiro",
+    "publisher":"Rios Ambiciosos",
+    "date":{"year":2001},
+    "title":"O quarto iconoclasmo e outros ensaios hereges",
+    "textual_id":"Machado-2001",
     "cited":true
 },
 
@@ -1839,6 +1920,20 @@ const referencias = [
     "access":{"year":null,"month":null,"day":null},
     "textual_id":"Simanowski-2010"
 },*/
+{
+    "rec_number":321,
+    "type":"book",
+    "author":[
+        {"name":"Lev Manovich"}
+    ],
+    "pages":"1-423",
+    "pub_location":"Buenos Aires",
+    "publisher":"Paidós",
+    "date":{"year":2006},
+    "title":"El lenguaje de los nuevos medios de comunicación",
+    "sub_title":"La imagen en la era digital",
+    "textual_id":"Manovich-2006"
+},
 {
     "rec_number":321,
     "type":"book",
@@ -2611,7 +2706,7 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     ],
     "book": {
         "editor":[
-            {"name":"M ADALAIDE"},
+            {"name":"M Adalaide"},
             {"name":"T Swiss"}
         ],
         "pub_location":"Cambridge",
@@ -2623,7 +2718,7 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "date":{"year":2006},
     "title":"The Time of Digital Poetry",
     "sub_title":"From Object to Event",
-    "textual_id":"Finglass-2020",
+    "textual_id":"Hayles-2006",
     "cited":true
 },
 {
@@ -2794,9 +2889,38 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "textual_id":"Veredasbot-2020",
     "cited":true
 },
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"Young Vic",
+    "title":"AI | Young Vic Website",
+    "url":"https://www.youngvic.org/whats-on/ai",
+    "access":{"day":15,"month":10,"year":2021},
+    "textual_id":"YoungVic-2021",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"Wikipedia",
+    "title":"Hacker",
+    "url":"https://pt.wikipedia.org/wiki/Hacker",
+    "access":{"day":18,"month":12,"year":2021},
+    "textual_id":"Wikipedia-hacker-2021",
+    "cited":true
+},
+{
+    "rec_number":391,
+    "type":"website",
+    "site":"Observatório da literatura digital brasileira",
+    "title":"Atlas da Literatura Digital Braileira",
+    "url":"https://www.observatorioldigital.ufscar.br/#atlas",
+    "access":{"day":12,"month":10,"year":2021},
+    "textual_id":"Atals-2021",
+    "cited":true
+},
 // adicoes 02/03
 /*
-GRANDE SERTÃO. “Eu atravesso as coisas — e no meio da travessia não vejo! — só estava era entretido na ideia dos lugares de saída e de chegada”. 23 dez. 2020. Twitter: @veredasbot. Disponível em: https://twitter.com/veredasbot/status/1341927019119042560. Acesso em: 12 fev. 2021
 
 
 

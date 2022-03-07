@@ -1,0 +1,7 @@
+<p class="citacao" *ngIf="!inline">
+    <span [class.estrangeirismo]="switch" [innerHTML]="!switch ? portugues : original"></span><citacao [id]="ref" [pg]="pg" [min]="min" [abrv]="abrv" [obs]="!switch ? obs : null"></citacao>&nbsp;<span class="switcher" *ngIf="portugues && original" (click)="switchLanguage()" [innerHTML]="!switch ? 'original' : 'tradução'"></span>
+</p>
+
+<ng-container *ngIf="inline">
+    <span [class.estrangeirismo]="switch">{{quotes ? '"' : ''}}{{!switch ? portugues : original}}{{quotes ? '"' : ''}}</span><citacao [id]="ref" [pg]="pg" [min]="min" [abrv]="abrv" [obs]="!switch ? obs : null"></citacao>&nbsp;<span class="switcher" *ngIf="portugues && original" (click)="switchLanguage()" [innerHTML]="!switch ? 'original' : 'tradução'"></span>
+</ng-container>

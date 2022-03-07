@@ -61,6 +61,7 @@ import { ConsideracoesFinaisComponent } from './consideracoes-finais/consideraco
 import { AbstractComponent } from './abstract/abstract.component';
 import { HiperdramaComponent } from './textos/hiperdramas-de-charles-deemer/hiperdrama/hiperdrama.component';
 import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipertexto/hipertexto.component';
+import { CitacaoDiretaComponent } from './textos/citacao-direta/citacao-direta.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipe
     ConsideracoesFinaisComponent,
     AbstractComponent,
     HiperdramaComponent,
-    HipertextoComponent
+    HipertextoComponent,
+    CitacaoDiretaComponent
   ],
   imports: [
     BrowserModule,

@@ -43,6 +43,16 @@ p.anotacao a.nav-lexia {
     text-decoration: underline;
 }
 
+a.nav-lexia:visited {
+    display: inline-block;
+    color: #fff;
+    background: /*#09FFEA*/#000;
+    font-weight: bold !important;
+    text-decoration: none;
+    padding: 0rem .2rem;
+    border-radius: .2rem;
+}
+
 h1 {
     margin-bottom: 1.5rem;
     line-height: 1.25;

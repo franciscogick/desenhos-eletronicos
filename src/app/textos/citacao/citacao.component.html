@@ -1,5 +1,5 @@
 <div class="citacao-wrapper" *ngIf="referencia">
-    <span [innerHTML]="referencia | citador:formato:pg:min:abrv:obs:par"></span>
+    <span [innerHTML]="referencia | citador:formato:pg:min:abrv:obs:par:referencia.distinct"></span>
     <div class="citacao-pop">
         <div class="label">referência</div>
         <p class="content" [innerHTML]="referencia | referenciador"></p>

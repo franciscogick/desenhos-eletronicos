@@ -6,11 +6,12 @@ import { Referencia } from '../interfaces/referencia';
 })
 export class CitadorPipe implements PipeTransform {
 
-  transform(ref: Referencia, formato:string, pg: string, min: boolean, abrv: string, obs: string, par: boolean = true): string {
+  transform(ref: Referencia, formato:string, pg: string, min: boolean, abrv: string, obs: string, par: boolean = true, distinct:string): string {
     if (!ref) return null;
     if (!formato || formato === '') formato = 'abnt';
     if (!pg || pg === '') pg = null;
     if (!obs || obs === '') obs = null;
+    if (!distinct) distinct = '';
 
     let autor = '';
     let ano = 0;
@@ -45,10 +46,12 @@ export class CitadorPipe implements PipeTransform {
       // ano
       ano = ref.date?.year || ref.access.year;
 
-      if (min) return `${par ? '(':''}${ano}${pg ? ', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
-      if (abrv !== null) return `${par ? '(':''}${abrv}${pg?', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
+      if (abrv !== null && min) return `${par ? '(':''}${abrv}${pg?', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
 
-      return `${par ? '(':''}${autor}, ${ano}${pg ? ', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
+      if (min) return `${par ? '(':''}${ano}${pg ? ', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
+      if (abrv !== null) return `${par ? '(':''}${autor}, ${abrv}${pg?', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
+
+      return `${par ? '(':''}${autor}, ${ano}${distinct}${pg ? ', '+pg:''}${obs ? ', '+obs:''}${par ? ')':''}`;
     }
   }
 

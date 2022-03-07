@@ -50,7 +50,7 @@ export class ReferenciadorPipe implements PipeTransform {
         if (ref.author) { autor = createAuthors(ref.author); }
         else if (ref.editor) { autor = createAuthors(ref.editor); }
 
-        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.edition?ref.edition + '. ':''}${ref.pub_location}: ${ref.publisher}, ${ref.date.year}.`; 
+        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.edition?ref.edition + '. ':''}${ref.pub_location}: ${ref.publisher}, ${ref.date.year}${ref.distinct || ''}.`; 
       }
       if (ref.type == 'book-chapter') {
         //SOBRENOME, Nome. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, ano de publicação da obra
@@ -75,9 +75,9 @@ export class ReferenciadorPipe implements PipeTransform {
         if (ref.author) {
           autor = createAuthors(ref.author);
           
-          return `${autor}${ref.author?'':'.'} ${ref.site}, ${ref.date.year}. <i>${ref.title}</i>. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
+          return `${autor}${ref.author?'':'.'} ${ref.site}, ${ref.date.year}${ref.distinct || ''}. <i>${ref.title}</i>. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         } else {
-          return `${ref.title}. ${ref.site}${(ref.date && ref.date.year)?', '+ref.date.year:''}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
+          return `${ref.title}. ${ref.site}${(ref.date && ref.date.year)?', '+ref.date.year+ref.distinct || '':''}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         }         
       }
       if (ref.type == 'video') {

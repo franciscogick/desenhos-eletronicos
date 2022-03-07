@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { interval, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ParagrafosService } from 'src/app/paragrafos.service';
 
 @Component({
@@ -7,7 +9,7 @@ import { ParagrafosService } from 'src/app/paragrafos.service';
   templateUrl: './introducao.component.html',
   styleUrls: ['./introducao.component.css']
 })
-export class IntroducaoComponent implements OnInit,AfterViewInit {
+export class IntroducaoComponent implements OnInit,AfterViewInit,OnDestroy {
 
   nodeId='101';
 
@@ -18,6 +20,8 @@ export class IntroducaoComponent implements OnInit,AfterViewInit {
     {texto:'<b>Novas grafias 2</b> discute características observadas nas dramaturgias digitais analisadas.',link:'novas-grafias-2',name:'Novas grafias 2'}
   ]
 
+  destroy$: Subject<boolean> = new Subject<boolean>();
+
   @ViewChild('innerEl', { read: ElementRef }) public innerEl: ElementRef<any>;
 
   constructor(private titleService: Title, private paragrafosService: ParagrafosService) { 
@@ -26,10 +30,17 @@ export class IntroducaoComponent implements OnInit,AfterViewInit {
 
   ngOnInit(): void {
     this.shuffle(this.lexias);
+    interval(5000).pipe(takeUntil(this.destroy$))
+    .subscribe(() => this.shuffle(this.lexias));
   }
 
   ngAfterViewInit(): void {
     this.paragrafosService.addNumbers(this.innerEl);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
   shuffle(array) {
@@ -38,5 +49,7 @@ export class IntroducaoComponent implements OnInit,AfterViewInit {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
+
+  
 
 }

@@ -22,7 +22,7 @@ constructor(rendererFactory: RendererFactory2) {
   }
 
   addNumbers(el:any):void {
-    const pars = el.nativeElement.querySelectorAll('p:not(.anotacao)');
+    const pars = el.nativeElement.querySelectorAll('p:not(.anotacao):not(.content)');
     
     Array.from(pars).forEach((p,n) => {
       const div = this.renderer.createElement('span');

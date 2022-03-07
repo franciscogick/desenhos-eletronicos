@@ -1,0 +1,15 @@
+p {
+    margin-bottom: .5rem;
+}
+span.switcher {
+    background: #999;
+    color: #fff;
+    border: none;
+    font-family: 'Source Code Pro',monospace;
+    font-style: normal;
+    font-size: 90%;
+    border-radius: .25rem;
+    padding: 0 .25rem;
+    cursor: pointer;
+    white-space: nowrap;
+}

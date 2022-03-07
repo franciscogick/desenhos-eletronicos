@@ -30,5 +30,6 @@ export interface Referencia {
         publisher: string;
         edition?: string;
         date:{year:number};
-    },  
+    }, 
+    distinct?: string; 
 }
