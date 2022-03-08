@@ -13,6 +13,14 @@
     color: #fff;
 }
 
+#video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
 
 button {
     border: 1px solid #fff;

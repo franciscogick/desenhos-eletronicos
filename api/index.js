@@ -77,7 +77,7 @@ const edges = [
     //{from: 104, to: 10412, dashes: true},
     {from: 104, to: 10413, dashes: true},
     {from: 104, to: 10414, dashes: true},
-    {from: 105, to: 101, dashes: true},
+    //{from: 105, to: 101, dashes: true},
     //{from: 105, to: 106, dashes: true},
     //{from: 105, to: 1051, dashes: true},
     {from: 106, to: 1061, dashes: true},

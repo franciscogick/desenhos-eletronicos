@@ -1,0 +1,41 @@
+.wrapper-manifesto {
+    position: relative;
+    margin: 4rem 0;
+    display: flex;
+    pointer-events: none;
+    user-select: none;
+    
+}
+.img {
+    position: absolute;
+    right: -5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20rem;
+}
+img {
+    width: 100%;
+    display: block;
+}
+.label {
+    position: absolute;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgba(0,0,0,.05);
+}
+.manifesto {
+    font-size: 8rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .wrapper-manifesto {
+        overflow: hidden;
+    }
+}

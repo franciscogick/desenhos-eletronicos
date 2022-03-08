@@ -29,7 +29,6 @@ export class CitacaoComponent implements OnInit {
     this.httpService.getReferenciaByName(this.id).pipe(takeUntil(this.destroy$))
     .subscribe(referencia => {
       this.referencia = referencia;
-      console.log(referencia)
     });
   }
 

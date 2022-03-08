@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -11,7 +11,7 @@ import { SessionService } from '../session.service';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit,OnDestroy {
+export class InicioComponent implements OnInit,AfterViewInit,OnDestroy {
 
   user: User;
   flash: boolean;
@@ -25,6 +25,12 @@ export class InicioComponent implements OnInit,OnDestroy {
   constructor(private sessionService: SessionService, private router: Router, private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this._formBuilder.group({
+      name: ['', [Validators.required,Validators.minLength(3)]],
+    });
+  }
+
+  ngAfterViewInit():void {
     console.log(this.sessionService.redirectUrl);
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {
       if (user) {
@@ -37,10 +43,6 @@ export class InicioComponent implements OnInit,OnDestroy {
         //console.log(storedUser,sessionStorage.getItem('rizomaUser'))
         if (storedUser?.name) this.sessionService.registerUser(storedUser);
       }
-    });
-
-    this.form = this._formBuilder.group({
-      name: ['', [Validators.required,Validators.minLength(3)]],
     });
   }
 

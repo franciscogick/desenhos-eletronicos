@@ -62,6 +62,7 @@ import { AbstractComponent } from './abstract/abstract.component';
 import { HiperdramaComponent } from './textos/hiperdramas-de-charles-deemer/hiperdrama/hiperdrama.component';
 import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipertexto/hipertexto.component';
 import { CitacaoDiretaComponent } from './textos/citacao-direta/citacao-direta.component';
+import { ManifestoDebrayComponent } from './textos/manifesto-debray/manifesto-debray.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { CitacaoDiretaComponent } from './textos/citacao-direta/citacao-direta.c
     AbstractComponent,
     HiperdramaComponent,
     HipertextoComponent,
-    CitacaoDiretaComponent
+    CitacaoDiretaComponent,
+    ManifestoDebrayComponent
   ],
   imports: [
     BrowserModule,
