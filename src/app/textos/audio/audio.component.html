@@ -1,0 +1,18 @@
+<div class="audio" *ngIf="src">
+    <div class="controls">
+        <div class="controls-1">
+            <div class="play-pause" (click)="playPause()">
+                <svg id="Groupe_21" data-name="Groupe 21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g id="pause" *ngIf="playing">
+                        <rect width="8" height="24" fill="#000"/>
+                        <rect width="8" height="24" transform="translate(16)" fill="#000"/>
+                    </g>
+                    <path id="play" *ngIf="!playing" d="M8462,13780l24,12.429L8462,13804h0Z" transform="translate(-8462 -13780)" fill="#000"/>
+                </svg>
+            </div>
+            <div class="track">
+                <div class="head" [style.left.%]="progress"></div>
+            </div>
+        </div>
+    </div>    
+</div>

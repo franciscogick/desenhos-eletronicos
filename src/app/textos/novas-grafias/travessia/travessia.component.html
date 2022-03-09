@@ -1,0 +1,312 @@
+<div id="wrapper_mapa" #wrapper_mapa drag>
+    <div id="mapa" #mapa>
+      
+      <div class="trabalho" id="osso-chico" #chico>
+        <div class="imagem" id="imagem1" (mouseover)="onMouseOverBartolomeu()" (mouseout)="onMouseOutBartolomeu()">
+          <!-- BARTOLOMEU -->
+          <svg id="olhos-tristes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1098 744">
+            <g transform="translate(-124 -403)">
+              <text id="TRISTES" transform="translate(142 714)" fill="#181516" font-size="328" font-family="Fira Sans Condensed" font-weight="700"><tspan x="0" y="0">TRISTES</tspan></text>
+              <text id="OLHOS" transform="translate(124 1060)" fill="#181516" font-size="385" font-family="Fira Sans Condensed" font-weight="700"><tspan x="0" y="0">OLHOS</tspan></text>
+            </g>
+          </svg>
+          
+          <img src="/assets/travessia/bartolomeu.png" alt="bartolomeu" #bartolomeu1>
+          <img src="/assets/travessia/bartolomeu-T800.png" alt="bartolomeu T800" #bartolomeu2>
+          <img src="/assets/travessia/bartolomeu-caveira.png" alt="bartolomeu caveira" #bartolomeu3>
+        </div>
+  
+        <div class="imagem" id="imagem3">
+          <img src="/assets/travessia/perna1.png" alt="perna">
+        </div>
+  
+        <div class="imagem" id="imagem2-alt">
+          <img src="/assets/travessia/coluna-alt.png" alt="coluna">
+  
+          <div class="coluna_texto" [id]="'coluna_texto'+idx" *ngFor="let f of fabula; let idx = index;" [style.left.px]="f.x" [style.top.px]="f.y">
+            <span [innerHTML]="f.txt"></span>
+          </div>
+        </div>
+  
+        <div class="imagem" id="imagem4">
+          <img src="/assets/travessia/pe.png" alt="pe">
+        </div>
+  
+        <div class="imagem" id="imagem5">
+          <img src="/assets/travessia/pe1.png" alt="pe1">
+        </div>
+  
+        <div class="imagem" id="imagem6">
+          <img src="/assets/travessia/tronco.png" alt="tronco">
+        </div>
+        <div class="imagem multiply" id="imagem6b">
+          <img src="/assets/travessia/cranio.jpg" alt="cranio">
+        </div>
+  
+        <div class="imagem multiply" id="imagem7">
+          <img src="/assets/travessia/circulacao-face.png" alt="circulação da face">
+        </div>
+  
+        <div class="imagem" id="imagem8">
+          <img src="/assets/travessia/bartolomeu-estatua.png" alt="bartolomeu estátua">
+        </div>
+  
+        <div class="video" id="video2a">
+          <app-video [src]="'/assets/travessia/pe1.mp4'"></app-video>
+        </div>
+        <div class="video" id="video2b">
+          <app-video [src]="'/assets/travessia/pe2.mp4'"></app-video>
+        </div>
+        <div class="video" id="video2c">
+          <app-video [src]="'/assets/travessia/pe3.mp4'"></app-video>
+        </div>
+        <div class="video" id="video2d">
+          <app-video [src]="'/assets/travessia/pe4.mp4'"></app-video>
+        </div>
+  
+        <div class="video" id="video3a">
+          <app-video [src]="'/assets/travessia/joelho2.mp4'"></app-video>
+        </div>
+        <div class="video" id="video3b">
+          <app-video [src]="'/assets/travessia/joelho1.mp4'"></app-video>
+        </div>
+        <div class="video" id="video3c">
+          <app-video [src]="'/assets/travessia/tornozelo.mp4'"></app-video>
+        </div>
+  
+        <div class="video" id="video4">
+          <app-video [src]="'/assets/travessia/cervical.mp4'"></app-video>
+        </div>
+  
+        <div (click)="onZoomIn('texto1')" class="texto_link" id="link_texto1" #link_texto1>
+          <span>Trocanter</span>
+        </div>
+  
+        <div (click)="onZoomIn('texto2')" class="texto_link" id="link_texto2" #link_texto2>
+          <span>A pessoa dentro tem osso</span>
+        </div>
+  
+        <div (click)="onZoomIn('texto3')" class="texto_link" id="link_texto3" #link_texto3>
+          <span>Concussão</span>
+        </div>
+  
+        <div (click)="onZoomIn('texto4')" class="texto_link" id="link_texto4" #link_texto4>
+          <span>Automóveis guiados por robôs</span>
+        </div>
+  
+        <div (click)="onZoomIn('texto5')" class="texto_link" id="link_texto5" #link_texto5>
+          <span>Maior que qualquer coisa do Welles</span>
+        </div>
+  
+        <div class="texto" id="texto1" #texto1>
+          <div class="link_back" (click)="onZoomOut('texto1')"><img src="/assets/travessia/back.png" ></div>
+          <div class="audio">
+            <app-audio [container]="'texto1'" [src]="'trocanter.mp3'"></app-audio>
+          </div>
+          <p>
+            <span>gosto de trocanter</span><br/> 
+            <span>da palavra trocanter</span><br/>
+            <span>gosto do pedaço do osso</span><br/>
+            <span>do côndilo</span><br/>
+            <span>abaixo do joelho</span><br/>
+            <span>o joelho</span><br/>
+            <span>dói</span><br/>
+            <span>por longas horas sentadas</span><br/> 
+            <span>gosto de maléolo</span><br/> 
+            <span>por longas horas sentadas em uma cadeira consumida pela idade já frágil já desequilibrada</span><br/>
+            <span>por longas horas sentadas</span><br/>
+            <span>pelo tempo que atravessa alguém sentada em uma cadeira consumida pela idade já frágil já</span><br/> 
+            <span>não sei se gosto de patela</span><br/>
+            <span>gosto de artelho</span><br/>
+            <span>calcâneo</span>
+          </p>
+          <p>
+            <span>as últimas páginas do volume 15 da Enciclopédia Delta Universal são feitas de um filme plástico transparente e têm impresso em cores um corpo humano de homem branco em diferentes profundidades primeiro o homem como a gente vê na rua mas nu depois o mesmo homem sem pele como se um colonizador ou um policial ou um médico ou um outro homem de bem tivesse removido cuidadosamente toda a sua pele e ele agora existisse desse jeito em carne viva as páginas são lisas e fazem um suave ruído quando se separam se você volta a página é um milagre que acontece e o homem tem pele novamente como um são bartolomeu regenerado no teto da capela cistina mas você passa a página e o suplício novamente se abate sobre aquele homem mais uma página ruído suave essas páginas têm um cheiro especial diferente do cheiro de livro antigo guardado cheiro de papel com mofo e pó essas páginas tem um cheiro diferente não sei de que é como se tivessem removido dele toda a carne e restassem somente os nervos e espinha e cérebro e os olhos depois removidos os nervos na próxima página os ossos apenas eles limpos sem resíduo de sangue ou carne ou nervo ou vísceras mortos como só podem existir quando mortos é uma condição do osso por isso a morte é retratada como um esqueleto e o Esqueleto do desenho é retratado como um esqueleto e alguém pode argumentar que ele está vivo mas eu perguntaria se aquilo é vida e o símbolo de venenoso é um crânio com dois ossos longos cruzados osso visível é morte eu cheirava as páginas passava uma a uma pra frente e pra trás e via aquele homem morrer e voltar à vida pelas minhas pequenas mãos de criança como se fosse eu mesmo o policial no porão da delegacia fazendo pequenos cortes na pele de alguém e puxando a pele e ouvindo entre os gritos o ruído que a pele faz quando se separa da carne eu sei você deve estar pensando que eu não tive uma infância saudável eu era uma criança curiosa</span>
+          </p>
+          <p>
+            <span>tubérculo</span><br/>
+            <span>metatarso</span><br/> 
+            <span>eu queria saber o que tem por dentro</span><br/>
+            <span>fíbula</span><br/>
+            <span>fêmur</span><br/>
+            <span>você pode pensar em mim como uma fã uma espécie de fã</span><br/>
+            <span>eu queria ver os bastidores</span><br/>
+            <span>entender como alguém </span><br/>
+            <span>fica em pé</span><br/>
+            <span>caminha</span><br/>
+            <span>corre</span><br/>
+            <span>cai</span><br/> 
+            <span>quebra uma perna</span><br/>
+            <span>ou qualquer coisa assim</span>
+          </p>
+        </div>
+        <div class="texto" id="texto2" #texto2>
+          <div class="link_back" (click)="onZoomOut('texto2')"><img src="/assets/travessia/back.png" ></div>
+          <div class="audio">
+            <app-audio [container]="'texto2'" [src]="'aPessoaDentroTemOsso.mp3'"></app-audio>
+          </div>
+          <p>
+            <span>a pessoa dentro tem osso mas não aparece a não ser que corte a carne profundamente a pele e a carne nessa ordem profundamente o suficiente</span><br/> 
+            <span>ou que haja uma fratura suficiente exposta então é o osso que corta a carne e a pele nessa ordem e tem o sangue mas o sangue é outra palavra</span><br/>
+            <span>alguém vai precisar consertar isso colocar o osso de volta no lugar com uma placa de metal e religar os tendões destroçados e as fibras musculares destroçadas e costurar a pele destroçada e atravessar parafusos fixadores e essa pessoa vai ficar deitada em uma cama com a perna parecendo uma estação espacial ou um acelerador de partículas por meses destroçada olhando fixamente o teto e pensando</span><br/>
+            <span>depois vai ter que aprender a ficar em pé e vai ter medo de cair bater a cabeça quebrar alguma coisa não é exatamente como andar de bicicleta vai pensar em sua mãe quando aprendeu a ficar de pé pela primeira vez o medo de cair quebrar alguma coisa bater a cabeça principalmente a cabeça os ossos no crânio do bebê ainda são moles por isso as pessoas viram bebês no berço de tempos em tempos para garantir que aquela cabeça se consolide em um belo formato arredondado e simétrico</span><br/> 
+            <span>a verdade é que ela vai aprender a andar ninguém aprende a ficar de pé apenas a andar</span><br/>
+            <span>saber ficar de pé é decorrência apenas de saber andar</span>
+          </p>
+        </div>
+        <div class="texto" id="texto3" #texto3>
+          <div class="link_back" (click)="onZoomOut('texto3')"><img src="/assets/travessia/back.png" ></div>
+          <div class="audio">
+            <app-audio [container]="'texto3'" [src]="'concussao.mp3'"></app-audio>
+          </div>
+          <p>
+            <span>a câmera começa no chão e sobe lentamente revelando o pneu (de novo)</span><br/>
+            <span>a câmera começa no chão e sobe lentamente lentamente revelando o pneu e depois o para-choques amassado (de novo)</span><br/>
+            <span>a câmera (de novo)</span><br/>
+            <span>a camera começa no chão e sobe lentamente lentamente revelando o pneu e depois lentamente o para-choques amassado e então o farol quebrado mas com a lâmpada ainda acesa e o capô amassado e o para-brisas quebrado e atrás do vidro atrás da direção uma mulher sentada chorando a câmera olha para ela por alguns instantes e a vê abrir a porta apressada e sair apressada do carro como se fugisse (de novo)</span><br/>
+            <span>agora a câmera é você não os seus olhos você você começa do chão e eu guio você com minha mão direita deslizo meus dedos delicadamente pelos seus cabelos e você sente as pontas deles tocarem de leve sua nuca o que te dá um pequeno arrepio e um certo prazer mesmo nessa situação então eu firmo meus dedos no arredondado do seu crânio bonito e simétrico a sua mãe virava você no berço quando ainda era um bebê e faço com que você levante lentamente e te mostro o pneu eu firmo meus dedos no seu crânio e te levanto lentamente te mostro o pneu e depois o para-choques amassado e eu firmo meus dedos no seu belo crânio e eu firmo meus dedos no seu rígido crânio de pessoa crescida e te faço mover lentamente e te mostro o pneu e o para-choques amassado e depois sempre lentamente com gentileza você sente meus dedos firmemente no seu crânio mas com gentileza eu te faço levantar e ver o farol quebrado com a luz ainda acesa e o capô do carro amassado e o para-brisas quebrado mas ainda no lugar e atrás do vidro uma mulher sentada no banco atrás da direção chorando e ela olha para você chorando por uns instantes e abre a porta apressada e sai apressada do carro e vem em sua direção dizendo coisas que você não consegue distinguir nem responder eu movo sua cabeça em gestos aleatórios de sim e não e ela segue falando coisas como você não pode ficar em pé você está bem você precisa ficar deitado a gente não tem como saber o que pode ter acontecido com a sua cabeça que você não deveria se mexer está tudo bem com a sua cabeça você sente os meus dedos firmes ali e pensa que está tudo bem com a sua cabeça ela toca suas mãos segura com força suas mãos e você olha para ela profundamente e você sente que de alguma forma mesmo que não entenda direito a situação você acha aquilo bonito aquela pessoa na sua frente falando sem parar você sorri enquanto a vê pegando o telefone e ligando desesperada para alguém e iluminada intermitentemente de vermelho e te acompanhando até a ambulância e ficando pra trás enquanto alguém injeta algo no seu braço que gela por dentro e você já não a vê mais quando os seus neuroreceptores são inundados por uma dose cavalar de benzodiazepínico e você já não sente ou vê mais nada</span>
+          </p>
+        </div>
+        <div class="texto" id="texto4" #texto4>
+          <div class="link_back" (click)="onZoomOut('texto4')"><img src="/assets/travessia/back.png" ></div>
+          <div class="audio">
+            <app-audio [container]="'texto4'" [src]="'automoveisGuiadosPorRobos.mp3'"></app-audio>
+          </div>
+          <div id="videot4_wrapper">
+            <div class="video" id="videot4a">
+              <app-video [container]="'texto4'" [src]="'/assets/travessia/atropelamento.mp4'"></app-video>
+            </div>
+            <div class="video" id="videot4b">
+              <app-video [container]="'texto4'" [src]="'/assets/travessia/react.mp4'"></app-video>
+            </div>
+          </div>
+        
+          <p>
+            <span>Automóveis guiados por robôs é tudo o que você vai ver não haverá pessoas já não haverá pessoas nas ruas quero dizer as pessoas não sairão mais às ruas quero dizer as pessoas que puderem sair de algum lugar que que tiverem um lugar de onde sair é claro é disso que eu estou falando não quero falar das pessoas que estarão nas ruas porque vivem nas ruas é evidente não quero falar delas mas das que tiverem um lugar onde estar um lugar uma casa um apartamento seu ou alugado mas mesmo que temporariamente seu seu ou seja um lugar de onde sair e então sim estar na rua é o que eu quero dizer a gente não vai ver isso as pessoas estarão dentro de lugares ou quando estiverem em trânsito entre um e outro lugar as pessoas estarão em de automóveis guiados por robôs é claro que eu não falo de robôs como aqueles dos filmes antigos você sabe do que eu estou falando carcaças metálicas brilhantes em formato humano eu tenho uma teoria sobre eles os robôs dos filmes eu não sou nenhuma especialista mas eu tenho uma teoria acho que eles só eram feitos dessa maneira porque dentro daquele robô tinha uma pessoa por isso o robô tinha que ter uma forma humana sabe do que eu estou falando tinha uma pessoa de carne e osso dentro daquele monte de lata se a gente pensar bem não faz nenhum sentido e depois quando começaram a fazer robôs sem pessoas dentro por algum motivo eles continuavam fazendo parecido com a gente o que não faz nenhum sentido se a gente pensar bem como o Frankenstein aliás que foi o primeiro robô a ser inventado não teria a menor necessidade de ele ter aquele formato humano quero dizer você poderia criar um centauro ou uma centopeia ou qualquer coisa porque afinal você já tá esquartejando cadáveres de indigentes que você roubou de algum lugar e costurando pedaços de diferentes pessoas mortas pra fazer seu monstro então por que não ousar até porque se você pensar bem não é um design muito eficiente e pode parecer falta de criatividade mas eu tenho uma teoria sobre isso e de novo eu não sou uma especialista mas tenho uma teoria de que acontece uma de duas coisas ou um complexo de deus ou algum tipo de frustração sexual ou as duas coisas mas não é disso que estou falando o carro por exemplo o robô do carro não terá essa forma aliás nem dará para falar no robô do carro porque não existirão o carro e o robô o carro será o robô e tudo bem terá uma pessoa dentro mas é diferente a pessoa estará ali de passagem é outra coisa entrará num lugar sairá no outro quase como se aquilo ali não estivesse acontecendo quase como se a pessoa estivesse não sei passando por uma porta porque será tão silencioso e contínuo e monótono que a gente nem se dará conta só saberá que começou e terminou a não ser que aconteça alguma coisa no meio do caminho daí será como se a pessoa acordasse assustada no meio da noite porque ela não imaginaria que algo pudesse acontecer fora do programado mas vai acontecer às vezes porque o robô é como a gente não como a gente mas é parecido porque ele é programado também pra ver algumas coisas e não ver outras ver algumas pessoas e não ver outras entende aí quando ele vê pode ser tarde demais e aí coisas acontecerão fora do programado um atropelamento é o que eu quero dizer um dia um atropelamento será última modalidade possível de encontro</span>
+          </p>
+        </div>
+        <div class="texto" id="texto5" #texto5>
+          <div class="link_back" (click)="onZoomOut('texto5')"><img src="/assets/travessia/back.png" ></div>
+          <div class="audio">
+            <app-audio [container]="'texto5'" [src]="'melhorQueQualquerCoisaDoWelles.mp3'"></app-audio>
+          </div>
+          <!-- <div class="video" id="videoWelles1">
+            <app-video [container]="'texto5'" [src]="'/assets/travessia/maiorQueQualquerCoisaDoWelles-Henrique1.mp4'"></app-video>
+          </div> -->
+          <p>
+            <span>no intervalo do jornal na tv a cabo entre a cotação do dólar o desempenho do agronegócio a situação da bolsa de valores as notícias do senado da câmara do palácio a imagem de uma criança extremamente magra indecentemente magra com olhos enormes tratada por médicos que olham para a câmera como se dizendo estamos aqui e estamos fazendo todo o possível e precisamos de ajuda os médicos claramente claramente estão fazendo todo o possível e claramente precisam de ajuda eu confio neles eu sou tomada por uma sensação estranha de esperança de confiança no futuro eu choro eu costumo chorar as crianças os ossos parecem querer saltar pele afora como se a morte cobrasse espaço naquele pequeno corpo eu me sinto intensamente tocada eu choro eu costumo chorar toda vez eu pego o telefone eu ligo para o número que aparece na tela eu poderia entrar no site que aparece na tela mas eu quero preciso falar com alguém preciso que algum ser humano saiba que eu estou abrindo mão de parte do meu patrimônio em nome das crianças então eu ligo<br/>
+            sou atendida por um robô mas mesmo assim ele me fala sobre as opções e valores de doação eu desabafo com ele eu realmente me abro pra ele e ele repete as opções e valores de doação eu falo o quanto é importante pra mim ajudar o quanto eu quero ajudar e ele repete as opções e valores de doação eu entendo você não pode dar atenção a cada pessoa que liga é uma carga emocional muito grande e eu entendo então digito uma opção do menu e doo eu doo 50 reais 100 reais eu gostaria eu não posso doar mais eu acabei de comprar um ar condicionado eu doaria mais se eu pudesse eu explico isso eu falo durante a avaliação do atendimento eu digito 9 completamente satisfeita e feliz eu fico feliz com esse comercial porque eu choro com ele e isso me convence de que eu não estou tão anestesiado a ponto de ver uma tragédia dessas na televisão e permanecer incólume então eu doo eu doo 50 reais 100 reais e se pudesse eu doaria muito mais como um agradecimento pelo que esse comercial fez por mim pelo que ele me fez sentir eles deveriam passar isso nas escolas nas universidades esse comercial é uma das maiores obras cinematográficas do século XXI</span><br/> 
+            <span>maior que qualquer coisa de Welles</span><br/>
+            <span>de Godard</span><br/>
+            <span>de Coppola</span><br/>
+            <span>de Tarkovsky</span><br/>
+            <span>de Béla Tarr</span><br/>
+            <span>de Spielberg</span><br/>
+            <span>já deram algum prêmio pra ele existe algum prêmio eles deveriam dar algum prêmio algum oscar eles deveriam passar nas estações de trem nos metrôs nos ônibus esse comercial é o melhor filme que eu assisti em toda a minha vida</span><br/>
+            <span>melhor que Matrix</span><br/>
+            <span>melhor que Blade Runner</span><br/>
+            <span>melhor que Titanic</span><br/>
+            <span>melhor que Tubarão 1</span><br/>
+            <span>melhor que De volta para o futuro 1</span><br/>
+            <span>melhor que Jurassic Park</span><br/>
+            <span>melhor que Cidadão Kane</span><br/>
+          </p>
+          <!-- <div class="video" id="videoWelles2">
+            <app-video [container]="'texto5'" [src]="'/assets/travessia/maiorQueQualquerCoisaDoWelles-Henrique2.mp4'"></app-video>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <div class="texto" id="texto1" #texto1>
+    <button (click)="onZoomOut('texto1')">voltar</button>
+    <p>
+      gosto de trocanter<br/> 
+      da palavra trocanter<br/>
+      gosto do pedaço do osso<br/>
+      do côndilo<br/>
+      abaixo do joelho<br/>
+      o joelho<br/>
+      dói<br/>
+      por longas horas sentadas<br/> 
+      gosto de maléolo<br/> 
+      por longas horas sentadas em uma cadeira consumida pela idade já frágil já desequilibrada<br/>
+      por longas horas sentadas<br/>
+      pelo tempo que atravessa alguém sentada em uma cadeira consumida pela idade já frágil já<br/> 
+      não sei se gosto de patela<br/>
+      gosto de artelho<br/>
+      calcâneo<br/>
+    </p>
+    <p>
+      as últimas páginas do volume 15 da Enciclopédia Delta Universal são feitas de um filme plástico transparente e têm impresso em cores um corpo humano de homem branco em diferentes profundidades primeiro o homem como a gente vê na rua mas nu depois o mesmo homem sem pele como se um colonizador ou um policial ou um médico ou um outro homem de bem tivesse removido cuidadosamente toda a sua pele e ele agora existisse desse jeito em carne viva as páginas são lisas e fazem um suave ruído quando se separam se você volta a página é um milagre que acontece e o homem tem pele novamente como um são bartolomeu regenerado no teto da capela cistina mas você passa a página e o suplício novamente se abate sobre aquele homem mais uma página ruído suave essas páginas têm um cheiro especial diferente do cheiro de livro antigo guardado cheiro de papel com mofo e pó essas páginas tem um cheiro diferente não sei de que é como se tivessem removido dele toda a carne e restassem somente os nervos e espinha e cérebro e os olhos depois removidos os nervos na próxima página os ossos apenas eles limpos sem resíduo de sangue ou carne ou nervo ou vísceras mortos como só podem existir quando mortos é uma condição do osso por isso a morte é retratada como um esqueleto e o Esqueleto do desenho é retratado como um esqueleto e alguém pode argumentar que ele está vivo mas eu perguntaria se aquilo é vida e o símbolo de venenoso é um crânio com dois ossos longos cruzados osso visível é morte eu cheirava as páginas passava uma a uma pra frente e pra trás e via aquele homem morrer e voltar à vida pelas minhas pequenas mãos de criança como se fosse eu mesmo o policial no porão da delegacia fazendo pequenos cortes na pele de alguém e puxando a pele e ouvindo entre os gritos o ruído que a pele faz quando se separa da carne eu sei você deve estar pensando que eu não tive uma infância saudável eu era uma criança curiosa
+    </p>
+    <p>
+      tubérculo<br/>
+      metatarso<br/> 
+      eu queria saber o que tem por dentro<br/>
+      fíbula<br/>
+      fêmur<br/>
+      você pode pensar em mim como uma fã uma espécie de fã<br/>
+      eu queria ver os bastidores<br/>
+      entender como alguém <br/>
+      fica em pé<br/>
+      caminha<br/>
+      corre<br/>
+      cai<br/> 
+      quebra uma perna<br/>
+      ou qualquer coisa assim
+    </p>
+  </div>
+  <div class="texto" id="texto2" #texto2>
+    <button (click)="onZoomOut('texto2')">voltar</button>
+    <p>
+      a pessoa dentro tem osso mas não aparece a não ser que corte a carne profundamente a pele e a carne nessa ordem profundamente o suficiente<br/> 
+      ou que haja uma fratura suficiente exposta então é o osso que corta a carne e a pele nessa ordem e tem o sangue mas o sangue é outra palavra<br/>
+      alguém vai precisar consertar isso colocar o osso de volta no lugar com uma placa de metal e religar os tendões destroçados e as fibras musculares destroçadas e costurar a pele destroçada e atravessar parafusos fixadores e essa pessoa vai ficar deitada em uma cama com a perna parecendo uma estação espacial ou um acelerador de partículas por meses destroçada olhando fixamente o teto e pensando<br/>
+      depois vai ter que aprender a ficar em pé e vai ter medo de cair bater a cabeça quebrar alguma coisa não é exatamente como andar de bicicleta vai pensar em sua mãe quando aprendeu a ficar de pé pela primeira vez o medo de cair quebrar alguma coisa bater a cabeça principalmente a cabeça os ossos no crânio do bebê ainda são moles por isso as pessoas viram bebês no berço de tempos em tempos para garantir que aquela cabeça se consolide em um belo formato arredondado e simétrico<br/> 
+      a verdade é que ela vai aprender a andar ninguém aprende a ficar de pé apenas a andar
+      saber ficar de pé é decorrência apenas de saber andar
+    </p>
+  </div>
+  <div class="texto" id="texto3" #texto3>
+    <p>
+      a câmera começa no chão e sobe lentamente revelando o pneu (de novo)<br/>
+      a câmera começa no chão e sobe lentamente lentamente revelando o pneu e depois o para-choques amassado (de novo)<br/>
+      a câmera (de novo)<br/>
+      a camera começa no chão e sobe lentamente lentamente revelando o pneu e depois lentamente o para-choques amassado e então o farol quebrado mas com a lâmpada ainda acesa e o capô amassado e o para-brisas quebrado e atrás do vidro atrás da direção uma mulher sentada chorando a câmera olha para ela por alguns instantes e a vê abrir a porta apressada e sair apressada do carro como se fugisse (de novo)<br/>
+      agora a câmera é você não os seus olhos você você começa do chão e eu guio você com minha mão direita deslizo meus dedos delicadamente pelos seus cabelos e você sente as pontas deles tocarem de leve sua nuca o que te dá um pequeno arrepio e um certo prazer mesmo nessa situação então eu firmo meus dedos no arredondado do seu crânio bonito e simétrico a sua mãe virava você no berço quando ainda era um bebê e faço com que você levante lentamente e te mostro o pneu eu firmo meus dedos no seu crânio e te levanto lentamente te mostro o pneu e depois o para-choques amassado e eu firmo meus dedos no seu belo crânio e eu firmo meus dedos no seu rígido crânio de pessoa crescida e te faço mover lentamente e te mostro o pneu e o para-choques amassado e depois sempre lentamente com gentileza você sente meus dedos firmemente no seu crânio mas com gentileza eu te faço levantar e ver o farol quebrado com a luz ainda acesa e o capô do carro amassado e o para-brisas quebrado mas ainda no lugar e atrás do vidro uma mulher sentada no banco atrás da direção chorando e ela olha para você chorando por uns instantes e abre a porta apressada e sai apressada do carro e vem em sua direção dizendo tantas coisas que você não consegue distinguir nem responder eu movo sua cabeça em gestos aleatórios de sim e não e ela segue falando coisas como você não pode ficar em pé você está bem você precisa ficar deitado a gente não tem como saber o que pode ter acontecido com a sua cabeça que você não deveria se mexer está tudo bem com a sua cabeça você sente os meus dedos firmes ali e pensa que está tudo bem com a sua cabeça ela toca suas mãos segura com força suas mãos e você olha para ela profundamente e você sente que de alguma forma mesmo que não entenda direito a situação você acha aquilo bonito aquela pessoa na sua frente falando sem parar você sorri enquanto a vê pegando o telefone e ligando desesperada para alguém e iluminada intermitentemente de vermelho e te acompanhando até a ambulância e ficando pra trás enquanto alguém injeta algo no seu braço que gela por dentro e você já não a vê mais quando os seus neuroreceptores são inundados por uma dose cavalar de benzodiazepínico e você já não sente ou vê mais nada 
+    </p>
+  </div>
+  <div class="texto" id="texto4" #texto4>
+    <p>
+      Automóveis guiados por robôs é tudo o que você vai ver não haverá pessoas já não haverá pessoas nas ruas quero dizer as pessoas não sairão mais às ruas quero dizer as pessoas que puderem sair de algum lugar que que tiverem um lugar de onde sair é claro é disso que eu estou falando não quero falar das pessoas que estarão nas ruas porque vivem nas ruas é evidente não quero falar delas mas das que tiverem um lugar onde estar um lugar uma casa um apartamento seu ou alugado mas mesmo que temporariamente seu seu ou seja um lugar de onde sair e então sim estar na rua é o que eu quero dizer a gente não vai ver isso as pessoas estarão dentro de lugares ou quando estiverem em trânsito entre um e outro lugar as pessoas estarão em de automóveis guiados por robôs é claro que eu não falo de robôs como aqueles dos filmes antigos você sabe do que eu estou falando carcaças metálicas brilhantes em formato humano eu tenho uma teoria sobre eles os robôs dos filmes eu não sou nenhuma especialista mas eu tenho uma teoria acho que eles só eram feitos dessa maneira porque dentro daquele robô tinha uma pessoa por isso o robô tinha que ter uma forma humana sabe do que eu estou falando tinha uma pessoa de carne e osso dentro daquele monte de lata se a gente pensar bem não faz nenhum sentido e depois quando começaram a fazer robôs sem pessoas dentro por algum motivo eles continuavam fazendo parecido com a gente o que não faz nenhum sentido se a gente pensar bem como o Frankenstein aliás que foi o primeiro robô a ser inventado não teria a menor necessidade de ele ter aquele formato humano quero dizer você poderia criar um centauro ou uma centopeia ou qualquer coisa porque afinal você já tá esquartejando cadáveres de indigentes que você roubou de algum lugar e costurando pedaços de diferentes pessoas mortas pra fazer seu monstro então por que não ousar [guega: adicionar algo sobre os tamanhos diferentes dos ossos de diferentes pessoas e usar isso pra pensar na montagem do monstro] até porque se você pensar bem não é um design muito eficiente e pode parecer falta de criatividade mas eu tenho uma teoria sobre isso e de novo eu não sou uma especialista mas eu tenho uma teoria de que acontece uma de duas coisas ou um complexo de deus ou algum tipo de frustração sexual ou as duas coisas hoje em dia é diferente o carro por exemplo o robô do carro não terá essa forma aliás nem dará para falar no robô do carro porque não existirão o carro e o robô o carro será o robô e tudo bem terá uma pessoa dentro mas é diferente a pessoa estará ali de passagem é outra coisa entrará num lugar sairá no outro quase como se aquilo ali não estivesse acontecendo quase como se a pessoa estivesse não sei passando por uma porta porque será tão silencioso e contínuo e monótono que a gente nem se dará conta só saberá que começou e terminou a não ser que aconteça alguma coisa no meio do caminho daí será como se a pessoa acordasse assustada no meio da noite porque ela não imaginaria que algo pudesse acontecer fora do programado mas vai acontecer às vezes porque o robô é como a gente não como a gente mas é parecido porque ele é programado também pra ver algumas coisas e não ver outras ver algumas pessoas e não ver outras entende aí quando ele vê pode ser tarde demais e aí coisas acontecerão fora do programado um atropelamento é o que eu quero dizer um dia um atropelamento será última modalidade possível de encontro
+    </p>
+  </div>
+  <div class="texto" id="texto5" #texto5>
+    <p>
+      no intervalo do jornal na tv a cabo entre a cotação do dólar o desempenho do agronegócio a situação da bolsa de valores as notícias do senado da câmara do palácio a imagem de uma criança negra extremamente magra indecentemente magra com olhos enormes tratada por médicos que olham para a câmera como se dizendo estamos aqui e estamos fazendo todo o possível e precisamos de ajuda os médicos claramente claramente estão fazendo todo o possível e claramente precisam de ajuda eu confio neles eu sou tomada por uma sensação estranha de esperança de confiança no futuro eu choro eu costumo chorar as crianças os ossos parecem querer saltar pele afora como se a morte cobrasse espaço naquele pequeno corpo eu me sinto intensamente tocada eu choro eu costumo chorar toda vez eu pego o telefone eu ligo para o número que aparece na tela eu poderia entrar no site que aparece na tela mas eu quero preciso falar com alguém preciso que algum ser humano saiba que eu estou abrindo mão de parte do meu patrimônio em nome das crianças então eu ligo<br/>
+      sou atendida por um robô mas mesmo assim ele me fala sobre as opções e valores de doação eu desabafo com ele eu realmente me abro pra ele e ele repete as opções e valores de doação eu falo o quanto é importante pra mim ajudar o quanto eu quero ajudar e ele repete as opções e valores de doação eu entendo você não pode dar atenção a cada pessoa que liga é uma carga emocional muito grande e eu entendo então digito uma opção do menu e doo eu doo 50 reais 100 reais eu gostaria eu não posso doar mais eu acabei de comprar um ar condicionado eu doaria mais se eu pudesse eu explico isso eu falo durante a avaliação do atendimento eu digito 9 completamente satisfeito e feliz eu fico feliz com esse comercial porque eu choro com ele e isso me convence de que eu não estou tão anestesiado a ponto de ver uma tragédia dessas na televisão e permanecer incólume então eu doo eu doo 50 reais 100 reais e se pudesse eu doaria muito mais como um agradecimento pelo que esse comercial fez por mim pelo que ele me fez sentir eles deveriam passar isso nas escolas nas universidades esse comercial é uma das maiores obras cinematográficas do século XXI<br/> 
+      maior que qualquer coisa de Welles<br/>
+      de Goddard<br/>
+      de Coppola<br/>
+      de Tarkovsky<br/>
+      de Béla Tarr<br/>
+      de Spielberg<br/>
+      já deram algum prêmio pra ele existe algum prêmio eles deveriam dar algum prêmio algum oscar eles deveriam passar nas estações de trem nos metrôs nos ônibus esse comercial é o melhor filme que eu assisti em toda a minha vida<br/>
+      melhor que Matrix<br/>
+      melhor que Blade Runner<br/>
+      melhor que Titanic<br/>
+      melhor que Tubarão 1<br/>
+      melhor que De volta para o futuro 1
+    </p>
+  </div> -->
+  
+  <div id="link_last" *ngIf="last">
+    <span (click)="back()">voltar para <b>{{textos[last]}}</b></span>
+  </div>
+  
+  <div id="overlay" *ngIf="!interacted" (click)="onPageInteraction()">
+    <span *ngIf="imagens.length > loaded.length">Carregando {{loaded.length}}/{{imagens.length}}</span>
+    <span *ngIf="imagens.length == loaded.length">clique para começar</span>
+  </div>

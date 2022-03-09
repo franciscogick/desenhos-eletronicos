@@ -1,0 +1,64 @@
+.audio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    padding: 6px;
+    color: #000;
+    width: 100%;
+}
+
+.img {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-position: center center;
+    border-radius: 1.25rem;
+    background-size: cover;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 1;
+}
+
+.controls-1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+} 
+
+.controls-2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    opacity: .5;
+}
+
+.play-pause {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.track {
+    height: 1px;
+    background: rgba(0,0,0,1);
+    position: relative;
+    flex-grow: 1;
+}
+
+.head {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1px;
+    height: 15px;
+    background: #000;
+}

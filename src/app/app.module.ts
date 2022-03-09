@@ -26,7 +26,7 @@ import { ResumoComponent } from './resumo/resumo.component';
 import { EpigrafeComponent } from './epigrafe/epigrafe.component';
 import { IntroducaoComponent } from './textos/introducao/introducao.component';
 import { DesenhosEletronicosComponent } from './textos/desenhos-eletronicos/desenhos-eletronicos.component';
-import { TravessiaComponent } from './textos/travessia/travessia.component';
+import { TravessiaComponent } from './textos/novas-grafias/travessia/travessia.component';
 import { LastSongOfVioletaParraComponent } from './textos/hiperdramas-de-charles-deemer/last-song-of-violeta-parra/last-song-of-violeta-parra.component';
 import { TransmissionADialogueComponent } from './textos/transmission-a-dialogue/transmission-a-dialogue.component';
 import { AiWhenARobotWritesAPlayComponent } from './textos/ai-when-a-robot-writes-a-play/ai-when-a-robot-writes-a-play.component';
@@ -63,6 +63,9 @@ import { HiperdramaComponent } from './textos/hiperdramas-de-charles-deemer/hipe
 import { HipertextoComponent } from './textos/hiperdramas-de-charles-deemer/hipertexto/hipertexto.component';
 import { CitacaoDiretaComponent } from './textos/citacao-direta/citacao-direta.component';
 import { ManifestoDebrayComponent } from './textos/manifesto-debray/manifesto-debray.component';
+import { DragDirective } from './directives/drag.directive';
+import { AudioComponent } from './textos/audio/audio.component';
+import { VideoComponent } from './textos/video/video.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +122,10 @@ import { ManifestoDebrayComponent } from './textos/manifesto-debray/manifesto-de
     HiperdramaComponent,
     HipertextoComponent,
     CitacaoDiretaComponent,
-    ManifestoDebrayComponent
+    ManifestoDebrayComponent,
+    DragDirective,
+    AudioComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
