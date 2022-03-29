@@ -886,7 +886,8 @@ const referencias = [
     "title":"Apresentação - Além do livro: literatura e novas mídias",
     "url":"http://www.scielo.br/scielo.php?script=sci_arttext&pid=S2316-40182016000100011&lng=pt&tlng=pt",
     "access":{"year":2020,"month":11,"day":05},
-    "textual_id":"Rocha-2016"
+    "textual_id":"Rocha-2016",
+    "cited":true
 },
 {
     "rec_number":411,
