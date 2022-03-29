@@ -58,14 +58,14 @@ export class ReferenciadorPipe implements PipeTransform {
         autor = createAuthors(ref.author);
         editor = createAuthors(ref.book.editor,'(org.)');
 
-        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. <i>In:</i> ${editor} ${ref.book.title}. ${ref.book.edition?ref.book.edition + '. ':''}${ref.book.pub_location}: ${ref.book.publisher}, ${ref.book.date.year}.`; 
+        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. <i>In:</i> ${editor} ${ref.book.title}. ${ref.book.edition?ref.book.edition + '. ':''}${ref.book.pub_location}: ${ref.book.publisher}, ${ref.book.date.year}${ref.distinct || ''}.`; 
       }
       if (ref.type == 'article') {
         //SOBRENOME, Nome abreviado. Título do artigo. Título da Revista, Local de publicação, número do volume, páginas inicial-final, mês e ano.
 
         autor = createAuthors(ref.author);
 
-        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.journal}, ${ref.pub_location?ref.pub_location+', ':''}${ref.volume?'n'+ref.volume + ', ':''}${ref.number?'v'+ref.number + ', ':''}${ref.pages?'p'+ref.pages + ', ':''}${ref.date.month?months[ref.date.month - 1]+'. de ':''}${ref.date.year}.${ref.url?' Disponível em: <a href="'+ref.url+'" target="_blank">'+ref.url+'</a>. Acesso em: '+ref.access.day+' '+months[ref.access.month - 1].toLowerCase()+'. '+ref.access.year+'.':''}`; 
+        return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.journal}, ${ref.pub_location?ref.pub_location+', ':''}${ref.volume?'n'+ref.volume + ', ':''}${ref.number?'v'+ref.number + ', ':''}${ref.pages?'p'+ref.pages + ', ':''}${ref.date.month?months[ref.date.month - 1]+'. de ':''}${ref.date.year}${ref.distinct || ''}.${ref.url?' Disponível em: <a href="'+ref.url+'" target="_blank">'+ref.url+'</a>. Acesso em: '+ref.access.day+' '+months[ref.access.month - 1].toLowerCase()+'. '+ref.access.year+'.':''}`; 
       }
       if (ref.type == 'website') {
         //TÍTULO da matéria. Nome do site, ano. Disponível em: URL. Acesso em: dia, mês e ano.
