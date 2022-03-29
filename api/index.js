@@ -960,7 +960,8 @@ const referencias = [
     "title":"Monstro esperançoso",
     "url":"http://www.scielo.br/scielo.php?script=sci_arttext&pid=S2316-40182016000100157&lng=pt&tlng=pt",
     "access":{"year":2020,"month":11,"day":04},
-    "textual_id":"Rocha-2016"
+    "textual_id":"Rocha-2016",
+    "cited":true
 },
 {
     "rec_number":406,
