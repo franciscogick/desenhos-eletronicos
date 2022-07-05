@@ -31,12 +31,12 @@ export class ReferenciasComponent implements OnInit {
         let x,y = '';
         let n = [];
 
-        if (a.author) {n = a.author[0].name.split(' '); x = n[n.length - 1]}
-        else if (a.editor) {n = a.editor[0].name.split(' '); x = n[n.length - 1]}
+        if (a.author) {n = a.author[0].name.split(' '); if (a.author_full_name) { x = n[0]} else { x = n[n.length - 1]} }
+        else if (a.editor) {n = a.editor[0].name.split(' '); if (a.author_full_name) { x = n[0]} else { x = n[n.length - 1]}}
         else if (a.site) {x = a.site}
 
-        if (b.author) {n = b.author[0].name.split(' '); y = n[n.length - 1]}
-        else if (b.editor) {n = b.editor[0].name.split(' '); y = n[n.length - 1]}
+        if (b.author) {n = b.author[0].name.split(' '); if (b.author_full_name) { y = n[0]} else { y = n[n.length - 1]} }
+        else if (b.editor) {n = b.editor[0].name.split(' '); if (b.author_full_name) { y = n[0]} else { y = n[n.length - 1]} }
         else if (b.site) {y = b.site}
 
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
@@ -45,6 +45,7 @@ export class ReferenciasComponent implements OnInit {
       this.consultadas = this.referencias.filter(r => !r.cited);
       
     });
+
     this.sessionService.getUser().pipe(takeUntil(this.destroy$)).subscribe(user => {if (user) this.sessionUser = user.name});
   }
   

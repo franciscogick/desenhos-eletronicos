@@ -31,5 +31,6 @@ export interface Referencia {
         edition?: string;
         date:{year:number};
     }, 
-    distinct?: string; 
+    distinct?: string;
+    author_full_name?: boolean; 
 }

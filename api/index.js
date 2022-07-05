@@ -1032,8 +1032,9 @@ const referencias = [
     "rec_number":0,
     "type":"website",
     "author":[
-        {"name":"CENTRO REGIONAL DE ESTUDOS PARA O DESENVOLVIMENTO DA SOCIEDADE DA INFORMAÇÃO (CETIC.BR)"}
+        {"name":"CENTRO REGIONAL DE ESTUDOS PARA O DESENVOLVIMENTO DA SOCIEDADE DA INFORMAÇÃO"}
     ],
+    "author_full_name":true,
     "site":"CETIC.BR",
     "date":{"year":2019},
     "title":"Pesquisa TIC domicílios 2019",
@@ -1046,8 +1047,9 @@ const referencias = [
     "rec_number":492,
     "type":"book",
     "author":[
-        {"name":"Núcleo de Informação e Coordenação do Ponto BR NIC.br"}
+        {"name":"Núcleo de Informação e Coordenação do Ponto BR"}
     ],
+    "author_full_name":true,
     "pub_location":"São Paulo",
     "publisher":"Comitê Gestor da Internet no Brasil",
     "date":{"year":2021},

@@ -47,8 +47,8 @@ export class ReferenciadorPipe implements PipeTransform {
 
       if (ref.type == 'book') {
         //SOBRENOME, Nome. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, ano de publicação da obra
-        if (ref.author) { autor = createAuthors(ref.author); }
-        else if (ref.editor) { autor = createAuthors(ref.editor); }
+        if (ref.author) { autor = ref.author_full_name ? ref.author[0].name+'.' : createAuthors(ref.author); }
+        else if (ref.editor) { autor = ref.author_full_name ? ref.editor[0].name+'.' : createAuthors(ref.editor); }
 
         return `${autor} <i>${ref.title}</i>${ref.subtitle?': '+ref.subtitle:''}. ${ref.edition?ref.edition + '. ':''}${ref.pub_location}: ${ref.publisher}, ${ref.date.year}${ref.distinct || ''}.`; 
       }
@@ -73,11 +73,11 @@ export class ReferenciadorPipe implements PipeTransform {
         //AUTOR OU ORGANIZAÇÃO. Nome do site, ano. Ementa (descrição). Disponível em: URL. Acesso em: dia, mês e ano.
 
         if (ref.author) {
-          autor = createAuthors(ref.author);
+          autor = ref.author_full_name ? ref.author[0].name : createAuthors(ref.author);
           
-          return `${autor}${ref.author?'':'.'} ${ref.site}, ${ref.date.year}${ref.distinct || ''}. <i>${ref.title}</i>. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
+          return `${autor}${ref.author?'.':''} ${ref.site}, ${ref.date.year}${ref.distinct || ''}. <i>${ref.title}</i>. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         } else {
-          return `${ref.title}. ${ref.site}${(ref.date && ref.date.year)?', '+ref.date.year+ref.distinct || '':''}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
+          return `${ref.title}. ${ref.site}${(ref.date && ref.date.year)?', '+ref.date.year+(ref.distinct || ''):''}. Disponível em: <a href="${ref.url}" target="_blank">${ref.url}</a>. Acesso em: ${ref.access.day} ${months[ref.access.month - 1].toLowerCase()}. ${ref.access.year}.`;
         }         
       }
       if (ref.type == 'video') {

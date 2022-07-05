@@ -23,7 +23,10 @@ export class CitadorPipe implements PipeTransform {
         if (ref.author.length <= 3) {
           let arr = []
           for (let a = 0; a < 3; a++) {
-            if (ref.author[a]) arr.push(ref.author[a].name.split(' ')[ref.author[a].name.split(' ').length - 1].toUpperCase());
+            if (ref.author[a]) {
+              if (ref.author_full_name) arr.push(ref.author[a].name) 
+              else arr.push(ref.author[a].name.split(' ')[ref.author[a].name.split(' ').length - 1].toUpperCase());
+            }
           }
           autor = arr.join('; ');
         } else {
