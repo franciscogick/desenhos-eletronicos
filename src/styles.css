@@ -473,6 +473,9 @@ button.disable {
 .estrangeirismo {
     font-style: italic;
 }
+.neologismo {
+    font-style: italic;
+}
 .tecnologia {
     font-family: 'Source Code Pro', monospace;
     font-style: italic;

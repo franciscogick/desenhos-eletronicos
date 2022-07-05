@@ -897,7 +897,7 @@ const referencias = [
         {"name":"Marina Ribeiro Mattar"}
     ],
     "number":59,
-    "pages":"101-12",
+    "pages":"101-112",
     "electronic_resource_num":"10.1590/2316-40185911",
     "journal":"Estudos de Literatura Brasileira Contemporânea",
     "volume":1,
@@ -906,6 +906,21 @@ const referencias = [
     "url":"http://www.scielo.br/scielo.php?script=sci_arttext&pid=S2316-40182020000100300&tlng=pt",
     "access":{"year":2020,"month":11,"day":07},
     "textual_id":"Mattar-2020"
+},
+{
+    "rec_number":0,
+    "type":"article",
+    "author":[
+        {"name":"Ludmila Costhek Abílio"}
+    ],
+    "number":1,
+    "pages":"12-26",
+    "journal":"Contracampo",
+    "volume":39,
+    "date":{"month":7,"year":2020},
+    "title":"Plataformas digitais e uberização",
+    "subtitle":"Globalização de um Sul administrado?",
+    "textual_id":"Abilio-2020"
 },
 {
     "rec_number":410,
@@ -1011,6 +1026,34 @@ const referencias = [
     "url":"http://www.latinamericanliteraturetoday.org/es/2019/mayo/poes%C3%ADa-digital-latinoamericana-lenguaje-experimental-en-tiempos-de-bits",
     "access":{"year":2020,"month":11,"day":23},
     "textual_id":"Kozak-2019",
+    "cited":true
+},
+{
+    "rec_number":0,
+    "type":"website",
+    "author":[
+        {"name":"CENTRO REGIONAL DE ESTUDOS PARA O DESENVOLVIMENTO DA SOCIEDADE DA INFORMAÇÃO (CETIC.BR)"}
+    ],
+    "site":"CETIC.BR",
+    "date":{"year":2019},
+    "title":"Pesquisa TIC domicílios 2019",
+    "url":"https://www.cetic.br/pt/arquivos/domicilios/2019/domicilios/",
+    "access":{"year":2022,"month":4,"day":03},
+    "textual_id":"CETIC-2019",
+    "cited":true
+},
+{
+    "rec_number":492,
+    "type":"book",
+    "author":[
+        {"name":"Núcleo de Informação e Coordenação do Ponto BR NIC.br"}
+    ],
+    "pub_location":"São Paulo",
+    "publisher":"Comitê Gestor da Internet no Brasil",
+    "date":{"year":2021},
+    "title":"Pesquisa sobre o uso das tecnologias de informação e comunicação nos domicílios brasileiros",
+    "subtitle":"TIC Domicílios 2020",
+    "textual_id":"CETIC-2020",
     "cited":true
 },
 {
