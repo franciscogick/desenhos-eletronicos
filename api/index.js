@@ -1032,7 +1032,7 @@ const referencias = [
     "rec_number":0,
     "type":"website",
     "author":[
-        {"name":"CENTRO REGIONAL DE ESTUDOS PARA O DESENVOLVIMENTO DA SOCIEDADE DA INFORMAÇÃO"}
+        {"name":"CENTRO REGIONAL DE ESTUDOS PARA O DESENVOLVIMENTO DA SOCIEDADE DA INFORMAÇÃO", "name_abrv":"CETIC.br"}
     ],
     "author_full_name":true,
     "site":"CETIC.BR",
@@ -1047,7 +1047,7 @@ const referencias = [
     "rec_number":492,
     "type":"book",
     "author":[
-        {"name":"Núcleo de Informação e Coordenação do Ponto BR"}
+        {"name":"Núcleo de Informação e Coordenação do Ponto BR", "name_abrv":"NIC.br"}
     ],
     "author_full_name":true,
     "pub_location":"São Paulo",

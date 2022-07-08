@@ -7,6 +7,14 @@ import { Referencia } from '../interfaces/referencia';
 export class CitadorPipe implements PipeTransform {
 
   transform(ref: Referencia, formato:string, pg: string, min: boolean, abrv: string, obs: string, par: boolean = true, distinct:string): string {
+    // ref - referência a formatar
+    // formato - em que formato vai formatar, padrão 'abnt'
+    // min: boolean - se faz citação reduzida, apenas ano, página e observação
+    // abrv - se faz citação abreviada, p. ex. 'op. cit.' ou 'idem' no lugar
+    // obs - observação
+    // par: boolean - se tem parênteses ou não 
+    // distinct - caso haja mais de uma ref do mesmo autor e ano, aquela letrinha no ano, p. ex. '2009a'. 
+    
     if (!ref) return null;
     if (!formato || formato === '') formato = 'abnt';
     if (!pg || pg === '') pg = null;
