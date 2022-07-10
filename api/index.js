@@ -920,7 +920,8 @@ const referencias = [
     "date":{"month":7,"year":2020},
     "title":"Plataformas digitais e uberização",
     "subtitle":"Globalização de um Sul administrado?",
-    "textual_id":"Abilio-2020"
+    "textual_id":"Abilio-2020",
+    "cited":true
 },
 {
     "rec_number":410,
@@ -2604,7 +2605,8 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "rec_number":229,
     "type":"article",
     "author":[
-        {"name":"Lorena Regattieri"}
+        {"name":"Lorena Regattieri"},
+        {"name":"Henrique Antoun"}
     ],
     "number":2,
     "language":"Portuguese",
@@ -2612,7 +2614,7 @@ SIMONDON, G. Sobre a tecno-estética: Carta a Jacques Derrida. In: ARAÚJO, H. R
     "volume":14,
     "date":{"year":2018},
     "title":"Algoritmização da vida e organização da informação: Considerações sobre a tecnicidade no algoritmo a partir de Gilbert Simondon",
-    "url":"https://lucaronconi.it/scheda/teatro/orlando-furioso",
+    "url":"https://revista.ibict.br/liinc/article/view/4304/3962",
     "access":{"year":2021,"month":11,"day":18},
     "textual_id":"Regattieri-2018",
     "cited":true
