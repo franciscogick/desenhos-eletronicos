@@ -21,4 +21,4 @@ Essa dissertação é composta por dois objetos, um hipertexto digital disponibi
 
 ## Licença
 
-Os materiais dessa dissertação estão licenciados sob CC BY-NC-SA 4.0 [https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1].
+Os materiais dessa dissertação estão licenciados sob CC BY-NC-SA 4.0 [http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1].
