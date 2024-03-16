@@ -29,7 +29,7 @@ import { ScrollService } from 'src/app/scroll.service';
 })
 export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
-  texto = [
+  textoA = [
     'Um','sensor','de','presença','é','A MÁQUINA MAIS HUMANA QUE EXISTE.','Ele','conversa','com','você,','ele sente você.','Ele','de','alguma','maneira','confirma','que','você','está','aqui.','Então','ele','abre','a','porta','pra','você,','ele','liga','a','luz','ou','abre','a','sua','torneira.','Porque','você','existe,','porque','você','está','aqui.','Eu','estou','aqui.','Essa','é','uma','grande','afirmação.','Eu','estou','aqui.','E','agora','é','agora,','e','já','passou.','Eu','sei','disso','porque','a','luz','acendeu.','E','isso','aconteceu.','Porque','a','luz','acendeu.','E','fora','disso','é','muito','complicado','afirmar','com','certeza','qualquer','coisa','porque','falta','esse','elemento','concreto','de','prova.','Como','ter','certeza?','Alguém','esbarra','em','você','na','rua,','alguém','te','liga,','alguém','te','manda','um','e-mail,','alguém','se','apaixona','por','você,','alguém','te','beija...','fora','isso?','Quando','você','está','completamente','só','no','meio','da','noite','e','','ouve','ao','longe','a','televisão','do','vizinho','que','passa','algum','filme','antigo','em','preto','e','branco','e','você','se','vê','confrontado','com','essa','terrível','sensação','de','insignificância','por','ser','uma','entre','bilhões','de','pessoas','que','tentam','dormir','e','não','conseguem','e','ficam','sozinhas','paradas','no','meio','de','uma','sala','escura.','Se','pelo','menos','eu','tivesse','alguém','disposto','a','olhar','constantemente','pra','mim','e,','de','tempos','em','tempos,','me','dizer,','você','está','aqui.','Talvez','eu','compre','um','cachorro...','um','desses','com','a','cara','achatada','que','quase','não','se','movem...<br/>',
     'Qualquer coisa<br/>',
     'Qualquer coisa,<br/>',
@@ -63,6 +63,60 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     'Agora...<br/>',
     'Não?<br/>',
   ];
+
+  texto = [
+  "Há","dias<br>",
+  "convivo","com","essa<br>",
+  "sensação<br>",
+  "de","que","tem","alguma","coisa<br>",
+  "dentro","da","minha","cabeça,<br>",
+  "um","objeto,<br>",
+  "um","prego,<br>",
+  "um","estilhaço<br>",
+  "talvez,<br>",
+  "ou","um","inseto<br>",
+  "quem","entrou","enquanto","eu","dormia<br>",
+  "e","resolveu","morar<br>",
+  "lá","dentro<br>",
+  "e","está","crescendo<br>",
+  "e","pondo","seus","ovinhos<br>",
+  "e","seus","filhinhos-insetos<br>",
+  "estão","nascendo<br>",
+  "e","crescendo<br>",
+  "e","se","alimentando<br>",
+  "da","massa","cinzenta","rica","em","açúcar<br>",
+  "do","meu","cérebro.<br>",
+  "Minha","cabeça","dói.<br>",
+  "Talvez","uma","veia","inchada pronta pra explodir,<br>",
+  "um acidente,<br>",
+  "um acidente cerebral,<br>",
+  "tem","um","acidente","pronto","pra","acontecer<br>",
+  "aqui","dentro,<br>",
+  "algo","pronto","pra","explodir.<br>",
+  "E","eu<br>",
+  "às","vezes","sinto","uma","vontade","quase","incontrolável<br>",
+  "de","abrir","um","buraco<br>",
+  "bem aqui<br>", 
+  "pra descobrir o que é,<br>",
+  "ou,","pelo","menos,","aliviar","a","pressão.<br>",
+  "Minha","cabeça","é","uma","espécie","de<br>",
+  "bomba relógio.<br>",
+  "Sem timer.<br>",
+  "E","eu","carrego","esse","artefato","escondido<br>",
+  "que","pode","muito","bem","explodir<br>",
+  "no","meio","de","uma","multidão,<br>",
+  "aliás,<br>",
+  "eu","carrego","esse","desejo","escondido<br>",
+  "de","que","exploda<br>",
+  "bem no meio de uma multidão<br>",
+  "então","vago","pelo","centro","da","cidade,<br>",
+  "pelas","estações","de","trem,<br>",
+  "na","rodoviária,<br>",
+  "no","aeroporto,<br>",
+  "nos","bares,<br>",
+  "nas","lojas","de","departamento...<br>",
+  "esperando","alguma","coisa."
+]
 
   fragmentos: string[] = [];
 
