@@ -29,7 +29,7 @@ import { ScrollService } from 'src/app/scroll.service';
 })
 export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
 
-  textoA = [
+  texto = [
     'Um','sensor','de','presença','é','A MÁQUINA MAIS HUMANA QUE EXISTE.','Ele','conversa','com','você,','ele sente você.','Ele','de','alguma','maneira','confirma','que','você','está','aqui.','Então','ele','abre','a','porta','pra','você,','ele','liga','a','luz','ou','abre','a','sua','torneira.','Porque','você','existe,','porque','você','está','aqui.','Eu','estou','aqui.','Essa','é','uma','grande','afirmação.','Eu','estou','aqui.','E','agora','é','agora,','e','já','passou.','Eu','sei','disso','porque','a','luz','acendeu.','E','isso','aconteceu.','Porque','a','luz','acendeu.','E','fora','disso','é','muito','complicado','afirmar','com','certeza','qualquer','coisa','porque','falta','esse','elemento','concreto','de','prova.','Como','ter','certeza?','Alguém','esbarra','em','você','na','rua,','alguém','te','liga,','alguém','te','manda','um','e-mail,','alguém','se','apaixona','por','você,','alguém','te','beija...','fora','isso?','Quando','você','está','completamente','só','no','meio','da','noite','e','','ouve','ao','longe','a','televisão','do','vizinho','que','passa','algum','filme','antigo','em','preto','e','branco','e','você','se','vê','confrontado','com','essa','terrível','sensação','de','insignificância','por','ser','uma','entre','bilhões','de','pessoas','que','tentam','dormir','e','não','conseguem','e','ficam','sozinhas','paradas','no','meio','de','uma','sala','escura.','Se','pelo','menos','eu','tivesse','alguém','disposto','a','olhar','constantemente','pra','mim','e,','de','tempos','em','tempos,','me','dizer,','você','está','aqui.','Talvez','eu','compre','um','cachorro...','um','desses','com','a','cara','achatada','que','quase','não','se','movem...<br/>',
     'Qualquer coisa<br/>',
     'Qualquer coisa,<br/>',
@@ -64,7 +64,7 @@ export class DaAmabilidadeDosSensoresDePresencaComponent implements OnInit {
     'Não?<br/>',
   ];
 
-  texto = [
+  textoB = [
   "Há","dias<br>",
   "convivo","com","essa<br>",
   "sensação<br>",
