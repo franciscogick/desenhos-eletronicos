@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { UntypedFormBuilder, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { shareReplay, takeUntil } from 'rxjs/operators';
@@ -22,7 +22,7 @@ export class InicioComponent implements OnInit,AfterViewInit,OnDestroy {
   @ViewChild('f', { static: true }) f: NgForm;
   erro: boolean;
 
-  constructor(private sessionService: SessionService, private router: Router, private _formBuilder: FormBuilder) { }
+  constructor(private sessionService: SessionService, private router: Router, private _formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.form = this._formBuilder.group({
