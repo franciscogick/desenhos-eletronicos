@@ -5,11 +5,17 @@
             <h1>Da amabilidade dos sensores de presença</h1>
         </div>-->
         <div id="wrapper">
-            <div>[esteja presente]</div>
+            <div>[esteja presente / diga alguma coisa]</div>
+            <div class="dica" [class.dica-oculta]="interagiu">[mova o mouse ou fale para revelar o texto]</div>
+            <div class="aviso-mic" *ngIf="micPermissao !== 'concedida'">
+                <ng-container *ngIf="micPermissao === 'pendente'">[permita o acesso ao microfone no seu navegador para responder à sua voz]</ng-container>
+                <ng-container *ngIf="micPermissao === 'negada'">[seu microfone está desativado — habilite-o no navegador para responder à sua voz]</ng-container>
+            </div>
             <div id="continente" #continente>
-                <span class="fragmento" *ngFor="let f of fragmentos" [innerHTML]="f+' '" [@anim]="fragmentos"></span>
+                <span #fragmentoEl class="fragmento" *ngFor="let f of fragmentos" [innerHTML]="f+' '" [@anim]="fragmentos"></span>
                 <div id="mascara"></div>
             </div>
         </div>
     </div>
 </div>
+<div class="indicador-presenca" [class.indicador-visivel]="toque || volume">[eu percebo você]</div>
